@@ -46,6 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAnimales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAnimales.Designer.cs">
+      <DependentUpon>frmAnimales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCultivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCultivos.Designer.cs">
+      <DependentUpon>frmCultivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductos.Designer.cs">
+      <DependentUpon>frmProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentas.Designer.cs">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="tbl_Envios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +114,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="tbl_Envios.resx">
+      <DependentUpon>tbl_Envios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="tbl_VentasDetalle.resx">
       <DependentUpon>tbl_VentasDetalle.cs</DependentUpon>
     </EmbeddedResource>
