@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapaPresentación
 {
-    public partial class tbl_Inventarios: Form
+    public partial class frmInsumos: Form
     {
-        public tbl_Inventarios()
+        public frmInsumos()
         {
             InitializeComponent();
         }

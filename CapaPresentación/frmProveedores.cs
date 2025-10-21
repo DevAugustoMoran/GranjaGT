@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapaPresentación
 {
-    public partial class tbl_PagosVentas: Form
+    public partial class frmProveedores: Form
     {
-        public tbl_PagosVentas()
+        public frmProveedores()
         {
             InitializeComponent();
         }
