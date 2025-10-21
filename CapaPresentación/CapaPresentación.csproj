@@ -46,14 +46,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="tbl_Envios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="tbl_Envios.Designer.cs">
+      <DependentUpon>tbl_Envios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Insumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tbl_Insumos.Designer.cs">
+      <DependentUpon>tbl_Insumos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Inventarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tbl_Inventarios.Designer.cs">
+      <DependentUpon>tbl_Inventarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_PagosVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tbl_PagosVentas.Designer.cs">
+      <DependentUpon>tbl_PagosVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tbl_Proveedores.Designer.cs">
+      <DependentUpon>tbl_Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_VentasDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tbl_VentasDetalle.Designer.cs">
+      <DependentUpon>tbl_VentasDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="tbl_VentasDetalle.resx">
+      <DependentUpon>tbl_VentasDetalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
