@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentación
 {
-    partial class tbl_Envios
+    partial class frmPagosVentas
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "tbl_Envios";
+            this.Text = "tbl_PagosVentas";
         }
 
         #endregion
