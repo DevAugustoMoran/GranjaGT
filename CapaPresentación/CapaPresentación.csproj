@@ -154,17 +154,14 @@
     <EmbeddedResource Include="frmEnvios.resx">
       <DependentUpon>frmEnvios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInsumos.resx">
-      <DependentUpon>frmInsumos.cs</DependentUpon>
+    <EmbeddedResource Include="FrmRoles.resx">
+      <DependentUpon>FrmRoles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInventarios.resx">
-      <DependentUpon>frmInventarios.cs</DependentUpon>
+    <EmbeddedResource Include="FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPagosVentas.resx">
-      <DependentUpon>frmPagosVentas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmProveedores.resx">
-      <DependentUpon>frmProveedores.cs</DependentUpon>
+    <EmbeddedResource Include="frmVentas.resx">
+      <DependentUpon>frmVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVentasDetalle.resx">
       <DependentUpon>frmVentasDetalle.cs</DependentUpon>
