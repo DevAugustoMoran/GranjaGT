@@ -33,6 +33,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTipoVenta = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.dtpFechaVenta = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.cboxEstado = new System.Windows.Forms.ComboBox();
@@ -45,8 +47,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtTipoVenta = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsumos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -114,6 +114,23 @@
             this.groupBox1.Size = new System.Drawing.Size(1240, 212);
             this.groupBox1.TabIndex = 79;
             this.groupBox1.TabStop = false;
+            // 
+            // txtTipoVenta
+            // 
+            this.txtTipoVenta.Location = new System.Drawing.Point(780, 37);
+            this.txtTipoVenta.Name = "txtTipoVenta";
+            this.txtTipoVenta.Size = new System.Drawing.Size(154, 20);
+            this.txtTipoVenta.TabIndex = 72;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calisto MT", 14F);
+            this.label8.Location = new System.Drawing.Point(607, 37);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 22);
+            this.label8.TabIndex = 71;
+            this.label8.Text = "Tipo Venta:";
             // 
             // dtpFechaVenta
             // 
@@ -233,23 +250,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Codigo Venta:";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label8.Location = new System.Drawing.Point(607, 37);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 22);
-            this.label8.TabIndex = 71;
-            this.label8.Text = "Tipo Venta:";
-            // 
-            // txtTipoVenta
-            // 
-            this.txtTipoVenta.Location = new System.Drawing.Point(780, 37);
-            this.txtTipoVenta.Name = "txtTipoVenta";
-            this.txtTipoVenta.Size = new System.Drawing.Size(154, 20);
-            this.txtTipoVenta.TabIndex = 72;
-            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,6 +262,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmVentas";
             this.Text = "frmVentas";
+            this.Load += new System.EventHandler(this.frmVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsumos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
