@@ -154,8 +154,8 @@
     <EmbeddedResource Include="frmEnvios.resx">
       <DependentUpon>frmEnvios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRoles.resx">
-      <DependentUpon>FrmRoles.cs</DependentUpon>
+    <EmbeddedResource Include="frmVentas.resx">
+      <DependentUpon>frmVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVentasDetalle.resx">
       <DependentUpon>frmVentasDetalle.cs</DependentUpon>
