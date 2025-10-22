@@ -311,6 +311,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmRoles";
             this.Text = "FrmRoles";
+            this.Load += new System.EventHandler(this.FrmRoles_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

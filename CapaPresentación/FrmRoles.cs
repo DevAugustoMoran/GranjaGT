@@ -36,5 +36,10 @@ namespace CapaPresentación
         {
 
         }
+
+        private void FrmRoles_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
