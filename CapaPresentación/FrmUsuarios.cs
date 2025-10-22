@@ -16,5 +16,15 @@ namespace CapaPresentación
         {
             InitializeComponent();
         }
+
+        private void FrmUsuarios_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNivelAcceso_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
