@@ -33,8 +33,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.cboxEstado = new System.Windows.Forms.ComboBox();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.lblMonto = new System.Windows.Forms.Label();
+            this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.dtpFechaConsumo = new System.Windows.Forms.DateTimePicker();
             this.cboxCodigoServicio = new System.Windows.Forms.ComboBox();
             this.cboxCodigoReserva = new System.Windows.Forms.ComboBox();
@@ -45,9 +48,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
-            this.btnEditar = new FontAwesome.Sharp.IconButton();
-            this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsumos)).BeginInit();
@@ -74,7 +74,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(305, 31);
             this.label11.TabIndex = 75;
-            this.label11.Text = "DETALLES DE VENTA";
+            this.label11.Text = "DETALLE DE VENTAS";
             // 
             // label10
             // 
@@ -119,6 +119,20 @@
             this.groupBox1.TabIndex = 74;
             this.groupBox1.TabStop = false;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Remove;
+            this.btnCancelar.IconColor = System.Drawing.Color.Black;
+            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelar.IconSize = 25;
+            this.btnCancelar.Location = new System.Drawing.Point(1102, 153);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(118, 40);
+            this.btnCancelar.TabIndex = 78;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
             // cboxEstado
             // 
             this.cboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -134,6 +148,20 @@
             this.cboxEstado.Size = new System.Drawing.Size(154, 23);
             this.cboxEstado.TabIndex = 68;
             // 
+            // btnEditar
+            // 
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
+            this.btnEditar.IconColor = System.Drawing.Color.Black;
+            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditar.IconSize = 25;
+            this.btnEditar.Location = new System.Drawing.Point(1102, 93);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(118, 40);
+            this.btnEditar.TabIndex = 77;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
             // lblMonto
             // 
             this.lblMonto.AutoSize = true;
@@ -142,6 +170,20 @@
             this.lblMonto.Size = new System.Drawing.Size(10, 13);
             this.lblMonto.TabIndex = 67;
             this.lblMonto.Text = "-";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnAgregar.IconColor = System.Drawing.Color.Black;
+            this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregar.IconSize = 25;
+            this.btnAgregar.Location = new System.Drawing.Point(1102, 29);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(118, 40);
+            this.btnAgregar.TabIndex = 76;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // dtpFechaConsumo
             // 
@@ -236,48 +278,6 @@
             this.label1.Size = new System.Drawing.Size(155, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "Codigo Consumo:";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Remove;
-            this.btnCancelar.IconColor = System.Drawing.Color.Black;
-            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.IconSize = 25;
-            this.btnCancelar.Location = new System.Drawing.Point(1102, 153);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(118, 40);
-            this.btnCancelar.TabIndex = 78;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
-            this.btnEditar.IconColor = System.Drawing.Color.Black;
-            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditar.IconSize = 25;
-            this.btnEditar.Location = new System.Drawing.Point(1102, 93);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(118, 40);
-            this.btnEditar.TabIndex = 77;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.btnAgregar.IconColor = System.Drawing.Color.Black;
-            this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregar.IconSize = 25;
-            this.btnAgregar.Location = new System.Drawing.Point(1102, 29);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(118, 40);
-            this.btnAgregar.TabIndex = 76;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // btnSalir
             // 
