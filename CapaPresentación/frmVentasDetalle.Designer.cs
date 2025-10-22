@@ -99,8 +99,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.cboxEstado);
+            this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.lblMonto);
+            this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.dtpFechaConsumo);
             this.groupBox1.Controls.Add(this.cboxCodigoServicio);
             this.groupBox1.Controls.Add(this.cboxCodigoReserva);
