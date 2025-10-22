@@ -21,5 +21,10 @@ namespace CapaPresentación
         {
 
         }
+
+        private void txtNivelAcceso_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

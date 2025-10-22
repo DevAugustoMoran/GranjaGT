@@ -37,18 +37,18 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dtpFechaRegistro = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cboxEstado = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNivelAcceso = new System.Windows.Forms.TextBox();
-            this.txtCodigoRol = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCodigoUsuario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNombreRol = new System.Windows.Forms.TextBox();
+            this.txtCodigoRol = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -173,17 +173,27 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cboxEstado);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtNivelAcceso);
-            this.groupBox1.Controls.Add(this.txtCodigoRol);
+            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.txtCodigoUsuario);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtNombreRol);
+            this.groupBox1.Controls.Add(this.txtCodigoRol);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(14, 115);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1237, 169);
             this.groupBox1.TabIndex = 81;
             this.groupBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 130);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 20);
+            this.label7.TabIndex = 68;
+            this.label7.Text = "Nombre:";
             // 
             // label5
             // 
@@ -213,19 +223,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo Usuario:";
             // 
-            // txtNivelAcceso
+            // txtNombre
             // 
-            this.txtNivelAcceso.Location = new System.Drawing.Point(216, 120);
-            this.txtNivelAcceso.Name = "txtNivelAcceso";
-            this.txtNivelAcceso.Size = new System.Drawing.Size(142, 22);
-            this.txtNivelAcceso.TabIndex = 7;
+            this.txtNombre.Location = new System.Drawing.Point(216, 120);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(142, 22);
+            this.txtNombre.TabIndex = 7;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNivelAcceso_TextChanged);
             // 
-            // txtCodigoRol
+            // txtCodigoUsuario
             // 
-            this.txtCodigoRol.Location = new System.Drawing.Point(216, 25);
-            this.txtCodigoRol.Name = "txtCodigoRol";
-            this.txtCodigoRol.Size = new System.Drawing.Size(142, 22);
-            this.txtCodigoRol.TabIndex = 1;
+            this.txtCodigoUsuario.Location = new System.Drawing.Point(216, 25);
+            this.txtCodigoUsuario.Name = "txtCodigoUsuario";
+            this.txtCodigoUsuario.Size = new System.Drawing.Size(142, 22);
+            this.txtCodigoUsuario.TabIndex = 1;
             // 
             // label4
             // 
@@ -233,7 +244,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(38, 125);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 25);
+            this.label4.Size = new System.Drawing.Size(0, 20);
             this.label4.TabIndex = 6;
             // 
             // label2
@@ -246,12 +257,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Codigo Rol:";
             // 
-            // txtNombreRol
+            // txtCodigoRol
             // 
-            this.txtNombreRol.Location = new System.Drawing.Point(216, 74);
-            this.txtNombreRol.Name = "txtNombreRol";
-            this.txtNombreRol.Size = new System.Drawing.Size(142, 22);
-            this.txtNombreRol.TabIndex = 3;
+            this.txtCodigoRol.Location = new System.Drawing.Point(216, 74);
+            this.txtCodigoRol.Name = "txtCodigoRol";
+            this.txtCodigoRol.Size = new System.Drawing.Size(142, 22);
+            this.txtCodigoRol.TabIndex = 3;
             // 
             // label3
             // 
@@ -290,16 +301,6 @@
             this.label6.Size = new System.Drawing.Size(343, 38);
             this.label6.TabIndex = 83;
             this.label6.Text = "Registro de Usuarios";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 130);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 25);
-            this.label7.TabIndex = 68;
-            this.label7.Text = "Nombre:";
             // 
             // FrmUsuarios
             // 
@@ -341,11 +342,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboxEstado;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNivelAcceso;
-        private System.Windows.Forms.TextBox txtCodigoRol;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtCodigoUsuario;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNombreRol;
+        private System.Windows.Forms.TextBox txtCodigoRol;
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private System.Windows.Forms.Label label6;
