@@ -221,7 +221,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo Usuario:";
+            this.label1.Text = "Código Usuario:";
             // 
             // txtNombre
             // 
@@ -235,6 +235,7 @@
             // 
             this.txtCodigoUsuario.Location = new System.Drawing.Point(216, 25);
             this.txtCodigoUsuario.Name = "txtCodigoUsuario";
+            this.txtCodigoUsuario.ReadOnly = true;
             this.txtCodigoUsuario.Size = new System.Drawing.Size(142, 22);
             this.txtCodigoUsuario.TabIndex = 1;
             // 
@@ -255,12 +256,13 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 20);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Codigo Rol:";
+            this.label2.Text = "Código Rol:";
             // 
             // txtCodigoRol
             // 
             this.txtCodigoRol.Location = new System.Drawing.Point(216, 74);
             this.txtCodigoRol.Name = "txtCodigoRol";
+            this.txtCodigoRol.ReadOnly = true;
             this.txtCodigoRol.Size = new System.Drawing.Size(142, 22);
             this.txtCodigoRol.TabIndex = 3;
             // 

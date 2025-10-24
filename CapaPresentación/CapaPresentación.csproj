@@ -151,11 +151,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmEmpleados.resx">
+      <DependentUpon>FrmEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEnvios.resx">
       <DependentUpon>frmEnvios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGranjas.resx">
       <DependentUpon>FrmGranjas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPagosEmpleados.resx">
+      <DependentUpon>FrmPagosEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRoles.resx">
       <DependentUpon>FrmRoles.cs</DependentUpon>
