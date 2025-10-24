@@ -39,6 +39,12 @@
             this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSalarioFinal = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDescuentos = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtBonos = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cboxEstado = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,12 +54,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtBonos = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtSalarioFinal = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtDescuentos = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -226,6 +226,57 @@
             this.groupBox1.TabIndex = 81;
             this.groupBox1.TabStop = false;
             // 
+            // txtSalarioFinal
+            // 
+            this.txtSalarioFinal.Location = new System.Drawing.Point(741, 76);
+            this.txtSalarioFinal.Name = "txtSalarioFinal";
+            this.txtSalarioFinal.Size = new System.Drawing.Size(142, 22);
+            this.txtSalarioFinal.TabIndex = 73;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(551, 78);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(121, 20);
+            this.label8.TabIndex = 72;
+            this.label8.Text = "Salario Final:";
+            // 
+            // txtDescuentos
+            // 
+            this.txtDescuentos.Location = new System.Drawing.Point(741, 27);
+            this.txtDescuentos.Name = "txtDescuentos";
+            this.txtDescuentos.Size = new System.Drawing.Size(142, 22);
+            this.txtDescuentos.TabIndex = 71;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(551, 29);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(115, 20);
+            this.label9.TabIndex = 70;
+            this.label9.Text = "Descuentos:";
+            // 
+            // txtBonos
+            // 
+            this.txtBonos.Location = new System.Drawing.Point(240, 170);
+            this.txtBonos.Name = "txtBonos";
+            this.txtBonos.Size = new System.Drawing.Size(138, 22);
+            this.txtBonos.TabIndex = 69;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 172);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 20);
+            this.label7.TabIndex = 68;
+            this.label7.Text = "Bonos:";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -306,62 +357,11 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Estado:";
             // 
-            // txtBonos
-            // 
-            this.txtBonos.Location = new System.Drawing.Point(240, 170);
-            this.txtBonos.Name = "txtBonos";
-            this.txtBonos.Size = new System.Drawing.Size(138, 22);
-            this.txtBonos.TabIndex = 69;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 172);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 20);
-            this.label7.TabIndex = 68;
-            this.label7.Text = "Bonos:";
-            // 
-            // txtSalarioFinal
-            // 
-            this.txtSalarioFinal.Location = new System.Drawing.Point(741, 76);
-            this.txtSalarioFinal.Name = "txtSalarioFinal";
-            this.txtSalarioFinal.Size = new System.Drawing.Size(142, 22);
-            this.txtSalarioFinal.TabIndex = 73;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(551, 78);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(121, 20);
-            this.label8.TabIndex = 72;
-            this.label8.Text = "Salario Final:";
-            // 
-            // txtDescuentos
-            // 
-            this.txtDescuentos.Location = new System.Drawing.Point(741, 27);
-            this.txtDescuentos.Name = "txtDescuentos";
-            this.txtDescuentos.Size = new System.Drawing.Size(142, 22);
-            this.txtDescuentos.TabIndex = 71;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(551, 29);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(115, 20);
-            this.label9.TabIndex = 70;
-            this.label9.Text = "Descuentos:";
-            // 
             // FrmPagosEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1261, 667);
+            this.ClientSize = new System.Drawing.Size(1261, 648);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lblFecha);
