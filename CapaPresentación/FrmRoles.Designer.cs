@@ -67,6 +67,7 @@
             // 
             this.txtCodigoRol.Location = new System.Drawing.Point(192, 25);
             this.txtCodigoRol.Name = "txtCodigoRol";
+            this.txtCodigoRol.ReadOnly = true;
             this.txtCodigoRol.Size = new System.Drawing.Size(142, 22);
             this.txtCodigoRol.TabIndex = 1;
             // 
