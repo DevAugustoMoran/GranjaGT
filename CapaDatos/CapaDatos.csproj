@@ -41,7 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CDanimales.cs" />
+    <Compile Include="CDclientes.cs" />
     <Compile Include="CDconexion.cs" />
+    <Compile Include="CDcultivos.cs" />
+    <Compile Include="CDgranjas.cs" />
+    <Compile Include="CDpagosEmpleados.cs" />
+    <Compile Include="CDproductos.cs" />
+    <Compile Include="CDproveedores.cs" />
+    <Compile Include="CDroles.cs" />
     <Compile Include="CDempleados.cs" />
     <Compile Include="CDenvios.cs" />
     <Compile Include="CDinsumos.cs" />

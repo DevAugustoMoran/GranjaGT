@@ -95,11 +95,11 @@
     <Compile Include="frmProductos.Designer.cs">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRoles.cs">
+    <Compile Include="frmRoles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRoles.Designer.cs">
-      <DependentUpon>FrmRoles.cs</DependentUpon>
+    <Compile Include="frmRoles.Designer.cs">
+      <DependentUpon>frmRoles.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmUsuarios.cs">
       <SubType>Form</SubType>
