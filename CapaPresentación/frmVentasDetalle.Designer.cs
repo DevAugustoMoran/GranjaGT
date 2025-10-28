@@ -57,7 +57,7 @@
             this.cboxCodigoAnimal = new System.Windows.Forms.ComboBox();
             this.cboxCodigoVenta = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCodigoVenta = new System.Windows.Forms.TextBox();
+            this.txtCodigoDetalle = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -79,7 +79,7 @@
             this.dgvVentasDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVentasDetalle.Size = new System.Drawing.Size(1240, 306);
             this.dgvVentasDetalle.TabIndex = 81;
-            this.dgvVentasDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsumos_CellContentClick);
+            this.dgvVentasDetalle.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentasDetalle_CellClick);
             // 
             // label11
             // 
@@ -140,7 +140,7 @@
             this.groupBox1.Controls.Add(this.cboxCodigoAnimal);
             this.groupBox1.Controls.Add(this.cboxCodigoVenta);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtCodigoVenta);
+            this.groupBox1.Controls.Add(this.txtCodigoDetalle);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
@@ -344,6 +344,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // cboxEstado
             // 
@@ -397,13 +398,13 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "Total:";
             // 
-            // txtCodigoVenta
+            // txtCodigoDetalle
             // 
-            this.txtCodigoVenta.Location = new System.Drawing.Point(271, 17);
-            this.txtCodigoVenta.Name = "txtCodigoVenta";
-            this.txtCodigoVenta.ReadOnly = true;
-            this.txtCodigoVenta.Size = new System.Drawing.Size(156, 20);
-            this.txtCodigoVenta.TabIndex = 15;
+            this.txtCodigoDetalle.Location = new System.Drawing.Point(271, 17);
+            this.txtCodigoDetalle.Name = "txtCodigoDetalle";
+            this.txtCodigoDetalle.ReadOnly = true;
+            this.txtCodigoDetalle.Size = new System.Drawing.Size(156, 20);
+            this.txtCodigoDetalle.TabIndex = 15;
             // 
             // label5
             // 
@@ -516,7 +517,7 @@
         private System.Windows.Forms.ComboBox cboxCodigoAnimal;
         private System.Windows.Forms.ComboBox cboxCodigoVenta;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCodigoVenta;
+        private System.Windows.Forms.TextBox txtCodigoDetalle;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
