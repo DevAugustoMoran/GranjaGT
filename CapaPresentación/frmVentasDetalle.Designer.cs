@@ -90,7 +90,6 @@
             this.label11.Size = new System.Drawing.Size(305, 31);
             this.label11.TabIndex = 85;
             this.label11.Text = "DETALLE DE VENTAS";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
             // 
@@ -101,7 +100,6 @@
             this.label10.Size = new System.Drawing.Size(117, 22);
             this.label10.TabIndex = 83;
             this.label10.Text = "Fecha actual:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // lblFecha
             // 
@@ -112,7 +110,6 @@
             this.lblFecha.Size = new System.Drawing.Size(137, 22);
             this.lblFecha.TabIndex = 82;
             this.lblFecha.Text = "Imprimir Fecha";
-            this.lblFecha.Click += new System.EventHandler(this.lblFecha_Click);
             // 
             // groupBox1
             // 
@@ -150,7 +147,6 @@
             this.groupBox1.Size = new System.Drawing.Size(1240, 212);
             this.groupBox1.TabIndex = 84;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lblTotalVenta
             // 
@@ -317,6 +313,7 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // label8
             // 
@@ -350,12 +347,6 @@
             // 
             this.cboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxEstado.FormattingEnabled = true;
-            this.cboxEstado.Items.AddRange(new object[] {
-            "Solicitado",
-            "Progreso",
-            "Finalizado",
-            "Cancelado",
-            "Facturado"});
             this.cboxEstado.Location = new System.Drawing.Point(780, 177);
             this.cboxEstado.Name = "cboxEstado";
             this.cboxEstado.Size = new System.Drawing.Size(154, 23);
@@ -462,6 +453,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 

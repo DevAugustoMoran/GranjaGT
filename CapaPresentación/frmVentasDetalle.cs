@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -90,6 +91,22 @@ namespace CapaPresentación
             dgvVentasDetalle.DataSource = dtVentasDetalle;
         }
 
+        private void mtdLimpiarCampos()
+        {
+            txtCodigoDetalle.Text = "";
+            cboxCodigoVenta.Text = "";
+            cboxCodigoAnimal.Text = "";
+            cboxCodigoCultivo.Text = "";
+            cboxCodigoProducto.Text = "";
+            txtCantidad.Text = "";
+            txtPrecioUnitario.Text = "";
+            lblTotal.Text = "-";
+            txtDescuento.Text = "";
+            txtImpuesto.Text = "";
+            lblTotalVenta.Text = "-";
+            cboxEstado.Text = "";
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -110,13 +127,54 @@ namespace CapaPresentación
 
                 cd_ventasdetalle.MtdAgregarVentasDetalle(CodigoVenta, CodigoAnimal, CodigoCultivo, CodigoProducto, Cantidad, PrecioUnitario, Total, Descuento, Impuesto, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
                 MessageBox.Show("Detalle de venta agregado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                mtdConsultarVentasDetalle();
+                mtdLimpiarCampos();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int CodigoDetalle = int.Parse(txtCodigoDetalle.Text);
+                int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
+                int CodigoAnimal = int.Parse(cboxCodigoAnimal.Text.Split('-')[0].Trim());
+                int CodigoCultivo = int.Parse(cboxCodigoCultivo.Text.Split('-')[0].Trim());
+                int CodigoProducto = int.Parse(cboxCodigoProducto.Text.Split('-')[0].Trim());
+                decimal Cantidad = decimal.Parse(txtCantidad.Text);
+                decimal PrecioUnitario = decimal.Parse(txtPrecioUnitario.Text);
+                decimal Total = 10; //Hay que cambiarlo
+                decimal Descuento = decimal.Parse(txtDescuento.Text);
+                decimal Impuesto = decimal.Parse(txtImpuesto.Text);
+                decimal TotalVenta = 20; //Hay que cambiarlo
+                string Estado = cboxEstado.Text;
+                string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                DateTime FechaAuditoria = cl_ventasdetalle.MtdFechaActual();
+
+                cd_ventasdetalle.MtdActualizarVentasDetalle(CodigoDetalle, CodigoVenta, CodigoAnimal, CodigoCultivo, CodigoProducto, Cantidad, PrecioUnitario, Total, Descuento, Impuesto, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
+                MessageBox.Show("Detalle de venta actualizado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mtdConsultarVentasDetalle();
+                mtdLimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int CodigoDetalle = int.Parse(txtCodigoDetalle.Text);
+
+            cd_ventasdetalle.MtdEliminarVentasDetalle(CodigoDetalle);
+            MessageBox.Show("Orden eliminada correctamente", "Eliminar Orden", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            mtdConsultarVentasDetalle();
+            mtdLimpiarCampos();
         }
 
         private void dgvVentasDetalle_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -134,32 +192,5 @@ namespace CapaPresentación
             lblTotalVenta.Text = dgvVentasDetalle.SelectedCells[10].Value.ToString();
             cboxEstado.Text = dgvVentasDetalle.SelectedCells[11].Value.ToString();
         }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvConsumos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblFecha_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-       
     }
 }

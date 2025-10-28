@@ -349,7 +349,6 @@
             this.label4.Size = new System.Drawing.Size(160, 22);
             this.label4.TabIndex = 5;
             this.label4.Text = "Codigo Empleado:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label2
             // 
@@ -370,7 +369,6 @@
             this.label1.Size = new System.Drawing.Size(126, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "Codigo Envio:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmEnvios
             // 
@@ -386,6 +384,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmEnvios";
             this.Text = "tbl_Envios";
+            this.Load += new System.EventHandler(this.frmEnvios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnvios)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
