@@ -12,6 +12,86 @@ namespace CapaDatos
     {
         CDconexion cd_conexion = new CDconexion();
 
+        public List<dynamic> MtdListarVentas()
+        {
+            List<dynamic> ListaVentas = new List<dynamic>();
+            string QueryListaVentas = "Select CodigoVenta, TipoVenta from tbl_Ventas";
+            SqlCommand cmd = new SqlCommand(QueryListaVentas, cd_conexion.MtdAbrirConexion());
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListaVentas.Add(new
+                {
+                    Value = reader["CodigoVenta"],
+                    Text = $"{reader["CodigoVenta"]} - {reader["TipoVenta"]}"
+                });
+            }
+
+            cd_conexion.MtdCerrarConexion();
+            return ListaVentas;
+        }
+
+        public List<dynamic> MtdListarAnimal()
+        {
+            List<dynamic> ListaAnimal = new List<dynamic>();
+            string QueryListaAnimal = "Select CodigoAnimal, TipoAnimal from tbl_Animales";
+            SqlCommand cmd = new SqlCommand(QueryListaAnimal, cd_conexion.MtdAbrirConexion());
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListaAnimal.Add(new
+                {
+                    Value = reader["CodigoAnimal"],
+                    Text = $"{reader["CodigoAnimal"]} - {reader["TipoAnimal"]}"
+                });
+            }
+
+            cd_conexion.MtdCerrarConexion();
+            return ListaAnimal;
+        }
+
+        public List<dynamic> MtdListarCultivo()
+        {
+            List<dynamic> ListaCultivo = new List<dynamic>();
+            string QueryListaCultivo = "Select CodigoCultivo, TipoCultivo from tbl_Cultivos";
+            SqlCommand cmd = new SqlCommand(QueryListaCultivo, cd_conexion.MtdAbrirConexion());
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListaCultivo.Add(new
+                {
+                    Value = reader["CodigoCultivo"],
+                    Text = $"{reader["CodigoCultivo"]} - {reader["TipoCultivo"]}"
+                });
+            }
+
+            cd_conexion.MtdCerrarConexion();
+            return ListaCultivo;
+        }
+
+        public List<dynamic> MtdListarProducto()
+        {
+            List<dynamic> ListaProducto = new List<dynamic>();
+            string QueryListaProducto = "Select CodigoProducto, Nombre from tbl_Productos";
+            SqlCommand cmd = new SqlCommand(QueryListaProducto, cd_conexion.MtdAbrirConexion());
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListaProducto.Add(new
+                {
+                    Value = reader["CodigoProducto"],
+                    Text = $"{reader["CodigoProducto"]} - {reader["Nombre"]}"
+                });
+            }
+
+            cd_conexion.MtdCerrarConexion();
+            return ListaProducto;
+        }
+
         public DataTable MtdConsultarVentasDetalle()
         {
             string QueryConsultarVentasDetalle = "Select * from tbl_VentasDetalle";
