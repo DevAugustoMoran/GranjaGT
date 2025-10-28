@@ -160,8 +160,20 @@
     <EmbeddedResource Include="FrmGranjas.resx">
       <DependentUpon>FrmGranjas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInsumos.resx">
+      <DependentUpon>frmInsumos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInventarios.resx">
+      <DependentUpon>frmInventarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPagosEmpleados.resx">
       <DependentUpon>FrmPagosEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPagosVentas.resx">
+      <DependentUpon>frmPagosVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProveedores.resx">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRoles.resx">
       <DependentUpon>FrmRoles.cs</DependentUpon>
