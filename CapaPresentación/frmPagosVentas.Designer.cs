@@ -38,10 +38,8 @@
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.cboxEstado = new System.Windows.Forms.ComboBox();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
-            this.lblMonto = new System.Windows.Forms.Label();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.dtpFechaConsumo = new System.Windows.Forms.DateTimePicker();
-            this.cboxCodigoServicio = new System.Windows.Forms.ComboBox();
             this.cboxCodigoReserva = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,6 +48,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsumos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -126,13 +128,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.cboxEstado);
             this.groupBox1.Controls.Add(this.btnEditar);
-            this.groupBox1.Controls.Add(this.lblMonto);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.dtpFechaConsumo);
-            this.groupBox1.Controls.Add(this.cboxCodigoServicio);
             this.groupBox1.Controls.Add(this.cboxCodigoReserva);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label3);
@@ -171,7 +175,7 @@
             "Finalizado",
             "Cancelado",
             "Facturado"});
-            this.cboxEstado.Location = new System.Drawing.Point(855, 174);
+            this.cboxEstado.Location = new System.Drawing.Point(806, 165);
             this.cboxEstado.Name = "cboxEstado";
             this.cboxEstado.Size = new System.Drawing.Size(154, 23);
             this.cboxEstado.TabIndex = 68;
@@ -190,15 +194,6 @@
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = true;
             // 
-            // lblMonto
-            // 
-            this.lblMonto.AutoSize = true;
-            this.lblMonto.Location = new System.Drawing.Point(857, 39);
-            this.lblMonto.Name = "lblMonto";
-            this.lblMonto.Size = new System.Drawing.Size(10, 13);
-            this.lblMonto.TabIndex = 67;
-            this.lblMonto.Text = "-";
-            // 
             // btnAgregar
             // 
             this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
@@ -216,25 +211,16 @@
             // dtpFechaConsumo
             // 
             this.dtpFechaConsumo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaConsumo.Location = new System.Drawing.Point(855, 102);
+            this.dtpFechaConsumo.Location = new System.Drawing.Point(806, 103);
             this.dtpFechaConsumo.Name = "dtpFechaConsumo";
             this.dtpFechaConsumo.Size = new System.Drawing.Size(154, 20);
             this.dtpFechaConsumo.TabIndex = 66;
-            // 
-            // cboxCodigoServicio
-            // 
-            this.cboxCodigoServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxCodigoServicio.FormattingEnabled = true;
-            this.cboxCodigoServicio.Location = new System.Drawing.Point(271, 170);
-            this.cboxCodigoServicio.Name = "cboxCodigoServicio";
-            this.cboxCodigoServicio.Size = new System.Drawing.Size(156, 23);
-            this.cboxCodigoServicio.TabIndex = 64;
             // 
             // cboxCodigoReserva
             // 
             this.cboxCodigoReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxCodigoReserva.FormattingEnabled = true;
-            this.cboxCodigoReserva.Location = new System.Drawing.Point(271, 98);
+            this.cboxCodigoReserva.Location = new System.Drawing.Point(271, 78);
             this.cboxCodigoReserva.Name = "cboxCodigoReserva";
             this.cboxCodigoReserva.Size = new System.Drawing.Size(156, 23);
             this.cboxCodigoReserva.TabIndex = 58;
@@ -243,21 +229,21 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label7.Location = new System.Drawing.Point(666, 100);
+            this.label7.Location = new System.Drawing.Point(617, 101);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(146, 22);
+            this.label7.Size = new System.Drawing.Size(109, 22);
             this.label7.TabIndex = 22;
-            this.label7.Text = "Fecha Consumo:";
+            this.label7.Text = "Fecha Pago:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label3.Location = new System.Drawing.Point(666, 36);
+            this.label3.Location = new System.Drawing.Point(98, 160);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 22);
+            this.label3.Size = new System.Drawing.Size(121, 22);
             this.label3.TabIndex = 20;
-            this.label3.Text = "Monto:";
+            this.label3.Text = "Tipo de Pago:";
             // 
             // txtCodigoConsumo
             // 
@@ -271,7 +257,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label5.Location = new System.Drawing.Point(666, 177);
+            this.label5.Location = new System.Drawing.Point(617, 168);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 22);
             this.label5.TabIndex = 7;
@@ -281,21 +267,21 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label4.Location = new System.Drawing.Point(98, 172);
+            this.label4.Location = new System.Drawing.Point(98, 120);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(143, 22);
+            this.label4.Size = new System.Drawing.Size(69, 22);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Codigo Servicio:";
+            this.label4.Text = "Monto:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label2.Location = new System.Drawing.Point(98, 100);
+            this.label2.Location = new System.Drawing.Point(98, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 22);
+            this.label2.Size = new System.Drawing.Size(125, 22);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Codigo Reserva:";
+            this.label2.Text = "Codigo Venta:";
             // 
             // label1
             // 
@@ -303,9 +289,44 @@
             this.label1.Font = new System.Drawing.Font("Calisto MT", 14F);
             this.label1.Location = new System.Drawing.Point(98, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 22);
+            this.label1.Size = new System.Drawing.Size(118, 22);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Codigo Consumo:";
+            this.label1.Text = "Codigo Pago:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(806, 35);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(156, 23);
+            this.comboBox1.TabIndex = 80;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calisto MT", 14F);
+            this.label6.Location = new System.Drawing.Point(617, 37);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(153, 22);
+            this.label6.TabIndex = 79;
+            this.label6.Text = "Num. Referencia:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(271, 123);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(156, 20);
+            this.textBox1.TabIndex = 81;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(271, 162);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(156, 23);
+            this.comboBox2.TabIndex = 82;
             // 
             // frmPagosVentas
             // 
@@ -341,10 +362,8 @@
         private FontAwesome.Sharp.IconButton btnCancelar;
         private System.Windows.Forms.ComboBox cboxEstado;
         private FontAwesome.Sharp.IconButton btnEditar;
-        private System.Windows.Forms.Label lblMonto;
         private FontAwesome.Sharp.IconButton btnAgregar;
         private System.Windows.Forms.DateTimePicker dtpFechaConsumo;
-        private System.Windows.Forms.ComboBox cboxCodigoServicio;
         private System.Windows.Forms.ComboBox cboxCodigoReserva;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
@@ -353,5 +372,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label6;
     }
 }

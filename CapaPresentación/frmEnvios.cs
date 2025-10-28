@@ -16,5 +16,10 @@ namespace CapaPresentación
         {
             InitializeComponent();
         }
+
+        private void frmEnvios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

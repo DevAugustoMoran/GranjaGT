@@ -10,7 +10,7 @@ namespace CapaDatos
 {
     public class CDconexion
     {
-        private SqlConnection db_conexion = new SqlConnection("Data Source=dbgranjagt.cr2wcaoq65ff.us-east-2.rds.amazonaws.com;User ID=admin;Password=********;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+        private SqlConnection db_conexion = new SqlConnection("Data Source=dbgranjagt.cr2wcaoq65ff.us-east-2.rds.amazonaws.com;Initial Catalog=dbGranjaGT;User ID=admin;Password=Pass$2025;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True");
 
         public SqlConnection MtdAbrirConexion()
         {

@@ -30,29 +30,31 @@
         {
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
-            this.dgvConsumos = new System.Windows.Forms.DataGridView();
+            this.dgvInventario = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            this.lblCostoTotal = new System.Windows.Forms.Label();
+            this.txtCostoUnitario = new System.Windows.Forms.TextBox();
+            this.txtCantidadDisponible = new System.Windows.Forms.TextBox();
+            this.dtpFechaRegistro = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.cboxEstado = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
-            this.lblMonto = new System.Windows.Forms.Label();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
-            this.dtpFechaConsumo = new System.Windows.Forms.DateTimePicker();
-            this.cboxCodigoServicio = new System.Windows.Forms.ComboBox();
-            this.cboxCodigoReserva = new System.Windows.Forms.ComboBox();
+            this.cboxCodigoInsumo = new System.Windows.Forms.ComboBox();
+            this.cboxCodigoGranja = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCodigoConsumo = new System.Windows.Forms.TextBox();
+            this.txtCodigoInventario = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConsumos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,17 +86,17 @@
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // dgvConsumos
+            // dgvInventario
             // 
-            this.dgvConsumos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvConsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConsumos.Location = new System.Drawing.Point(12, 303);
-            this.dgvConsumos.Name = "dgvConsumos";
-            this.dgvConsumos.ReadOnly = true;
-            this.dgvConsumos.RowHeadersWidth = 51;
-            this.dgvConsumos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvConsumos.Size = new System.Drawing.Size(1240, 288);
-            this.dgvConsumos.TabIndex = 78;
+            this.dgvInventario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventario.Location = new System.Drawing.Point(12, 303);
+            this.dgvInventario.Name = "dgvInventario";
+            this.dgvInventario.ReadOnly = true;
+            this.dgvInventario.RowHeadersWidth = 51;
+            this.dgvInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInventario.Size = new System.Drawing.Size(1240, 288);
+            this.dgvInventario.TabIndex = 78;
             // 
             // label11
             // 
@@ -128,19 +130,21 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.lblCostoTotal);
+            this.groupBox1.Controls.Add(this.txtCostoUnitario);
+            this.groupBox1.Controls.Add(this.txtCantidadDisponible);
+            this.groupBox1.Controls.Add(this.dtpFechaRegistro);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.cboxEstado);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnCancelar);
-            this.groupBox1.Controls.Add(this.cboxEstado);
             this.groupBox1.Controls.Add(this.btnEditar);
-            this.groupBox1.Controls.Add(this.lblMonto);
             this.groupBox1.Controls.Add(this.btnAgregar);
-            this.groupBox1.Controls.Add(this.dtpFechaConsumo);
-            this.groupBox1.Controls.Add(this.cboxCodigoServicio);
-            this.groupBox1.Controls.Add(this.cboxCodigoReserva);
+            this.groupBox1.Controls.Add(this.cboxCodigoInsumo);
+            this.groupBox1.Controls.Add(this.cboxCodigoGranja);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtCodigoConsumo);
+            this.groupBox1.Controls.Add(this.txtCodigoInventario);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
@@ -150,6 +154,72 @@
             this.groupBox1.Size = new System.Drawing.Size(1240, 212);
             this.groupBox1.TabIndex = 81;
             this.groupBox1.TabStop = false;
+            // 
+            // lblCostoTotal
+            // 
+            this.lblCostoTotal.AutoSize = true;
+            this.lblCostoTotal.Location = new System.Drawing.Point(912, 72);
+            this.lblCostoTotal.Name = "lblCostoTotal";
+            this.lblCostoTotal.Size = new System.Drawing.Size(10, 13);
+            this.lblCostoTotal.TabIndex = 85;
+            this.lblCostoTotal.Text = "-";
+            // 
+            // txtCostoUnitario
+            // 
+            this.txtCostoUnitario.Location = new System.Drawing.Point(855, 24);
+            this.txtCostoUnitario.Name = "txtCostoUnitario";
+            this.txtCostoUnitario.Size = new System.Drawing.Size(156, 20);
+            this.txtCostoUnitario.TabIndex = 84;
+            // 
+            // txtCantidadDisponible
+            // 
+            this.txtCantidadDisponible.Location = new System.Drawing.Point(309, 153);
+            this.txtCantidadDisponible.Name = "txtCantidadDisponible";
+            this.txtCantidadDisponible.Size = new System.Drawing.Size(156, 20);
+            this.txtCantidadDisponible.TabIndex = 83;
+            // 
+            // dtpFechaRegistro
+            // 
+            this.dtpFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaRegistro.Location = new System.Drawing.Point(855, 114);
+            this.dtpFechaRegistro.Name = "dtpFechaRegistro";
+            this.dtpFechaRegistro.Size = new System.Drawing.Size(154, 20);
+            this.dtpFechaRegistro.TabIndex = 82;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calisto MT", 14F);
+            this.label8.Location = new System.Drawing.Point(666, 112);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(136, 22);
+            this.label8.TabIndex = 81;
+            this.label8.Text = "Fecha Registro:";
+            // 
+            // cboxEstado
+            // 
+            this.cboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxEstado.FormattingEnabled = true;
+            this.cboxEstado.Items.AddRange(new object[] {
+            "Solicitado",
+            "Progreso",
+            "Finalizado",
+            "Cancelado",
+            "Facturado"});
+            this.cboxEstado.Location = new System.Drawing.Point(855, 153);
+            this.cboxEstado.Name = "cboxEstado";
+            this.cboxEstado.Size = new System.Drawing.Size(154, 23);
+            this.cboxEstado.TabIndex = 80;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calisto MT", 14F);
+            this.label6.Location = new System.Drawing.Point(666, 156);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 22);
+            this.label6.TabIndex = 79;
+            this.label6.Text = "Estado:";
             // 
             // btnCancelar
             // 
@@ -165,21 +235,6 @@
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // cboxEstado
-            // 
-            this.cboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxEstado.FormattingEnabled = true;
-            this.cboxEstado.Items.AddRange(new object[] {
-            "Solicitado",
-            "Progreso",
-            "Finalizado",
-            "Cancelado",
-            "Facturado"});
-            this.cboxEstado.Location = new System.Drawing.Point(855, 64);
-            this.cboxEstado.Name = "cboxEstado";
-            this.cboxEstado.Size = new System.Drawing.Size(154, 23);
-            this.cboxEstado.TabIndex = 68;
-            // 
             // btnEditar
             // 
             this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
@@ -193,15 +248,6 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // lblMonto
-            // 
-            this.lblMonto.AutoSize = true;
-            this.lblMonto.Location = new System.Drawing.Point(315, 156);
-            this.lblMonto.Name = "lblMonto";
-            this.lblMonto.Size = new System.Drawing.Size(10, 13);
-            this.lblMonto.TabIndex = 67;
-            this.lblMonto.Text = "-";
             // 
             // btnAgregar
             // 
@@ -217,31 +263,23 @@
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // dtpFechaConsumo
+            // cboxCodigoInsumo
             // 
-            this.dtpFechaConsumo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaConsumo.Location = new System.Drawing.Point(855, 25);
-            this.dtpFechaConsumo.Name = "dtpFechaConsumo";
-            this.dtpFechaConsumo.Size = new System.Drawing.Size(154, 20);
-            this.dtpFechaConsumo.TabIndex = 66;
+            this.cboxCodigoInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxCodigoInsumo.FormattingEnabled = true;
+            this.cboxCodigoInsumo.Location = new System.Drawing.Point(309, 110);
+            this.cboxCodigoInsumo.Name = "cboxCodigoInsumo";
+            this.cboxCodigoInsumo.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoInsumo.TabIndex = 64;
             // 
-            // cboxCodigoServicio
+            // cboxCodigoGranja
             // 
-            this.cboxCodigoServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxCodigoServicio.FormattingEnabled = true;
-            this.cboxCodigoServicio.Location = new System.Drawing.Point(309, 110);
-            this.cboxCodigoServicio.Name = "cboxCodigoServicio";
-            this.cboxCodigoServicio.Size = new System.Drawing.Size(156, 23);
-            this.cboxCodigoServicio.TabIndex = 64;
-            // 
-            // cboxCodigoReserva
-            // 
-            this.cboxCodigoReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxCodigoReserva.FormattingEnabled = true;
-            this.cboxCodigoReserva.Location = new System.Drawing.Point(309, 67);
-            this.cboxCodigoReserva.Name = "cboxCodigoReserva";
-            this.cboxCodigoReserva.Size = new System.Drawing.Size(156, 23);
-            this.cboxCodigoReserva.TabIndex = 58;
+            this.cboxCodigoGranja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxCodigoGranja.FormattingEnabled = true;
+            this.cboxCodigoGranja.Location = new System.Drawing.Point(309, 67);
+            this.cboxCodigoGranja.Name = "cboxCodigoGranja";
+            this.cboxCodigoGranja.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoGranja.TabIndex = 58;
             // 
             // label7
             // 
@@ -263,13 +301,13 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "Cantidad Disponible:";
             // 
-            // txtCodigoConsumo
+            // txtCodigoInventario
             // 
-            this.txtCodigoConsumo.Location = new System.Drawing.Point(309, 24);
-            this.txtCodigoConsumo.Name = "txtCodigoConsumo";
-            this.txtCodigoConsumo.ReadOnly = true;
-            this.txtCodigoConsumo.Size = new System.Drawing.Size(156, 20);
-            this.txtCodigoConsumo.TabIndex = 15;
+            this.txtCodigoInventario.Location = new System.Drawing.Point(309, 24);
+            this.txtCodigoInventario.Name = "txtCodigoInventario";
+            this.txtCodigoInventario.ReadOnly = true;
+            this.txtCodigoInventario.Size = new System.Drawing.Size(156, 20);
+            this.txtCodigoInventario.TabIndex = 15;
             // 
             // label5
             // 
@@ -311,31 +349,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Codigo Inventario:";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Solicitado",
-            "Progreso",
-            "Finalizado",
-            "Cancelado",
-            "Facturado"});
-            this.comboBox1.Location = new System.Drawing.Point(855, 109);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(154, 23);
-            this.comboBox1.TabIndex = 80;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label6.Location = new System.Drawing.Point(666, 112);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 22);
-            this.label6.TabIndex = 79;
-            this.label6.Text = "Estado:";
-            // 
             // frmInventarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,14 +356,14 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.dgvConsumos);
+            this.Controls.Add(this.dgvInventario);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmInventarios";
             this.Text = "tbl_Inventarios";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConsumos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -362,27 +375,29 @@
 
         private FontAwesome.Sharp.IconButton btnSalir;
         private FontAwesome.Sharp.IconButton btnEliminar;
-        private System.Windows.Forms.DataGridView dgvConsumos;
+        private System.Windows.Forms.DataGridView dgvInventario;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.GroupBox groupBox1;
         private FontAwesome.Sharp.IconButton btnCancelar;
-        private System.Windows.Forms.ComboBox cboxEstado;
         private FontAwesome.Sharp.IconButton btnEditar;
-        private System.Windows.Forms.Label lblMonto;
         private FontAwesome.Sharp.IconButton btnAgregar;
-        private System.Windows.Forms.DateTimePicker dtpFechaConsumo;
-        private System.Windows.Forms.ComboBox cboxCodigoServicio;
-        private System.Windows.Forms.ComboBox cboxCodigoReserva;
+        private System.Windows.Forms.ComboBox cboxCodigoInsumo;
+        private System.Windows.Forms.ComboBox cboxCodigoGranja;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCodigoConsumo;
+        private System.Windows.Forms.TextBox txtCodigoInventario;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboxEstado;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dtpFechaRegistro;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblCostoTotal;
+        private System.Windows.Forms.TextBox txtCostoUnitario;
+        private System.Windows.Forms.TextBox txtCantidadDisponible;
     }
 }
