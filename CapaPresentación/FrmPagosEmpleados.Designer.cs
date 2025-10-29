@@ -38,6 +38,7 @@
             this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblSalarioFinal = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDescuentos = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvPagoEmpleados = new System.Windows.Forms.DataGridView();
-            this.lblSalarioFinal = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagoEmpleados)).BeginInit();
             this.SuspendLayout();
@@ -217,6 +217,17 @@
             this.groupBox1.TabIndex = 81;
             this.groupBox1.TabStop = false;
             // 
+            // lblSalarioFinal
+            // 
+            this.lblSalarioFinal.AutoSize = true;
+            this.lblSalarioFinal.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalarioFinal.Location = new System.Drawing.Point(553, 65);
+            this.lblSalarioFinal.Name = "lblSalarioFinal";
+            this.lblSalarioFinal.Size = new System.Drawing.Size(113, 15);
+            this.lblSalarioFinal.TabIndex = 92;
+            this.lblSalarioFinal.Text = "lblImprimirSalario";
+            this.lblSalarioFinal.Click += new System.EventHandler(this.lblSalarioFinal_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -370,17 +381,6 @@
             this.dgvPagoEmpleados.Size = new System.Drawing.Size(928, 209);
             this.dgvPagoEmpleados.TabIndex = 91;
             this.dgvPagoEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagoEmpleados_CellClick);
-            // 
-            // lblSalarioFinal
-            // 
-            this.lblSalarioFinal.AutoSize = true;
-            this.lblSalarioFinal.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalarioFinal.Location = new System.Drawing.Point(553, 65);
-            this.lblSalarioFinal.Name = "lblSalarioFinal";
-            this.lblSalarioFinal.Size = new System.Drawing.Size(98, 15);
-            this.lblSalarioFinal.TabIndex = 92;
-            this.lblSalarioFinal.Text = "ImprimirSalario";
-            this.lblSalarioFinal.Click += new System.EventHandler(this.lblSalarioFinal_Click);
             // 
             // FrmPagosEmpleados
             // 
