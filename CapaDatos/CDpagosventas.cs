@@ -8,9 +8,30 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public class CDpagosPagosVentass
+    public class CDpagosventas
     {
         CDconexion cd_conexion = new CDconexion();
+
+        //LLAVE FORANEA
+        public List<dynamic> MtdListarVentas()
+        {
+            List<dynamic> ListaVentas = new List<dynamic>();
+            string QueryListaVentas = "Select CodigoVenta, TipoVenta from tbl_Ventas";
+            SqlCommand cmd = new SqlCommand(QueryListaVentas, cd_conexion.MtdAbrirConexion());
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListaVentas.Add(new
+                {
+                    Value = reader["CodigoVenta"],
+                    Text = $"{reader["CodigoVenta"]} - {reader["TipoVenta"]}"
+                });
+            }
+
+            cd_conexion.MtdCerrarConexion();
+            return ListaVentas;
+        }
 
         public DataTable MtdConsultarPagosVentas()
         {

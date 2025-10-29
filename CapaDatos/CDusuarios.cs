@@ -12,6 +12,28 @@ namespace CapaDatos
     {
         CDconexion cd_conexion = new CDconexion();
 
+        //LLAVE FORANEA
+        public List<dynamic> MtdListarUsuarios()
+        {
+            List<dynamic> ListaUsuarios = new List<dynamic>();
+            string QueryListaUsuarios = "Select CodigoRol, NombreRol from tbl_Roles";
+            SqlCommand cmd = new SqlCommand(QueryListaUsuarios, cd_conexion.MtdAbrirConexion());
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListaUsuarios.Add(new
+                {
+                    Value = reader["CodigoRol"],
+                    Text = $"{reader["CodigoRol"]} - {reader["NombreRol"]}"
+                });
+            }
+
+            cd_conexion.MtdCerrarConexion();
+            return ListaUsuarios;
+        }
+
+        //METODOS:
         public DataTable MtdConsultarUsuario()
         {
             string QueryConsultarUsuario = "Select * from tbl_Usuarios";
@@ -22,14 +44,14 @@ namespace CapaDatos
             return dt_usuario;
         }
 
-        public void MtdAgregarUsuario(int CodigoRol, string Nombre, string Estado, string UsuarioSistema, DateTime FechaAuditoria, DateTime FechaRegistro)
+        public void MtdAgregarUsuario(int CodigoRol, string Nombre, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria, DateTime FechaRegistro)
         {
             string QueryAgregarUsuario = "Insert into tbl_Usuarios(CodigoRol, Nombre, Estado, UsuarioAuditoria, FechaAuditoria, FechaRegistro) values (@CodigoRol, @Nombre, @Estado, @UsuarioAuditoria, @FechaAuditoria, @FechaRegistro)";
             SqlCommand CommandAgregarUsuario = new SqlCommand(QueryAgregarUsuario, cd_conexion.MtdAbrirConexion());
             CommandAgregarUsuario.Parameters.AddWithValue("@CodigoRol", CodigoRol);
             CommandAgregarUsuario.Parameters.AddWithValue("@Nombre", Nombre);
             CommandAgregarUsuario.Parameters.AddWithValue("@Estado", Estado);
-            CommandAgregarUsuario.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioSistema);
+            CommandAgregarUsuario.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
             CommandAgregarUsuario.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
             CommandAgregarUsuario.Parameters.AddWithValue("@FechaRegistro", FechaRegistro);
             CommandAgregarUsuario.ExecuteNonQuery();
