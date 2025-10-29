@@ -8,9 +8,53 @@ using System.Data;
 
 namespace CapaDatos
 {
+
     public class CDempleados
     {
         CDconexion cd_conexion = new CDconexion();
+
+        //LLAVE FORANEA
+        public List<dynamic> MtdListarGranjas()
+        {
+            List<dynamic> ListaGranjas = new List<dynamic>();
+            string QueryListaGranjas = "Select CodigoGranja, Nombre from tbl_Granjas";
+            SqlCommand cmd = new SqlCommand(QueryListaGranjas, cd_conexion.MtdAbrirConexion());
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListaGranjas.Add(new
+                {
+                    Value = reader["CodigoGranja"],
+                    Text = $"{reader["CodigoGranja"]} - {reader["Nombre"]}"
+                });
+            }
+
+            cd_conexion.MtdCerrarConexion();
+            return ListaGranjas;
+        }
+
+        public List<dynamic> MtdListarUsuarios()
+        {
+            List<dynamic> ListaUsuarios = new List<dynamic>();
+            string QueryListaUsuarios = "Select CodigoUsuario, Nombre from tbl_Usuarios";
+            SqlCommand cmd = new SqlCommand(QueryListaUsuarios, cd_conexion.MtdAbrirConexion());
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListaUsuarios.Add(new
+                {
+                    Value = reader["CodigoUsuario"],
+                    Text = $"{reader["CodigoUsuario"]} - {reader["Nombre"]}"
+                });
+            }
+
+            cd_conexion.MtdCerrarConexion();
+            return ListaUsuarios;
+        }
+
+        //METODOS:
         public DataTable MtdConsultarEmpleado()
         {
             string QueryConsultarEmpleado = "Select * from tbl_Empleados";

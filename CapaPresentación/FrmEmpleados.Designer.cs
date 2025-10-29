@@ -35,13 +35,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dtpFechaRegistro = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboxCargo = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtSalarioBase = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtSalario = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -52,14 +51,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cboxEstado = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCodigoUsuario = new System.Windows.Forms.TextBox();
             this.txtCodigoEmpleado = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCodigoGranja = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cboxCodigoGranja = new System.Windows.Forms.ComboBox();
+            this.cboxCodigoUsuario = new System.Windows.Forms.ComboBox();
+            this.dgvRegistroEmpleados = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -79,6 +79,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -97,6 +98,7 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -115,6 +117,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnSalir
             // 
@@ -133,6 +136,7 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label10
             // 
@@ -166,24 +170,14 @@
             this.label6.TabIndex = 83;
             this.label6.Text = "Registro de Empleados";
             // 
-            // dataGridView1
+            // dtpFechaIngreso
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 364);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1237, 216);
-            this.dataGridView1.TabIndex = 82;
-            // 
-            // dtpFechaRegistro
-            // 
-            this.dtpFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaRegistro.Location = new System.Drawing.Point(709, 165);
-            this.dtpFechaRegistro.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpFechaRegistro.Name = "dtpFechaRegistro";
-            this.dtpFechaRegistro.Size = new System.Drawing.Size(142, 22);
-            this.dtpFechaRegistro.TabIndex = 67;
+            this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(709, 165);
+            this.dtpFechaIngreso.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFechaIngreso.Name = "dtpFechaIngreso";
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(142, 22);
+            this.dtpFechaIngreso.TabIndex = 67;
             // 
             // btnEliminar
             // 
@@ -202,15 +196,18 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboxCodigoUsuario);
+            this.groupBox1.Controls.Add(this.cboxCodigoGranja);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.cboxCargo);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtSalarioBase);
             this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.Controls.Add(this.txtSalario);
             this.groupBox1.Controls.Add(this.label12);
@@ -218,15 +215,13 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.dtpFechaRegistro);
+            this.groupBox1.Controls.Add(this.dtpFechaIngreso);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cboxEstado);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtCodigoUsuario);
             this.groupBox1.Controls.Add(this.txtCodigoEmpleado);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtCodigoGranja);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(23, 100);
             this.groupBox1.Name = "groupBox1";
@@ -252,12 +247,13 @@
             this.label9.TabIndex = 72;
             this.label9.Text = "Correo:";
             // 
-            // textBox3
+            // txtSalarioBase
             // 
-            this.textBox3.Location = new System.Drawing.Point(709, 121);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(142, 22);
-            this.textBox3.TabIndex = 77;
+            this.txtSalarioBase.AcceptsReturn = true;
+            this.txtSalarioBase.Location = new System.Drawing.Point(709, 121);
+            this.txtSalarioBase.Name = "txtSalarioBase";
+            this.txtSalarioBase.Size = new System.Drawing.Size(142, 22);
+            this.txtSalarioBase.TabIndex = 77;
             // 
             // txtCorreo
             // 
@@ -327,9 +323,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(520, 167);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 20);
+            this.label5.Size = new System.Drawing.Size(134, 20);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Fecha Registro:";
+            this.label5.Text = "Fecha Ingreso:";
             // 
             // cboxEstado
             // 
@@ -348,14 +344,6 @@
             this.label1.Size = new System.Drawing.Size(161, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Código Empleado:";
-            // 
-            // txtCodigoUsuario
-            // 
-            this.txtCodigoUsuario.Location = new System.Drawing.Point(203, 121);
-            this.txtCodigoUsuario.Name = "txtCodigoUsuario";
-            this.txtCodigoUsuario.ReadOnly = true;
-            this.txtCodigoUsuario.Size = new System.Drawing.Size(142, 22);
-            this.txtCodigoUsuario.TabIndex = 7;
             // 
             // txtCodigoEmpleado
             // 
@@ -385,14 +373,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Código Granja:";
             // 
-            // txtCodigoGranja
-            // 
-            this.txtCodigoGranja.Location = new System.Drawing.Point(203, 74);
-            this.txtCodigoGranja.Name = "txtCodigoGranja";
-            this.txtCodigoGranja.ReadOnly = true;
-            this.txtCodigoGranja.Size = new System.Drawing.Size(142, 22);
-            this.txtCodigoGranja.TabIndex = 3;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -403,23 +383,54 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Estado:";
             // 
+            // cboxCodigoGranja
+            // 
+            this.cboxCodigoGranja.FormattingEnabled = true;
+            this.cboxCodigoGranja.Location = new System.Drawing.Point(203, 74);
+            this.cboxCodigoGranja.Name = "cboxCodigoGranja";
+            this.cboxCodigoGranja.Size = new System.Drawing.Size(142, 24);
+            this.cboxCodigoGranja.TabIndex = 89;
+            // 
+            // cboxCodigoUsuario
+            // 
+            this.cboxCodigoUsuario.FormattingEnabled = true;
+            this.cboxCodigoUsuario.Location = new System.Drawing.Point(203, 119);
+            this.cboxCodigoUsuario.Name = "cboxCodigoUsuario";
+            this.cboxCodigoUsuario.Size = new System.Drawing.Size(142, 24);
+            this.cboxCodigoUsuario.TabIndex = 90;
+            // 
+            // dgvRegistroEmpleados
+            // 
+            this.dgvRegistroEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRegistroEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegistroEmpleados.Location = new System.Drawing.Point(23, 365);
+            this.dgvRegistroEmpleados.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvRegistroEmpleados.Name = "dgvRegistroEmpleados";
+            this.dgvRegistroEmpleados.ReadOnly = true;
+            this.dgvRegistroEmpleados.RowHeadersWidth = 51;
+            this.dgvRegistroEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRegistroEmpleados.Size = new System.Drawing.Size(1221, 214);
+            this.dgvRegistroEmpleados.TabIndex = 92;
+            this.dgvRegistroEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroEmpleados_CellContentClick);
+            // 
             // FrmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1278, 649);
+            this.Controls.Add(this.dgvRegistroEmpleados);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmEmpleados";
             this.Text = "FrmEmpleados";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmEmpleados_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroEmpleados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -434,18 +445,15 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DateTimePicker dtpFechaRegistro;
+        private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboxEstado;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCodigoUsuario;
         private System.Windows.Forms.TextBox txtCodigoEmpleado;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCodigoGranja;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label7;
@@ -453,9 +461,12 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ComboBox cboxCargo;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtSalarioBase;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label txtSalario;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cboxCodigoUsuario;
+        private System.Windows.Forms.ComboBox cboxCodigoGranja;
+        private System.Windows.Forms.DataGridView dgvRegistroEmpleados;
     }
 }

@@ -34,9 +34,9 @@
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.label10 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dtpFechaRegistro = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboxCodigoRol = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cboxEstado = new System.Windows.Forms.ComboBox();
@@ -45,12 +45,12 @@
             this.txtCodigoUsuario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCodigoRol = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvRegistroUsuarios = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -70,6 +70,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -88,6 +89,7 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -106,6 +108,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnSalir
             // 
@@ -124,6 +127,7 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label10
             // 
@@ -147,16 +151,6 @@
             this.lblFecha.TabIndex = 84;
             this.lblFecha.Text = "Imprimir Fecha";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 290);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1237, 305);
-            this.dataGridView1.TabIndex = 82;
-            // 
             // dtpFechaRegistro
             // 
             this.dtpFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -168,6 +162,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboxCodigoRol);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.dtpFechaRegistro);
             this.groupBox1.Controls.Add(this.label5);
@@ -177,13 +172,20 @@
             this.groupBox1.Controls.Add(this.txtCodigoUsuario);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtCodigoRol);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(14, 115);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1237, 169);
             this.groupBox1.TabIndex = 81;
             this.groupBox1.TabStop = false;
+            // 
+            // cboxCodigoRol
+            // 
+            this.cboxCodigoRol.FormattingEnabled = true;
+            this.cboxCodigoRol.Location = new System.Drawing.Point(216, 77);
+            this.cboxCodigoRol.Name = "cboxCodigoRol";
+            this.cboxCodigoRol.Size = new System.Drawing.Size(142, 24);
+            this.cboxCodigoRol.TabIndex = 69;
             // 
             // label7
             // 
@@ -258,14 +260,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Código Rol:";
             // 
-            // txtCodigoRol
-            // 
-            this.txtCodigoRol.Location = new System.Drawing.Point(216, 74);
-            this.txtCodigoRol.Name = "txtCodigoRol";
-            this.txtCodigoRol.ReadOnly = true;
-            this.txtCodigoRol.Size = new System.Drawing.Size(142, 22);
-            this.txtCodigoRol.TabIndex = 3;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -293,6 +287,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label6
             // 
@@ -304,27 +299,41 @@
             this.label6.TabIndex = 83;
             this.label6.Text = "Registro de Usuarios";
             // 
+            // dgvRegistroUsuarios
+            // 
+            this.dgvRegistroUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRegistroUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegistroUsuarios.Location = new System.Drawing.Point(14, 291);
+            this.dgvRegistroUsuarios.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvRegistroUsuarios.Name = "dgvRegistroUsuarios";
+            this.dgvRegistroUsuarios.ReadOnly = true;
+            this.dgvRegistroUsuarios.RowHeadersWidth = 51;
+            this.dgvRegistroUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRegistroUsuarios.Size = new System.Drawing.Size(1221, 303);
+            this.dgvRegistroUsuarios.TabIndex = 91;
+            this.dgvRegistroUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroUsuarios_CellContentClick);
+            // 
             // FrmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1266, 659);
+            this.Controls.Add(this.dgvRegistroUsuarios);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.label6);
             this.Name = "FrmUsuarios";
             this.Text = "FrmUsuarios";
             this.Load += new System.EventHandler(this.FrmUsuarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,7 +347,6 @@
         private FontAwesome.Sharp.IconButton btnSalir;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dtpFechaRegistro;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
@@ -348,10 +356,11 @@
         private System.Windows.Forms.TextBox txtCodigoUsuario;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCodigoRol;
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cboxCodigoRol;
+        private System.Windows.Forms.DataGridView dgvRegistroUsuarios;
     }
 }

@@ -12,6 +12,49 @@ namespace CapaDatos
     {
         CDconexion cd_conexion = new CDconexion();
 
+        //LLAVE FORANEA
+        public List<dynamic> MtdListarClientes()
+        {
+            List<dynamic> ListaClientes = new List<dynamic>();
+            string QueryListaClientes = "Select CodigoCliente, Nombre from tbl_Clientes";
+            SqlCommand cmd = new SqlCommand(QueryListaClientes, cd_conexion.MtdAbrirConexion());
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListaClientes.Add(new
+                {
+                    Value = reader["CodigoCliente"],
+                    Text = $"{reader["CodigoCliente"]} - {reader["Nombre"]}"
+                });
+            }
+
+            cd_conexion.MtdCerrarConexion();
+            return ListaClientes;
+        }
+
+        public List<dynamic> MtdListarGranjas()
+        {
+            List<dynamic> ListaGranjas = new List<dynamic>();
+            string QueryListaGranjas = "Select CodigoGranja, Nombre from tbl_Granjas";
+            SqlCommand cmd = new SqlCommand(QueryListaGranjas, cd_conexion.MtdAbrirConexion());
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListaGranjas.Add(new
+                {
+                    Value = reader["CodigoGranja"],
+                    Text = $"{reader["CodigoGranja"]} - {reader["Nombre"]}"
+                });
+            }
+
+            cd_conexion.MtdCerrarConexion();
+            return ListaGranjas;
+        }
+
+
+        //METODOS:
         public DataTable MtdConsultarVenta()
         {
             string QueryConsultarVenta = "Select * from tbl_Ventas";
