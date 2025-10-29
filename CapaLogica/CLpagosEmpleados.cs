@@ -12,5 +12,6 @@ namespace CapaLogica
         {
             return DateTime.Today;
         }
+
     }
 }

@@ -38,7 +38,6 @@
             this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtSalarioFinal = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDescuentos = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -54,6 +53,7 @@
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvPagoEmpleados = new System.Windows.Forms.DataGridView();
+            this.lblSalarioFinal = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagoEmpleados)).BeginInit();
             this.SuspendLayout();
@@ -133,20 +133,20 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(733, 69);
+            this.label10.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(676, 37);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 14);
+            this.label10.Size = new System.Drawing.Size(100, 19);
             this.label10.TabIndex = 85;
             this.label10.Text = "Fecha actual:";
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(856, 69);
+            this.lblFecha.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Location = new System.Drawing.Point(799, 37);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(86, 14);
+            this.lblFecha.Size = new System.Drawing.Size(119, 19);
             this.lblFecha.TabIndex = 84;
             this.lblFecha.Text = "Imprimir Fecha";
             // 
@@ -168,6 +168,7 @@
             this.dtpFechaPago.Name = "dtpFechaPago";
             this.dtpFechaPago.Size = new System.Drawing.Size(108, 20);
             this.dtpFechaPago.TabIndex = 67;
+            this.dtpFechaPago.ValueChanged += new System.EventHandler(this.dtpFechaPago_ValueChanged);
             // 
             // btnEliminar
             // 
@@ -189,8 +190,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblSalarioFinal);
             this.groupBox1.Controls.Add(this.btnCancelar);
-            this.groupBox1.Controls.Add(this.txtSalarioFinal);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.label8);
@@ -215,14 +216,6 @@
             this.groupBox1.Size = new System.Drawing.Size(928, 176);
             this.groupBox1.TabIndex = 81;
             this.groupBox1.TabStop = false;
-            // 
-            // txtSalarioFinal
-            // 
-            this.txtSalarioFinal.Location = new System.Drawing.Point(556, 62);
-            this.txtSalarioFinal.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSalarioFinal.Name = "txtSalarioFinal";
-            this.txtSalarioFinal.Size = new System.Drawing.Size(108, 20);
-            this.txtSalarioFinal.TabIndex = 73;
             // 
             // label8
             // 
@@ -290,7 +283,7 @@
             this.cbxEstado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cbxEstado.Location = new System.Drawing.Point(556, 138);
+            this.cbxEstado.Location = new System.Drawing.Point(556, 140);
             this.cbxEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(108, 21);
@@ -378,6 +371,17 @@
             this.dgvPagoEmpleados.TabIndex = 91;
             this.dgvPagoEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagoEmpleados_CellClick);
             // 
+            // lblSalarioFinal
+            // 
+            this.lblSalarioFinal.AutoSize = true;
+            this.lblSalarioFinal.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalarioFinal.Location = new System.Drawing.Point(553, 65);
+            this.lblSalarioFinal.Name = "lblSalarioFinal";
+            this.lblSalarioFinal.Size = new System.Drawing.Size(98, 15);
+            this.lblSalarioFinal.TabIndex = 92;
+            this.lblSalarioFinal.Text = "ImprimirSalario";
+            this.lblSalarioFinal.Click += new System.EventHandler(this.lblSalarioFinal_Click);
+            // 
             // FrmPagosEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,10 +429,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBonos;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtSalarioFinal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDescuentos;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgvPagoEmpleados;
+        private System.Windows.Forms.Label lblSalarioFinal;
     }
 }
