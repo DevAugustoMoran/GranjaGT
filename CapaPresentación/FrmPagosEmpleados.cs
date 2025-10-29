@@ -36,7 +36,7 @@ namespace CapaPresentación
             txtHorasExtra.Text = "";
             txtBonos.Text = "";
             txtDescuentos.Text = "";
-            txtSalarioFinal.Text = "";
+            lblSalarioFinal.Text = "ImprimirSalario";
             dtpFechaPago.Value = DateTime.Now;
             cbxEstado.Text = "";
         }
@@ -49,7 +49,7 @@ namespace CapaPresentación
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtSalario.Text == "" || txtHorasExtra.Text == "" || txtBonos.Text == "" || txtDescuentos.Text == "" || txtSalarioFinal.Text == "" || cbxEstado.Text == "")
+            if (txtSalario.Text == "" || txtHorasExtra.Text == "" || txtBonos.Text == "" || txtDescuentos.Text == "" || lblSalarioFinal.Text == "ImprimirSalario" || cbxEstado.Text == "")
             {
                 MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -57,16 +57,16 @@ namespace CapaPresentación
             {
                 try
                 {
-                    Decimal Salario = Convert.ToDecimal(txtSalario.Text);
-                    Decimal HorasExtras = Convert.ToDecimal(txtHorasExtra.Text);
-                    Decimal Bonos = Convert.ToDecimal(txtBonos.Text);
-                    Decimal Descuentos = Convert.ToDecimal(txtDescuentos.Text);
-                    Decimal SalarioFinal = Convert.ToDecimal(txtSalarioFinal.Text);
+                    Decimal salario = Convert.ToDecimal(txtSalario.Text);
+                    Decimal horasExtra = Convert.ToDecimal(txtHorasExtra.Text);
+                    Decimal bonos = Convert.ToDecimal(txtBonos.Text);
+                    Decimal descuentos = Convert.ToDecimal(txtDescuentos.Text);
+                    Decimal salarioFinal = Convert.ToDecimal(txtBonos.Text);
                     DateTime FechaPago = dtpFechaPago.Value;
                     string Estado = cbxEstado.Text;
                     string UsuarioAuditoria = "Administrador";
                     DateTime FechaAuditoria = clpagosempleados.MtdFechaActual();
-                    cdpagosempleados.MtdAgregarPagoEmpleado(Salario, HorasExtras, Bonos, Descuentos, SalarioFinal, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria);
+                    cdpagosempleados.MtdAgregarPagoEmpleado(salario, horasExtra, bonos, descuentos, salarioFinal, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria);
                     MessageBox.Show("Pago de empleado agregado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MtdConsultarPagosEmpleados();
                     mtdLimpiarCampos();
@@ -85,14 +85,14 @@ namespace CapaPresentación
             txtHorasExtra.Text = dgvPagoEmpleados.SelectedCells[2].Value.ToString();
             txtBonos.Text = dgvPagoEmpleados.SelectedCells[3].Value.ToString();
             txtDescuentos.Text = dgvPagoEmpleados.SelectedCells[4].Value.ToString();
-            txtSalarioFinal.Text = dgvPagoEmpleados.SelectedCells[5].Value.ToString();
+            lblSalarioFinal.Text = dgvPagoEmpleados.SelectedCells[5].Value.ToString();
             dtpFechaPago.Value = Convert.ToDateTime(dgvPagoEmpleados.SelectedCells[6].Value);
             cbxEstado.Text = dgvPagoEmpleados.SelectedCells[7].Value.ToString();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (txtCodigoPagoEmpleado.Text == "" || txtSalario.Text == "" || txtHorasExtra.Text == "" || txtBonos.Text == "" || txtDescuentos.Text == "" || txtSalarioFinal.Text == "" || cbxEstado.Text == "")
+            if (txtCodigoPagoEmpleado.Text == "" || txtSalario.Text == "" || txtHorasExtra.Text == "" || txtBonos.Text == "" || txtDescuentos.Text == "" || lblSalarioFinal.Text == "ImprimirSalario" || cbxEstado.Text == "")
             {
                 MessageBox.Show("Por favor seleccione un pago de empleado para editar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -105,7 +105,7 @@ namespace CapaPresentación
                     Decimal HorasExtras = Convert.ToDecimal(txtHorasExtra.Text);
                     Decimal Bonos = Convert.ToDecimal(txtBonos.Text);
                     Decimal Descuentos = Convert.ToDecimal(txtDescuentos.Text);
-                    Decimal SalarioFinal = Convert.ToDecimal(txtSalarioFinal.Text);
+                    Decimal SalarioFinal = Convert.ToDecimal(lblSalarioFinal.Text);
                     DateTime FechaPago = dtpFechaPago.Value;
                     string Estado = cbxEstado.Text;
                     string UsuarioAuditoria = "Administrador";
@@ -153,6 +153,15 @@ namespace CapaPresentación
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lblSalarioFinal_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dtpFechaPago_ValueChanged(object sender, EventArgs e)
+        {
         }
     }
 }
