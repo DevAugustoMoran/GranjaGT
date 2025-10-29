@@ -12,6 +12,46 @@ namespace CapaDatos
     {
         CDconexion cd_conexion = new CDconexion();
 
+        public List<dynamic> MtdListarGranjas()
+        {
+            List<dynamic> ListaGranjas = new List<dynamic>();
+            string QueryListaGranjas = "Select CodigoGranja, Nombre from tbl_Granjas";
+            SqlCommand cmd = new SqlCommand(QueryListaGranjas, cd_conexion.MtdAbrirConexion());
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListaGranjas.Add(new
+                {
+                    Value = reader["CodigoGranja"],
+                    Text = $"{reader["CodigoGranja"]} - {reader["Nombre"]}"
+                });
+            }
+
+            cd_conexion.MtdCerrarConexion();
+            return ListaGranjas;
+        }
+
+        public List<dynamic> MtdListarInsumos()
+        {
+            List<dynamic> ListaInsumos = new List<dynamic>();
+            string QueryListaInsumos = "Select CodigoInsumo, Nombre from tbl_Insumos";
+            SqlCommand cmd = new SqlCommand(QueryListaInsumos, cd_conexion.MtdAbrirConexion());
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListaInsumos.Add(new
+                {
+                    Value = reader["CodigoInsumo"],
+                    Text = $"{reader["CodigoInsumo"]} - {reader["Nombre"]}"
+                });
+            }
+
+            cd_conexion.MtdCerrarConexion();
+            return ListaInsumos;
+        }
+
         public DataTable MtdConsultarInventario()
         {
             string QueryConsultarInventario = "Select * from tbl_Inventarios";

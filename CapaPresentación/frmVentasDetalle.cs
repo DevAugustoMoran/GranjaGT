@@ -172,8 +172,18 @@ namespace CapaPresentación
             int CodigoDetalle = int.Parse(txtCodigoDetalle.Text);
 
             cd_ventasdetalle.MtdEliminarVentasDetalle(CodigoDetalle);
-            MessageBox.Show("Orden eliminada correctamente", "Eliminar Orden", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Detalle de venta eliminado correctamente", "Eliminar Detalle", MessageBoxButtons.OK, MessageBoxIcon.Information);
             mtdConsultarVentasDetalle();
+            mtdLimpiarCampos();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
             mtdLimpiarCampos();
         }
 
