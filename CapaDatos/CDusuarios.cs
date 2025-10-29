@@ -22,6 +22,17 @@ namespace CapaDatos
             return dt_usuario;
         }
 
+        // Este método consulta los roles para llenar el ComboBox
+        public DataTable MtdConsultarRoles()
+        {
+            string QueryConsultarRoles = "Select CodigoRol, Nombre from tbl_Roles where Estado = 'Activo'";
+            SqlDataAdapter dt_adapter = new SqlDataAdapter(QueryConsultarRoles, cd_conexion.MtdAbrirConexion());
+            DataTable dt_roles = new DataTable();
+            dt_adapter.Fill(dt_roles);
+            cd_conexion.MtdCerrarConexion();
+            return dt_roles;
+        }
+
         public void MtdAgregarUsuario(int CodigoRol, string Nombre, string Estado, string UsuarioSistema, DateTime FechaAuditoria, DateTime FechaRegistro)
         {
             string QueryAgregarUsuario = "Insert into tbl_Usuarios(CodigoRol, Nombre, Estado, UsuarioAuditoria, FechaAuditoria, FechaRegistro) values (@CodigoRol, @Nombre, @Estado, @UsuarioAuditoria, @FechaAuditoria, @FechaRegistro)";
