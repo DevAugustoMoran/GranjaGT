@@ -109,61 +109,76 @@ namespace CapaPresentación
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            if (cboxCodigoVenta.Text == "" || cboxCodigoAnimal.Text == "" || cboxCodigoCultivo.Text == "" || cboxCodigoProducto.Text == "" || txtCantidad.Text == "" 
+                || txtPrecioUnitario.Text == "" || txtDescuento.Text == "" || txtImpuesto.Text == "" || cboxEstado.Text == "")
             {
-                int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
-                int CodigoAnimal = int.Parse(cboxCodigoAnimal.Text.Split('-')[0].Trim());
-                int CodigoCultivo = int.Parse(cboxCodigoCultivo.Text.Split('-')[0].Trim());
-                int CodigoProducto = int.Parse(cboxCodigoProducto.Text.Split('-')[0].Trim());
-                decimal Cantidad = decimal.Parse(txtCantidad.Text);
-                decimal PrecioUnitario = decimal.Parse(txtPrecioUnitario.Text);
-                decimal Total = 10; //Hay que cambiarlo
-                decimal Descuento = decimal.Parse(txtDescuento.Text);
-                decimal Impuesto = decimal.Parse(txtImpuesto.Text);
-                decimal TotalVenta = 20; //Hay que cambiarlo
-                string Estado = cboxEstado.Text;
-                string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
-                DateTime FechaAuditoria = cl_ventasdetalle.MtdFechaActual();
+                MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
+                    int CodigoAnimal = int.Parse(cboxCodigoAnimal.Text.Split('-')[0].Trim());
+                    int CodigoCultivo = int.Parse(cboxCodigoCultivo.Text.Split('-')[0].Trim());
+                    int CodigoProducto = int.Parse(cboxCodigoProducto.Text.Split('-')[0].Trim());
+                    decimal Cantidad = decimal.Parse(txtCantidad.Text);
+                    decimal PrecioUnitario = decimal.Parse(txtPrecioUnitario.Text);
+                    decimal Total = 10; //Hay que cambiarlo
+                    decimal Descuento = decimal.Parse(txtDescuento.Text);
+                    decimal Impuesto = decimal.Parse(txtImpuesto.Text);
+                    decimal TotalVenta = 20; //Hay que cambiarlo
+                    string Estado = cboxEstado.Text;
+                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    DateTime FechaAuditoria = cl_ventasdetalle.MtdFechaActual();
 
-                cd_ventasdetalle.MtdAgregarVentasDetalle(CodigoVenta, CodigoAnimal, CodigoCultivo, CodigoProducto, Cantidad, PrecioUnitario, Total, Descuento, Impuesto, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
-                MessageBox.Show("Detalle de venta agregado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                mtdConsultarVentasDetalle();
-                mtdLimpiarCampos();
+                    cd_ventasdetalle.MtdAgregarVentasDetalle(CodigoVenta, CodigoAnimal, CodigoCultivo, CodigoProducto, Cantidad, PrecioUnitario, Total, Descuento, Impuesto, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
+                    MessageBox.Show("Detalle de venta agregado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    mtdConsultarVentasDetalle();
+                    mtdLimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            try
+            if (cboxCodigoVenta.Text == "" || cboxCodigoAnimal.Text == "" || cboxCodigoCultivo.Text == "" || cboxCodigoProducto.Text == "" || txtCantidad.Text == ""
+                || txtPrecioUnitario.Text == "" || txtDescuento.Text == "" || txtImpuesto.Text == "" || cboxEstado.Text == "")
             {
-                int CodigoDetalle = int.Parse(txtCodigoDetalle.Text);
-                int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
-                int CodigoAnimal = int.Parse(cboxCodigoAnimal.Text.Split('-')[0].Trim());
-                int CodigoCultivo = int.Parse(cboxCodigoCultivo.Text.Split('-')[0].Trim());
-                int CodigoProducto = int.Parse(cboxCodigoProducto.Text.Split('-')[0].Trim());
-                decimal Cantidad = decimal.Parse(txtCantidad.Text);
-                decimal PrecioUnitario = decimal.Parse(txtPrecioUnitario.Text);
-                decimal Total = 10; //Hay que cambiarlo
-                decimal Descuento = decimal.Parse(txtDescuento.Text);
-                decimal Impuesto = decimal.Parse(txtImpuesto.Text);
-                decimal TotalVenta = 20; //Hay que cambiarlo
-                string Estado = cboxEstado.Text;
-                string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
-                DateTime FechaAuditoria = cl_ventasdetalle.MtdFechaActual();
-
-                cd_ventasdetalle.MtdActualizarVentasDetalle(CodigoDetalle, CodigoVenta, CodigoAnimal, CodigoCultivo, CodigoProducto, Cantidad, PrecioUnitario, Total, Descuento, Impuesto, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
-                MessageBox.Show("Detalle de venta actualizado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                mtdConsultarVentasDetalle();
-                mtdLimpiarCampos();
+                MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    int CodigoDetalle = int.Parse(txtCodigoDetalle.Text);
+                    int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
+                    int CodigoAnimal = int.Parse(cboxCodigoAnimal.Text.Split('-')[0].Trim());
+                    int CodigoCultivo = int.Parse(cboxCodigoCultivo.Text.Split('-')[0].Trim());
+                    int CodigoProducto = int.Parse(cboxCodigoProducto.Text.Split('-')[0].Trim());
+                    decimal Cantidad = decimal.Parse(txtCantidad.Text);
+                    decimal PrecioUnitario = decimal.Parse(txtPrecioUnitario.Text);
+                    decimal Total = 10; //Hay que cambiarlo
+                    decimal Descuento = decimal.Parse(txtDescuento.Text);
+                    decimal Impuesto = decimal.Parse(txtImpuesto.Text);
+                    decimal TotalVenta = 20; //Hay que cambiarlo
+                    string Estado = cboxEstado.Text;
+                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    DateTime FechaAuditoria = cl_ventasdetalle.MtdFechaActual();
+
+                    cd_ventasdetalle.MtdActualizarVentasDetalle(CodigoDetalle, CodigoVenta, CodigoAnimal, CodigoCultivo, CodigoProducto, Cantidad, PrecioUnitario, Total, Descuento, Impuesto, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
+                    MessageBox.Show("Detalle de venta actualizado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    mtdConsultarVentasDetalle();
+                    mtdLimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

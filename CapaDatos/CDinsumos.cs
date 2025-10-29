@@ -12,6 +12,26 @@ namespace CapaDatos
     {
         CDconexion cd_conexion = new CDconexion();
 
+        public List<dynamic> MtdListarProveedores()
+        {
+            List<dynamic> ListaProveedores = new List<dynamic>();
+            string QueryListaProveedores = "Select CodigoProveedor, Nombre from tbl_Proveedores";
+            SqlCommand cmd = new SqlCommand(QueryListaProveedores, cd_conexion.MtdAbrirConexion());
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListaProveedores.Add(new
+                {
+                    Value = reader["Codigoproveedor"],
+                    Text = $"{reader["CodigoProveedor"]} - {reader["Nombre"]}"
+                });
+            }
+
+            cd_conexion.MtdCerrarConexion();
+            return ListaProveedores;
+        }
+
         public DataTable MtdConsultarInsumos()
         {
             string QueryConsultarInsumos = "Select * from tbl_Insumos";
