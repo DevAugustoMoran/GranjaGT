@@ -30,7 +30,7 @@ namespace CapaDatos
             CommandAgregarPagoEmpleado.Parameters.AddWithValue("@Salario", Salario);
             CommandAgregarPagoEmpleado.Parameters.AddWithValue("@HorasExtras", HorasExtras);
             CommandAgregarPagoEmpleado.Parameters.AddWithValue("@Bonos", Bonos);
-            CommandAgregarPagoEmpleado.Parameters.AddWithValue("@Descuentoso", Descuentos);
+            CommandAgregarPagoEmpleado.Parameters.AddWithValue("@Descuentos", Descuentos);
             CommandAgregarPagoEmpleado.Parameters.AddWithValue("@SalarioFinal", SalarioFinal);
             CommandAgregarPagoEmpleado.Parameters.AddWithValue("@FechaPago", FechaPago);
             CommandAgregarPagoEmpleado.Parameters.AddWithValue("@Estado", Estado);
