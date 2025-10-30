@@ -10,7 +10,7 @@ namespace CapaPresentacion.Seguridad
 {
     public class UserDao : UserConnectionToSql
     {
-        public bool Login(string NombreUsuario, string Contrasenia)
+        public bool Login(string Nombre, string Contrasena)
         {
             using (var connection = GetConnection())
             {
@@ -18,9 +18,9 @@ namespace CapaPresentacion.Seguridad
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select * from tbl_Usuarios where NombreUsuario=@NombreUsuario and Contrasenia=@Contrasenia";
-                    command.Parameters.AddWithValue("@NombreUsuario", NombreUsuario);
-                    command.Parameters.AddWithValue("@Contrasenia", Contrasenia);
+                    command.CommandText = "Select * from tbl_Usuarios where Nombre = @Nombre and Contrasena = @Contrasena";
+                    command.Parameters.AddWithValue("@Nombre", Nombre);
+                    command.Parameters.AddWithValue("@Contrasena", Contrasena);
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
@@ -28,11 +28,11 @@ namespace CapaPresentacion.Seguridad
                         while (reader.Read())
                         {
                             UserCache.CodigoUsuario = reader.GetInt32(0);
-                            UserCache.CodigoEmpleado = reader.GetInt32(1);
-                            UserCache.NombreUsuario = reader.GetString(2);
-                            UserCache.Contrasenia = reader.GetString(3);
-                            UserCache.Rol = reader.GetString(4);
-                            UserCache.Estado = reader.GetString(5);
+                            UserCache.CodigoRol = reader.GetInt32(1);
+                            UserCache.Nombre = reader.GetString(2);
+                            UserCache.FechaRegistro = reader.GetString(3);
+                            UserCache.Estado = reader.GetString(4);
+                            UserCache.Contrasena = reader.GetString(5);
                         }
                         return true;
                     }
