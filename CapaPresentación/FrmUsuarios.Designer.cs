@@ -210,6 +210,12 @@
             // cboxEstado
             // 
             this.cboxEstado.FormattingEnabled = true;
+            this.cboxEstado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo",
+            "Suspendido",
+            "De vacaciones",
+            "En permiso"});
             this.cboxEstado.Location = new System.Drawing.Point(794, 94);
             this.cboxEstado.Name = "cboxEstado";
             this.cboxEstado.Size = new System.Drawing.Size(142, 24);

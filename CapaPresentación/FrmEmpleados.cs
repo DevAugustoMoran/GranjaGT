@@ -81,56 +81,70 @@ namespace CapaPresentación
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            if (cboxCodigoGranja.Text == "" || cboxCodigoUsuario.Text == "" || txtNombre.Text == "" || txtTelefono.Text == "" || txtCorreo.Text == "" || cboxCargo.Text == "" ||txtSalario.Text == "" || cboxEstado.Text == "")
             {
-                int CodigoGranja = int.Parse(cboxCodigoGranja.Text.Split('-')[0].Trim());
-                int CodigoUsuario = int.Parse(cboxCodigoUsuario.Text.Split('-')[0].Trim());
-                string Nombre = txtNombre.Text;
-                string Telefono = txtTelefono.Text;
-                string Correo = txtCorreo.Text;
-                string Cargo = cboxCargo.Text;
-                decimal SalarioBase = decimal.Parse(txtSalarioBase.Text);
-                string Estado = cboxEstado.Text;
-                string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
-                DateTime FechaAuditoria = cl_empleados.MtdFechaActual();
-                DateTime FechaRegistro = cl_empleados.MtdFechaActual();
-
-                cd_empleados.MtdAgregarEmpleado(CodigoGranja, CodigoUsuario, Nombre, Telefono, Correo, Cargo, Estado, SalarioBase, FechaAuditoria, UsuarioAuditoria, FechaRegistro);
-                MessageBox.Show("Empleado agregado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MtdConsultarEmpleados();
-                mtdLimpiarCampos();
+                MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    int CodigoGranja = int.Parse(cboxCodigoGranja.Text.Split('-')[0].Trim());
+                    int CodigoUsuario = int.Parse(cboxCodigoUsuario.Text.Split('-')[0].Trim());
+                    string Nombre = txtNombre.Text;
+                    string Telefono = txtTelefono.Text;
+                    string Correo = txtCorreo.Text;
+                    string Cargo = cboxCargo.Text;
+                    decimal SalarioBase = decimal.Parse(txtSalarioBase.Text);
+                    string Estado = cboxEstado.Text;
+                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    DateTime FechaAuditoria = cl_empleados.MtdFechaActual();
+                    DateTime FechaRegistro = cl_empleados.MtdFechaActual();
+
+                    cd_empleados.MtdAgregarEmpleado(CodigoGranja, CodigoUsuario, Nombre, Telefono, Correo, Cargo, Estado, SalarioBase, FechaAuditoria, UsuarioAuditoria, FechaRegistro);
+                    MessageBox.Show("Empleado agregado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarEmpleados();
+                    mtdLimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            try
+            if (cboxCodigoGranja.Text == "" || cboxCodigoUsuario.Text == "" || txtNombre.Text == "" || txtTelefono.Text == "" || txtCorreo.Text == "" || cboxCargo.Text == "" || txtSalario.Text == "" || cboxEstado.Text == "")
             {
-                int CodigoEmpleado = int.Parse(txtCodigoEmpleado.Text);
-                int CodigoGranja = int.Parse(cboxCodigoGranja.Text.Split('-')[0].Trim());
-                int CodigoUsuario = int.Parse(cboxCodigoUsuario.Text.Split('-')[0].Trim());
-                string Nombre = txtNombre.Text;
-                string Telefono = txtTelefono.Text;
-                string Correo = txtCorreo.Text;
-                string Cargo = cboxCargo.Text;
-                string Estado = cboxEstado.Text;
-                decimal SalarioBase = decimal.Parse(txtSalarioBase.Text);
-                DateTime FechaIngreso = dtpFechaIngreso.Value;
-                string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
-                DateTime FechaAuditoria = cl_empleados.MtdFechaActual();
-
-                cd_empleados.MtdActualizarEmpleado(CodigoEmpleado, CodigoGranja, CodigoUsuario, Nombre, Telefono, Correo, Cargo, Estado, SalarioBase, FechaIngreso, UsuarioAuditoria, FechaAuditoria);
-                MessageBox.Show("Empleado actualizado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MtdConsultarEmpleados();
-                mtdLimpiarCampos();
+                MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    int CodigoEmpleado = int.Parse(txtCodigoEmpleado.Text);
+                    int CodigoGranja = int.Parse(cboxCodigoGranja.Text.Split('-')[0].Trim());
+                    int CodigoUsuario = int.Parse(cboxCodigoUsuario.Text.Split('-')[0].Trim());
+                    string Nombre = txtNombre.Text;
+                    string Telefono = txtTelefono.Text;
+                    string Correo = txtCorreo.Text;
+                    string Cargo = cboxCargo.Text;
+                    string Estado = cboxEstado.Text;
+                    decimal SalarioBase = decimal.Parse(txtSalarioBase.Text);
+                    DateTime FechaIngreso = dtpFechaIngreso.Value;
+                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    DateTime FechaAuditoria = cl_empleados.MtdFechaActual();
+
+                    cd_empleados.MtdActualizarEmpleado(CodigoEmpleado, CodigoGranja, CodigoUsuario, Nombre, Telefono, Correo, Cargo, Estado, SalarioBase, FechaIngreso, UsuarioAuditoria, FechaAuditoria);
+                    MessageBox.Show("Empleado actualizado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarEmpleados();
+                    mtdLimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

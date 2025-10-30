@@ -71,53 +71,65 @@ namespace CapaPresentación
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            if (cboxCodigoCliente.Text == "" || cboxCodigoGranja.Text == "" || dtpFechaVenta.Text == "" || cboxTipoVenta.Text == "" || txtTotalVenta.Text == "" || cboxEstado.Text == "")
             {
-                int CodigoCliente = int.Parse(cboxCodigoCliente.Text.Split('-')[0].Trim());
-                int CodigoGranja = int.Parse(cboxCodigoGranja.Text.Split('-')[0].Trim());
-                DateTime FechaVenta = dtpFechaVenta.Value;
-                string TipoVenta = cboxTipoVenta.Text;
-                decimal TotalVenta = decimal.Parse(txtTotalVenta.Text);
-                string Estado = cboxEstado.Text;
-                string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
-                DateTime FechaAuditoria = cl_ventas.MtdFechaActual();
-
-                cd_ventas.MtdAgregarVenta( CodigoCliente,  CodigoGranja,  FechaVenta,  TipoVenta,  TotalVenta,  Estado,  UsuarioAuditoria,  FechaAuditoria);
-                MessageBox.Show("Venta agregada correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MtdConsultarVenta();
-                mtdLimpiarCampos();
+                MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    int CodigoCliente = int.Parse(cboxCodigoCliente.Text.Split('-')[0].Trim());
+                    int CodigoGranja = int.Parse(cboxCodigoGranja.Text.Split('-')[0].Trim());
+                    DateTime FechaVenta = dtpFechaVenta.Value;
+                    string TipoVenta = cboxTipoVenta.Text;
+                    decimal TotalVenta = decimal.Parse(txtTotalVenta.Text);
+                    string Estado = cboxEstado.Text;
+                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    DateTime FechaAuditoria = cl_ventas.MtdFechaActual();
+
+                    cd_ventas.MtdAgregarVenta(CodigoCliente, CodigoGranja, FechaVenta, TipoVenta, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
+                    MessageBox.Show("Venta agregada correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarVenta();
+                    mtdLimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            try
+            if (cboxCodigoCliente.Text == "" || cboxCodigoGranja.Text == "" || dtpFechaVenta.Text == "" || cboxTipoVenta.Text == "" || txtTotalVenta.Text == "" || cboxEstado.Text == "")
             {
-                int CodigoVenta = int.Parse(txtCodigoVenta.Text);
-                int CodigoCliente = int.Parse(cboxCodigoCliente.Text.Split('-')[0].Trim());
-                int CodigoGranja = int.Parse(cboxCodigoGranja.Text.Split('-')[0].Trim());
-                DateTime FechaVenta = dtpFechaVenta.Value;
-                string TipoVenta = cboxTipoVenta.Text;
-                decimal TotalVenta = decimal.Parse(txtTotalVenta.Text);
-                string Estado = cboxEstado.Text;
-                string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
-                DateTime FechaAuditoria = cl_ventas.MtdFechaActual();
-
-                cd_ventas.MtdActualizarVenta(CodigoVenta, CodigoCliente, CodigoGranja, FechaVenta, TipoVenta, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
-                MessageBox.Show("Venta actualizada correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MtdConsultarVenta();
-                mtdLimpiarCampos();
+                MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    int CodigoVenta = int.Parse(txtCodigoVenta.Text);
+                    int CodigoCliente = int.Parse(cboxCodigoCliente.Text.Split('-')[0].Trim());
+                    int CodigoGranja = int.Parse(cboxCodigoGranja.Text.Split('-')[0].Trim());
+                    DateTime FechaVenta = dtpFechaVenta.Value;
+                    string TipoVenta = cboxTipoVenta.Text;
+                    decimal TotalVenta = decimal.Parse(txtTotalVenta.Text);
+                    string Estado = cboxEstado.Text;
+                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    DateTime FechaAuditoria = cl_ventas.MtdFechaActual();
+
+                    cd_ventas.MtdActualizarVenta(CodigoVenta, CodigoCliente, CodigoGranja, FechaVenta, TipoVenta, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
+                    MessageBox.Show("Venta actualizada correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarVenta();
+                    mtdLimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
