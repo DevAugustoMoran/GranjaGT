@@ -48,7 +48,7 @@
             // 
             // Panel1
             // 
-            this.Panel1.BackColor = System.Drawing.Color.Maroon;
+            this.Panel1.BackColor = System.Drawing.Color.DimGray;
             this.Panel1.Controls.Add(this.pictureBox1);
             this.Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.Panel1.Location = new System.Drawing.Point(0, 0);
@@ -60,6 +60,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Gray;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(5, 61);
             this.pictureBox1.Name = "pictureBox1";
@@ -70,7 +71,7 @@
             // 
             // txtuser
             // 
-            this.txtuser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtuser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtuser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtuser.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtuser.ForeColor = System.Drawing.Color.White;
@@ -85,10 +86,10 @@
             // 
             // txtpass
             // 
-            this.txtpass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtpass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtpass.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpass.ForeColor = System.Drawing.Color.White;
+            this.txtpass.ForeColor = System.Drawing.Color.AliceBlue;
             this.txtpass.Location = new System.Drawing.Point(207, 107);
             this.txtpass.Margin = new System.Windows.Forms.Padding(2);
             this.txtpass.Name = "txtpass";
@@ -119,6 +120,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Black;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.Location = new System.Drawing.Point(554, 10);
@@ -131,7 +133,7 @@
             // 
             // btnMinimizar
             // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.Red;
+            this.btnMinimizar.BackColor = System.Drawing.Color.Black;
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
             this.btnMinimizar.Location = new System.Drawing.Point(522, 10);
@@ -144,7 +146,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.Maroon;
+            this.btnLogin.BackColor = System.Drawing.Color.Black;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(159)))), ((int)(((byte)(127)))));
             this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
@@ -167,14 +169,14 @@
             // lblErrorMessage
             // 
             this.lblErrorMessage.AutoSize = true;
-            this.lblErrorMessage.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorMessage.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorMessage.ForeColor = System.Drawing.Color.White;
             this.lblErrorMessage.Image = ((System.Drawing.Image)(resources.GetObject("lblErrorMessage.Image")));
             this.lblErrorMessage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblErrorMessage.Location = new System.Drawing.Point(204, 145);
+            this.lblErrorMessage.Location = new System.Drawing.Point(204, 148);
             this.lblErrorMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblErrorMessage.Name = "lblErrorMessage";
-            this.lblErrorMessage.Size = new System.Drawing.Size(106, 18);
+            this.lblErrorMessage.Size = new System.Drawing.Size(84, 14);
             this.lblErrorMessage.TabIndex = 9;
             this.lblErrorMessage.Text = "   Mensaje Error";
             this.lblErrorMessage.Visible = false;
@@ -182,10 +184,10 @@
             // LOGIN
             // 
             this.LOGIN.AutoSize = true;
-            this.LOGIN.BackColor = System.Drawing.Color.Red;
+            this.LOGIN.BackColor = System.Drawing.Color.DimGray;
             this.LOGIN.Font = new System.Drawing.Font("Corbel", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LOGIN.ForeColor = System.Drawing.Color.White;
-            this.LOGIN.Location = new System.Drawing.Point(299, 10);
+            this.LOGIN.Location = new System.Drawing.Point(308, 10);
             this.LOGIN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LOGIN.Name = "LOGIN";
             this.LOGIN.Size = new System.Drawing.Size(111, 39);
@@ -196,7 +198,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Red;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(585, 268);
             this.Controls.Add(this.LOGIN);
             this.Controls.Add(this.lblErrorMessage);
@@ -208,7 +210,7 @@
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.Panel1);
-            this.ForeColor = System.Drawing.Color.DarkGray;
+            this.ForeColor = System.Drawing.Color.Gainsboro;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
