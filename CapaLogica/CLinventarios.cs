@@ -13,6 +13,9 @@ namespace CapaLogica
             return DateTime.Today;
         }
 
-        
+        public decimal MtdCalcularCostoTotal(decimal cantidadDisponible, decimal CostoUnitario)
+        {
+            return cantidadDisponible * CostoUnitario;
+        }
     }
 }

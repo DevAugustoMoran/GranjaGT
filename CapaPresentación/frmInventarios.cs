@@ -90,7 +90,7 @@ namespace CapaPresentación
                     int CodigoInsumo = int.Parse(cboxCodigoInsumo.Text.Split('-')[0].Trim());
                     decimal CantidadDisponible = decimal.Parse(txtCantidadDisponible.Text);
                     decimal CostoUnitario = decimal.Parse(txtCostoUnitario.Text);
-                    decimal CostoTotal = 20; //Hay que cambiarlo
+                    decimal CostoTotal = cl_inventarios.MtdCalcularCostoTotal(CantidadDisponible, CostoUnitario);
                     DateTime FechaRegistro = dtpFechaRegistro.Value;
                     string Estado = cboxEstado.Text;
                     string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
@@ -124,7 +124,7 @@ namespace CapaPresentación
                     int CodigoInsumo = int.Parse(cboxCodigoInsumo.Text.Split('-')[0].Trim());
                     decimal CantidadDisponible = decimal.Parse(txtCantidadDisponible.Text);
                     decimal CostoUnitario = decimal.Parse(txtCostoUnitario.Text);
-                    decimal CostoTotal = 20; //Hay que cambiarlo
+                    decimal CostoTotal = cl_inventarios.MtdCalcularCostoTotal(CantidadDisponible, CostoUnitario);
                     DateTime FechaRegistro = dtpFechaRegistro.Value;
                     string Estado = cboxEstado.Text;
                     string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
@@ -172,6 +172,34 @@ namespace CapaPresentación
             lblCostoTotal.Text = dgvInventario.SelectedCells[5].Value.ToString();
             dtpFechaRegistro.Text = dgvInventario.SelectedCells[6].Value.ToString();
             cboxEstado.Text = dgvInventario.SelectedCells[7].Value.ToString();
+        }
+
+        private void txtCantidadDisponible_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCantidadDisponible.Text == "")
+            {
+                lblCostoTotal.Text = "-";
+            }
+            else if (txtCostoUnitario.Text != "")
+            {
+                decimal CantidadDisponible = decimal.Parse(txtCantidadDisponible.Text);
+                decimal CostoUnitario = decimal.Parse(txtCostoUnitario.Text);
+                lblCostoTotal.Text = cl_inventarios.MtdCalcularCostoTotal(CantidadDisponible, CostoUnitario).ToString();
+            }
+        }
+
+        private void txtCostoUnitario_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCostoUnitario.Text == "")
+            {
+                lblCostoTotal.Text = "-";
+            }
+            else if (txtCantidadDisponible.Text != "")
+            {
+                decimal CantidadDisponible = decimal.Parse(txtCantidadDisponible.Text);
+                decimal CostoUnitario = decimal.Parse(txtCostoUnitario.Text);
+                lblCostoTotal.Text = cl_inventarios.MtdCalcularCostoTotal(CantidadDisponible, CostoUnitario).ToString();
+            }
         }
     }
 }
