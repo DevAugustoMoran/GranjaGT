@@ -151,6 +151,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\FrmLogin.cs" />
+    <Compile Include="Seguridad\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\UserCache.cs" />
+    <Compile Include="Seguridad\UserConnectionToSql.cs" />
+    <Compile Include="Seguridad\UserDao.cs" />
+    <Compile Include="Seguridad\UserModel.cs" />
     <EmbeddedResource Include="frmAnimales.resx">
       <DependentUpon>frmAnimales.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +213,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Seguridad\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -228,6 +239,14 @@
       <Project>{c66cb809-a0dd-4278-ad19-3067680ad657}</Project>
       <Name>CapaLogica</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\botonabierto.bmp" />
+    <Content Include="Resources\lineafondo.png" />
+    <Content Include="Resources\lineafondo2.bmp" />
+    <Content Include="Resources\lineafondo2.png" />
+    <Content Include="Seguridad\Resources\Close_Icon.png" />
+    <Content Include="Seguridad\Resources\Minimize_Icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
