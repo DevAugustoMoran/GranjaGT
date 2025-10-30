@@ -13,5 +13,11 @@ namespace CapaLogica
             return DateTime.Today;
         }
 
+        public decimal MtdCalcularSalarioFinal(decimal salario, decimal horasExtra, decimal bonos, decimal descuentos)
+        {
+            decimal salarioFinal = salario + (horasExtra * 20)  + bonos - descuentos;
+            return salarioFinal;
+        }
+
     }
 }

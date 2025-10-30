@@ -246,6 +246,7 @@
             this.txtDescuentos.Name = "txtDescuentos";
             this.txtDescuentos.Size = new System.Drawing.Size(108, 20);
             this.txtDescuentos.TabIndex = 71;
+            this.txtDescuentos.TextChanged += new System.EventHandler(this.txtDescuentos_TextChanged);
             // 
             // label9
             // 
@@ -265,6 +266,7 @@
             this.txtBonos.Name = "txtBonos";
             this.txtBonos.Size = new System.Drawing.Size(104, 20);
             this.txtBonos.TabIndex = 69;
+            this.txtBonos.TextChanged += new System.EventHandler(this.txtBonos_TextChanged);
             // 
             // label7
             // 

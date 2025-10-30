@@ -61,7 +61,7 @@ namespace CapaPresentación
                     Decimal horasExtra = Convert.ToDecimal(txtHorasExtra.Text);
                     Decimal bonos = Convert.ToDecimal(txtBonos.Text);
                     Decimal descuentos = Convert.ToDecimal(txtDescuentos.Text);
-                    Decimal salarioFinal = Convert.ToDecimal(txtBonos.Text);
+                    Decimal salarioFinal = Convert.ToDecimal(lblSalarioFinal.Text);
                     DateTime FechaPago = dtpFechaPago.Value;
                     string Estado = cbxEstado.Text;
                     string UsuarioAuditoria = "Administrador";
@@ -162,6 +162,35 @@ namespace CapaPresentación
 
         private void dtpFechaPago_ValueChanged(object sender, EventArgs e)
         {
+
+            
+
         }
+
+        private void txtDescuentos_TextChanged(object sender, EventArgs e)
+        {
+
+            if (txtDescuentos.Text == "" || txtSalario.Text == "" || txtHorasExtra.Text == "")
+            {
+                lblSalarioFinal.Text = "-";
+            }
+            else if (txtBonos.Text != "")
+            {
+                lblSalarioFinal.Text = clpagosempleados.MtdCalcularSalarioFinal(Decimal.Parse(txtSalario.Text), Decimal.Parse(txtHorasExtra.Text), Decimal.Parse(txtBonos.Text), Decimal.Parse(txtDescuentos.Text)).ToString();
+            }
+        }
+
+        private void txtBonos_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBonos.Text == "" || txtSalario.Text == "" || txtHorasExtra.Text == "")
+            {
+                lblSalarioFinal.Text = "-";
+            }
+            else if (txtDescuentos.Text != "")
+            {
+                lblSalarioFinal.Text = clpagosempleados.MtdCalcularSalarioFinal(Decimal.Parse(txtSalario.Text), Decimal.Parse(txtHorasExtra.Text), Decimal.Parse(txtBonos.Text), Decimal.Parse(txtDescuentos.Text)).ToString();
+            }
+        }
+
     }
 }
