@@ -67,46 +67,60 @@ namespace CapaPresentación
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            if (cboxCodigoRol.Text == "" || txtNombre.Text == "" || cboxEstado.Text == "" || dtpFechaRegistro.Text == "")
             {
-                int CodigoRol = int.Parse(cboxCodigoRol.Text.Split('-')[0].Trim());
-                string Nombre = txtNombre.Text;
-                string Estado = cboxEstado.Text;
-                string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
-                DateTime FechaAuditoria = cl_usuarios.MtdFechaActual();
-                DateTime FechaRegistro = cl_usuarios.MtdFechaActual();
-
-                cd_usuarios.MtdAgregarUsuario(CodigoRol, Nombre, Estado, UsuarioAuditoria, FechaAuditoria, FechaRegistro);
-                MessageBox.Show("Usuario agregado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MtdConsultarUsuario();
-                mtdLimpiarCampos();
+                MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    int CodigoRol = int.Parse(cboxCodigoRol.Text.Split('-')[0].Trim());
+                    string Nombre = txtNombre.Text;
+                    string Estado = cboxEstado.Text;
+                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    DateTime FechaAuditoria = cl_usuarios.MtdFechaActual();
+                    DateTime FechaRegistro = dtpFechaRegistro.Value;
+
+                    cd_usuarios.MtdAgregarUsuario(CodigoRol, Nombre, Estado, UsuarioAuditoria, FechaAuditoria, FechaRegistro);
+                    MessageBox.Show("Usuario agregado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarUsuario();
+                    mtdLimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            try
+            if (cboxCodigoRol.Text == "" || txtNombre.Text == "" || cboxEstado.Text == "" || dtpFechaRegistro.Text == "")
             {
-                int CodigoUsuario = int.Parse(txtCodigoUsuario.Text);
-                int CodigoRol = int.Parse(cboxCodigoRol.Text.Split('-')[0].Trim());
-                string Nombre = txtNombre.Text;
-                string Estado = cboxEstado.Text;
-                string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
-                DateTime FechaAuditoria = cl_usuarios.MtdFechaActual();
-                DateTime FechaRegistro = dtpFechaRegistro.Value;
-
-                cd_usuarios.MtdActualizarUsuario( CodigoUsuario,  CodigoRol,  Nombre,  Estado, UsuarioAuditoria,  FechaAuditoria,  FechaRegistro);
-                MessageBox.Show("Usuario actualizado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MtdConsultarUsuario();
-                mtdLimpiarCampos();
+                MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    int CodigoUsuario = int.Parse(txtCodigoUsuario.Text);
+                    int CodigoRol = int.Parse(cboxCodigoRol.Text.Split('-')[0].Trim());
+                    string Nombre = txtNombre.Text;
+                    string Estado = cboxEstado.Text;
+                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    DateTime FechaAuditoria = cl_usuarios.MtdFechaActual();
+                    DateTime FechaRegistro = dtpFechaRegistro.Value;
+
+                    cd_usuarios.MtdActualizarUsuario(CodigoUsuario, CodigoRol, Nombre, Estado, UsuarioAuditoria, FechaAuditoria, FechaRegistro);
+                    MessageBox.Show("Usuario actualizado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarUsuario();
+                    mtdLimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

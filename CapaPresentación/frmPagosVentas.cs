@@ -61,50 +61,65 @@ namespace CapaPresentación
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            try
+            if (cboxCodigoVenta.Text == "" || cboxTipoPago.Text == "" || txtNumReferencia.Text == "" || dtpFechaPago.Text == "" || cboxEstado.Text == "")
             {
-                int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
-                decimal Monto = decimal.Parse(lblMonto.Text);
-                string TipoPago = cboxTipoPago.Text;
-                string NumReferencia = txtNumReferencia.Text;
-                DateTime FechaPago = dtpFechaPago.Value;
-                string Estado = cboxEstado.Text;
-                string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
-                DateTime FechaAuditoria = cl_pagosventas.MtdFechaActual();
+                MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
+                    decimal Monto = decimal.Parse(lblMonto.Text);
+                    string TipoPago = cboxTipoPago.Text;
+                    string NumReferencia = txtNumReferencia.Text;
+                    DateTime FechaPago = dtpFechaPago.Value;
+                    string Estado = cboxEstado.Text;
+                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    DateTime FechaAuditoria = cl_pagosventas.MtdFechaActual();
 
-                cd_pagosventas.MtdAgregarPagosVentas(CodigoVenta, Monto, TipoPago, NumReferencia, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria);
-                MessageBox.Show("Pago agregado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MtdConsultarVentas();
-                mtdLimpiarCampos();
+                    cd_pagosventas.MtdAgregarPagosVentas(CodigoVenta, Monto, TipoPago, NumReferencia, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria);
+                    MessageBox.Show("Pago agregado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarVentas();
+                    mtdLimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            try
+            if (cboxCodigoVenta.Text == "" || cboxTipoPago.Text == "" || txtNumReferencia.Text == "" || dtpFechaPago.Text == "" || cboxEstado.Text == "")
             {
-                int CodigoPago = int.Parse(txtCodigoPago.Text);
-                int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
-                decimal Monto = decimal.Parse(lblMonto.Text);
-                string TipoPago = cboxTipoPago.Text;
-                string NumReferencia = txtNumReferencia.Text;
-                DateTime FechaPago = dtpFechaPago.Value;
-                string Estado = cboxEstado.Text;
-                string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
-                DateTime FechaAuditoria = cl_pagosventas.MtdFechaActual();
-
-                cd_pagosventas.MtdActualizarPagosVentas(CodigoPago, CodigoVenta, Monto, TipoPago, NumReferencia, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria);
-                MessageBox.Show("Pago actualizado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MtdConsultarVentas();
-                mtdLimpiarCampos();
+                MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    int CodigoPago = int.Parse(txtCodigoPago.Text);
+                    int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
+                    decimal Monto = decimal.Parse(lblMonto.Text);
+                    string TipoPago = cboxTipoPago.Text;
+                    string NumReferencia = txtNumReferencia.Text;
+                    DateTime FechaPago = dtpFechaPago.Value;
+                    string Estado = cboxEstado.Text;
+                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    DateTime FechaAuditoria = cl_pagosventas.MtdFechaActual();
+
+                    cd_pagosventas.MtdActualizarPagosVentas(CodigoPago, CodigoVenta, Monto, TipoPago, NumReferencia, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria);
+                    MessageBox.Show("Pago actualizado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarVentas();
+                    mtdLimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
