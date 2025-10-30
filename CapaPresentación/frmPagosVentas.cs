@@ -15,7 +15,7 @@ namespace CapaPresentación
     public partial class frmPagosVentas: Form
     {
         CDpagosventas cd_pagosventas = new CDpagosventas();
-        CLpagoVentas cl_pagosventas = new CLpagoVentas();
+        CLpagosVentas cl_pagosventas = new CLpagosVentas();
 
         //LLENAR COMBOBOX CON LISTA DE VENTAS
         private void MtdMostrarListaVentas()
