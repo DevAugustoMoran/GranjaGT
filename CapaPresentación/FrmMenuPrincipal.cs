@@ -57,7 +57,10 @@ namespace CapaPresentación
 
         private void button10_Click(object sender, EventArgs e)
         {
+            frmInventarios formulario = new frmInventarios();
+            formulario.Show();
 
+            MtdOcultarSubMenu();
         }
 
         private void panelMenuLateral_Paint(object sender, PaintEventArgs e)
@@ -110,6 +113,27 @@ namespace CapaPresentación
         private void button6_Click(object sender, EventArgs e)
         {
             frmProveedores formulario = new frmProveedores();
+            formulario.Show();
+
+            MtdOcultarSubMenu();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MtdMostrarSubMenu(panelDos);
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            frmInsumos formulario = new frmInsumos();
+            formulario.Show();
+
+            MtdOcultarSubMenu();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            frmProductos formulario = new frmProductos();
             formulario.Show();
 
             MtdOcultarSubMenu();
