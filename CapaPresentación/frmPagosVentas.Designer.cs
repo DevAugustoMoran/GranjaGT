@@ -36,8 +36,6 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboxTipoPago = new System.Windows.Forms.ComboBox();
-            this.txtMonto = new System.Windows.Forms.TextBox();
-            this.cboxNumReferencia = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.cboxEstado = new System.Windows.Forms.ComboBox();
@@ -52,6 +50,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblMonto = new System.Windows.Forms.Label();
+            this.txtNumReferencia = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagosVentas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -100,6 +100,7 @@
             this.dgvPagosVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPagosVentas.Size = new System.Drawing.Size(1653, 354);
             this.dgvPagosVentas.TabIndex = 78;
+            this.dgvPagosVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagosVentas_CellContentClick);
             // 
             // label11
             // 
@@ -136,9 +137,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtNumReferencia);
+            this.groupBox1.Controls.Add(this.lblMonto);
             this.groupBox1.Controls.Add(this.cboxTipoPago);
-            this.groupBox1.Controls.Add(this.txtMonto);
-            this.groupBox1.Controls.Add(this.cboxNumReferencia);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.cboxEstado);
@@ -165,29 +166,17 @@
             // 
             this.cboxTipoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxTipoPago.FormattingEnabled = true;
+            this.cboxTipoPago.Items.AddRange(new object[] {
+            "Efectivo",
+            "Tarjeta",
+            "Transferencia",
+            "Cheque",
+            "Pago QR"});
             this.cboxTipoPago.Location = new System.Drawing.Point(361, 199);
             this.cboxTipoPago.Margin = new System.Windows.Forms.Padding(4);
             this.cboxTipoPago.Name = "cboxTipoPago";
             this.cboxTipoPago.Size = new System.Drawing.Size(207, 26);
             this.cboxTipoPago.TabIndex = 82;
-            // 
-            // txtMonto
-            // 
-            this.txtMonto.Location = new System.Drawing.Point(361, 151);
-            this.txtMonto.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(207, 22);
-            this.txtMonto.TabIndex = 81;
-            // 
-            // cboxNumReferencia
-            // 
-            this.cboxNumReferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxNumReferencia.FormattingEnabled = true;
-            this.cboxNumReferencia.Location = new System.Drawing.Point(1075, 43);
-            this.cboxNumReferencia.Margin = new System.Windows.Forms.Padding(4);
-            this.cboxNumReferencia.Name = "cboxNumReferencia";
-            this.cboxNumReferencia.Size = new System.Drawing.Size(207, 26);
-            this.cboxNumReferencia.TabIndex = 80;
             // 
             // label6
             // 
@@ -282,6 +271,7 @@
             this.cboxCodigoVenta.Name = "cboxCodigoVenta";
             this.cboxCodigoVenta.Size = new System.Drawing.Size(207, 26);
             this.cboxCodigoVenta.TabIndex = 58;
+            this.cboxCodigoVenta.SelectedIndexChanged += new System.EventHandler(this.cboxCodigoVenta_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -358,6 +348,22 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Codigo Pago:";
             // 
+            // lblMonto
+            // 
+            this.lblMonto.AutoSize = true;
+            this.lblMonto.Location = new System.Drawing.Point(441, 156);
+            this.lblMonto.Name = "lblMonto";
+            this.lblMonto.Size = new System.Drawing.Size(19, 16);
+            this.lblMonto.TabIndex = 83;
+            this.lblMonto.Text = "---";
+            // 
+            // txtNumReferencia
+            // 
+            this.txtNumReferencia.Location = new System.Drawing.Point(1075, 49);
+            this.txtNumReferencia.Name = "txtNumReferencia";
+            this.txtNumReferencia.Size = new System.Drawing.Size(204, 22);
+            this.txtNumReferencia.TabIndex = 84;
+            // 
             // frmPagosVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -405,8 +411,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboxTipoPago;
-        private System.Windows.Forms.TextBox txtMonto;
-        private System.Windows.Forms.ComboBox cboxNumReferencia;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblMonto;
+        private System.Windows.Forms.TextBox txtNumReferencia;
     }
 }

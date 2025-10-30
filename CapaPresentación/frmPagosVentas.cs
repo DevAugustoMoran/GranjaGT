@@ -53,9 +53,9 @@ namespace CapaPresentación
         {
             txtCodigoPago.Text = "";
             cboxCodigoVenta.Text = "";
-            txtMonto.Text = "";
+            lblMonto.Text = "";
             cboxTipoPago.Text = "";
-            cboxNumReferencia.Text = "";
+            txtNumReferencia.Text = "";
             cboxEstado.Text = "";
         }
 
@@ -64,9 +64,9 @@ namespace CapaPresentación
             try
             {
                 int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
-                decimal Monto = decimal.Parse(txtMonto.Text);
+                decimal Monto = decimal.Parse(lblMonto.Text);
                 string TipoPago = cboxTipoPago.Text;
-                string NumReferencia = cboxNumReferencia.Text;
+                string NumReferencia = txtNumReferencia.Text;
                 DateTime FechaPago = dtpFechaPago.Value;
                 string Estado = cboxEstado.Text;
                 string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
@@ -89,9 +89,9 @@ namespace CapaPresentación
             {
                 int CodigoPago = int.Parse(txtCodigoPago.Text);
                 int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
-                decimal Monto = decimal.Parse(txtMonto.Text);
+                decimal Monto = decimal.Parse(lblMonto.Text);
                 string TipoPago = cboxTipoPago.Text;
-                string NumReferencia = cboxNumReferencia.Text;
+                string NumReferencia = txtNumReferencia.Text;
                 DateTime FechaPago = dtpFechaPago.Value;
                 string Estado = cboxEstado.Text;
                 string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
@@ -126,6 +126,22 @@ namespace CapaPresentación
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvPagosVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtCodigoPago.Text = dgvPagosVentas.SelectedCells[0].Value.ToString();
+            cboxCodigoVenta.Text = dgvPagosVentas.SelectedCells[1].Value.ToString();
+            lblMonto.Text = dgvPagosVentas.SelectedCells[2].Value.ToString();
+            cboxTipoPago.Text = dgvPagosVentas.SelectedCells[3].Value.ToString();
+            txtNumReferencia.Text = dgvPagosVentas.SelectedCells[4].Value.ToString();
+            dtpFechaPago.Text = dgvPagosVentas.SelectedCells[5].Value.ToString();
+            cboxEstado.Text = dgvPagosVentas.SelectedCells[6].Value.ToString();
+        }
+
+        private void cboxCodigoVenta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblMonto.Text = cd_pagosventas.MtdMonto(int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim())).ToString("0.00");
         }
     }
 }

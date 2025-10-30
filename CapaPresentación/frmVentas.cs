@@ -64,7 +64,7 @@ namespace CapaPresentación
             txtCodigoVenta.Text = "";
             cboxCodigoCliente.Text = "";
             cboxCodigoGranja.Text = "";
-            txtTipoVenta.Text = "";
+            cboxTipoVenta.Text = "";
             txtTotalVenta.Text = "";
             cboxEstado.Text = "";
         }
@@ -76,7 +76,7 @@ namespace CapaPresentación
                 int CodigoCliente = int.Parse(cboxCodigoCliente.Text.Split('-')[0].Trim());
                 int CodigoGranja = int.Parse(cboxCodigoGranja.Text.Split('-')[0].Trim());
                 DateTime FechaVenta = dtpFechaVenta.Value;
-                string TipoVenta = txtTipoVenta.Text;
+                string TipoVenta = cboxTipoVenta.Text;
                 decimal TotalVenta = decimal.Parse(txtTotalVenta.Text);
                 string Estado = cboxEstado.Text;
                 string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
@@ -101,7 +101,7 @@ namespace CapaPresentación
                 int CodigoCliente = int.Parse(cboxCodigoCliente.Text.Split('-')[0].Trim());
                 int CodigoGranja = int.Parse(cboxCodigoGranja.Text.Split('-')[0].Trim());
                 DateTime FechaVenta = dtpFechaVenta.Value;
-                string TipoVenta = txtTipoVenta.Text;
+                string TipoVenta = cboxTipoVenta.Text;
                 decimal TotalVenta = decimal.Parse(txtTotalVenta.Text);
                 string Estado = cboxEstado.Text;
                 string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
@@ -146,7 +146,7 @@ namespace CapaPresentación
             cboxCodigoCliente.Text = dgvVentas.SelectedCells[1].Value.ToString();
             cboxCodigoGranja.Text = dgvVentas.SelectedCells[2].Value.ToString();
             dtpFechaVenta.Text = dgvVentas.SelectedCells[3].Value.ToString();
-            txtTipoVenta.Text = dgvVentas.SelectedCells[4].Value.ToString();
+            cboxTipoVenta.Text = dgvVentas.SelectedCells[4].Value.ToString();
             txtTotalVenta.Text = dgvVentas.SelectedCells[5].Value.ToString();
             cboxEstado.Text = dgvVentas.SelectedCells[6].Value.ToString();
         }
