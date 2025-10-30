@@ -157,5 +157,26 @@ namespace CapaPresentación
         {
             this.Close();
         }
+
+        private void mtdFechaCosecha()
+        {
+            try
+            {
+                DateTime fechaSiembra = dtpFechaSiembra.Value;
+                DateTime fechaCosecha = dtpFechaCosecha.Value;
+                DateTime fechaCalculada = clcultivos.MtdFechaCosecha(fechaSiembra, fechaCosecha);
+                dtpFechaCosecha.Value = fechaCalculada;
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Error de Fecha", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtpFechaCosecha.Value = dtpFechaSiembra.Value;
+            }
+        }
+
+        private void dtpFechaCosecha_ValueChanged(object sender, EventArgs e)
+        {
+            mtdFechaCosecha();
+        }
     }
 }

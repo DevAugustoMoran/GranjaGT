@@ -35,9 +35,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
-            this.btnEditar = new FontAwesome.Sharp.IconButton();
-            this.btnAgregar = new FontAwesome.Sharp.IconButton();
+            this.txtObservacion = new System.Windows.Forms.TextBox();
+            this.txtUbicacion = new System.Windows.Forms.TextBox();
+            this.dtpFechaCosecha = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaSiembra = new System.Windows.Forms.DateTimePicker();
+            this.cboxEstado = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCantidadCosecha = new System.Windows.Forms.TextBox();
@@ -50,12 +53,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtTipoCultivo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cboxEstado = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dtpFechaSiembra = new System.Windows.Forms.DateTimePicker();
-            this.dtpFechaCosecha = new System.Windows.Forms.DateTimePicker();
-            this.txtUbicacion = new System.Windows.Forms.TextBox();
-            this.txtObservacion = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
+            this.btnAgregar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCultivos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -162,50 +162,61 @@
             this.groupBox1.TabIndex = 88;
             this.groupBox1.TabStop = false;
             // 
-            // btnCancelar
+            // txtObservacion
             // 
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Remove;
-            this.btnCancelar.IconColor = System.Drawing.Color.Black;
-            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.IconSize = 25;
-            this.btnCancelar.Location = new System.Drawing.Point(876, 148);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(96, 40);
-            this.btnCancelar.TabIndex = 78;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.txtObservacion.Location = new System.Drawing.Point(751, 88);
+            this.txtObservacion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(108, 20);
+            this.txtObservacion.TabIndex = 100;
             // 
-            // btnEditar
+            // txtUbicacion
             // 
-            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
-            this.btnEditar.IconColor = System.Drawing.Color.Black;
-            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditar.IconSize = 25;
-            this.btnEditar.Location = new System.Drawing.Point(876, 88);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(96, 41);
-            this.btnEditar.TabIndex = 77;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.txtUbicacion.Location = new System.Drawing.Point(751, 49);
+            this.txtUbicacion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUbicacion.Name = "txtUbicacion";
+            this.txtUbicacion.Size = new System.Drawing.Size(108, 20);
+            this.txtUbicacion.TabIndex = 99;
             // 
-            // btnAgregar
+            // dtpFechaCosecha
             // 
-            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.btnAgregar.IconColor = System.Drawing.Color.Black;
-            this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregar.IconSize = 25;
-            this.btnAgregar.Location = new System.Drawing.Point(876, 24);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(96, 40);
-            this.btnAgregar.TabIndex = 76;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.dtpFechaCosecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaCosecha.Location = new System.Drawing.Point(471, 49);
+            this.dtpFechaCosecha.Name = "dtpFechaCosecha";
+            this.dtpFechaCosecha.Size = new System.Drawing.Size(108, 20);
+            this.dtpFechaCosecha.TabIndex = 98;
+            this.dtpFechaCosecha.ValueChanged += new System.EventHandler(this.dtpFechaCosecha_ValueChanged);
+            // 
+            // dtpFechaSiembra
+            // 
+            this.dtpFechaSiembra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaSiembra.Location = new System.Drawing.Point(188, 131);
+            this.dtpFechaSiembra.Name = "dtpFechaSiembra";
+            this.dtpFechaSiembra.Size = new System.Drawing.Size(108, 20);
+            this.dtpFechaSiembra.TabIndex = 97;
+            // 
+            // cboxEstado
+            // 
+            this.cboxEstado.FormattingEnabled = true;
+            this.cboxEstado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cboxEstado.Location = new System.Drawing.Point(751, 126);
+            this.cboxEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.cboxEstado.Name = "cboxEstado";
+            this.cboxEstado.Size = new System.Drawing.Size(108, 21);
+            this.cboxEstado.TabIndex = 96;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(611, 129);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 17);
+            this.label6.TabIndex = 95;
+            this.label6.Text = "Estado:";
             // 
             // txtPrecio
             // 
@@ -328,60 +339,50 @@
             this.label3.TabIndex = 83;
             this.label3.Text = "Observacion:";
             // 
-            // cboxEstado
+            // btnCancelar
             // 
-            this.cboxEstado.FormattingEnabled = true;
-            this.cboxEstado.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cboxEstado.Location = new System.Drawing.Point(751, 126);
-            this.cboxEstado.Margin = new System.Windows.Forms.Padding(2);
-            this.cboxEstado.Name = "cboxEstado";
-            this.cboxEstado.Size = new System.Drawing.Size(108, 21);
-            this.cboxEstado.TabIndex = 96;
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Remove;
+            this.btnCancelar.IconColor = System.Drawing.Color.Black;
+            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelar.IconSize = 25;
+            this.btnCancelar.Location = new System.Drawing.Point(876, 148);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(96, 40);
+            this.btnCancelar.TabIndex = 78;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // label6
+            // btnEditar
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(611, 129);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 17);
-            this.label6.TabIndex = 95;
-            this.label6.Text = "Estado:";
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
+            this.btnEditar.IconColor = System.Drawing.Color.Black;
+            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditar.IconSize = 25;
+            this.btnEditar.Location = new System.Drawing.Point(876, 88);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(96, 41);
+            this.btnEditar.TabIndex = 77;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // dtpFechaSiembra
+            // btnAgregar
             // 
-            this.dtpFechaSiembra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaSiembra.Location = new System.Drawing.Point(188, 131);
-            this.dtpFechaSiembra.Name = "dtpFechaSiembra";
-            this.dtpFechaSiembra.Size = new System.Drawing.Size(108, 20);
-            this.dtpFechaSiembra.TabIndex = 97;
-            // 
-            // dtpFechaCosecha
-            // 
-            this.dtpFechaCosecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaCosecha.Location = new System.Drawing.Point(471, 49);
-            this.dtpFechaCosecha.Name = "dtpFechaCosecha";
-            this.dtpFechaCosecha.Size = new System.Drawing.Size(108, 20);
-            this.dtpFechaCosecha.TabIndex = 98;
-            // 
-            // txtUbicacion
-            // 
-            this.txtUbicacion.Location = new System.Drawing.Point(751, 49);
-            this.txtUbicacion.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUbicacion.Name = "txtUbicacion";
-            this.txtUbicacion.Size = new System.Drawing.Size(108, 20);
-            this.txtUbicacion.TabIndex = 99;
-            // 
-            // txtObservacion
-            // 
-            this.txtObservacion.Location = new System.Drawing.Point(751, 88);
-            this.txtObservacion.Margin = new System.Windows.Forms.Padding(2);
-            this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(108, 20);
-            this.txtObservacion.TabIndex = 100;
+            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnAgregar.IconColor = System.Drawing.Color.Black;
+            this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregar.IconSize = 25;
+            this.btnAgregar.Location = new System.Drawing.Point(876, 24);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(96, 40);
+            this.btnAgregar.TabIndex = 76;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // frmCultivos
             // 

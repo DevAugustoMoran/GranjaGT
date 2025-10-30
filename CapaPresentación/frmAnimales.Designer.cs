@@ -35,6 +35,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtRaza = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTipoAnimal = new System.Windows.Forms.TextBox();
@@ -49,9 +52,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtRaza = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnimales)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -160,6 +160,30 @@
             this.groupBox1.TabIndex = 103;
             this.groupBox1.TabStop = false;
             // 
+            // txtRaza
+            // 
+            this.txtRaza.Location = new System.Drawing.Point(204, 124);
+            this.txtRaza.Name = "txtRaza";
+            this.txtRaza.Size = new System.Drawing.Size(154, 20);
+            this.txtRaza.TabIndex = 102;
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Location = new System.Drawing.Point(711, 55);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(154, 20);
+            this.txtPrecio.TabIndex = 101;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calisto MT", 14F);
+            this.label6.Location = new System.Drawing.Point(536, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 22);
+            this.label6.TabIndex = 100;
+            this.label6.Text = "Precio:";
+            // 
             // dtpFechaNacimiento
             // 
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -261,8 +285,8 @@
             this.cboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxEstado.FormattingEnabled = true;
             this.cboxEstado.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
+            "Vivo",
+            "Muerto"});
             this.cboxEstado.Location = new System.Drawing.Point(711, 140);
             this.cboxEstado.Name = "cboxEstado";
             this.cboxEstado.Size = new System.Drawing.Size(154, 23);
@@ -315,30 +339,6 @@
             this.label1.Size = new System.Drawing.Size(138, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "Codigo Animal:";
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(711, 55);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(154, 20);
-            this.txtPrecio.TabIndex = 101;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label6.Location = new System.Drawing.Point(536, 51);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 22);
-            this.label6.TabIndex = 100;
-            this.label6.Text = "Precio:";
-            // 
-            // txtRaza
-            // 
-            this.txtRaza.Location = new System.Drawing.Point(204, 124);
-            this.txtRaza.Name = "txtRaza";
-            this.txtRaza.Size = new System.Drawing.Size(154, 20);
-            this.txtRaza.TabIndex = 102;
             // 
             // frmAnimales
             // 

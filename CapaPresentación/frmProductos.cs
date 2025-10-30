@@ -155,5 +155,31 @@ namespace CapaPresentación
                 }
             }
         }
+
+        private void mtdFechaVencimiento()
+        {
+            try
+            {
+                DateTime fechaIngreso = dtpFechaIngreso.Value;
+                DateTime fechaVencimiento = dtpFechaVencimiento.Value;
+                DateTime fechaCalculada = clproductos.MtdCalcularVencimiento(fechaIngreso, fechaVencimiento);
+                dtpFechaVencimiento.Value = fechaCalculada;
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Error de Fecha", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtpFechaVencimiento.Value = dtpFechaIngreso.Value;
+            }
+        }
+
+
+
+
+
+        private void dtpFechaVencimiento_ValueChanged(object sender, EventArgs e)
+        {
+
+            mtdFechaVencimiento();
+        }
     }
 }

@@ -12,5 +12,17 @@ namespace CapaLogica
         {
             return DateTime.Today;
         }
+
+
+        public DateTime MtdFechaCosecha(DateTime fechaSiembra, DateTime fechaCosecha)
+        {
+            if (fechaCosecha < fechaSiembra)
+            {
+                throw new ArgumentException("La fecha de cosecha no puede ser anterior a la fecha de siembra.");
+                fechaCosecha = fechaSiembra;
+            }
+
+            return fechaCosecha;
+        }
     }
 }

@@ -158,6 +158,7 @@
             this.dtpFechaVencimiento.Name = "dtpFechaVencimiento";
             this.dtpFechaVencimiento.Size = new System.Drawing.Size(154, 20);
             this.dtpFechaVencimiento.TabIndex = 99;
+            this.dtpFechaVencimiento.ValueChanged += new System.EventHandler(this.dtpFechaVencimiento_ValueChanged);
             // 
             // label3
             // 
