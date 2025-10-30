@@ -223,25 +223,67 @@ namespace CapaPresentación
             if (txtCantidad.Text == "")
             {
                 lblTotal.Text = "-";
-            }else
+            }
+            else if(txtPrecioUnitario.Text != "")
             {
+                lblTotal.Text = cl_ventasdetalle.MtdCalcularTotal(decimal.Parse(txtCantidad.Text), decimal.Parse(txtPrecioUnitario.Text)).ToString();
                 
+                if(txtDescuento.Text != "" && txtImpuesto.Text != "")
+                {
+                    lblTotalVenta.Text = cl_ventasdetalle.MtdCalcularTotalVenta(decimal.Parse(lblTotal.Text), decimal.Parse(txtDescuento.Text), decimal.Parse(txtImpuesto.Text)).ToString();
+                }
             }
         }
 
         private void txtPrecioUnitario_TextChanged(object sender, EventArgs e)
         {
-
+            if (txtPrecioUnitario.Text == "")
+            {
+                lblTotal.Text = "-";
+            }
+            else if(txtCantidad.Text != "")
+            {
+                lblTotal.Text = cl_ventasdetalle.MtdCalcularTotal(decimal.Parse(txtCantidad.Text), decimal.Parse(txtPrecioUnitario.Text)).ToString();
+                
+                if (txtDescuento.Text != "" && txtImpuesto.Text != "")
+                {
+                    lblTotalVenta.Text = cl_ventasdetalle.MtdCalcularTotalVenta(decimal.Parse(lblTotal.Text), decimal.Parse(txtDescuento.Text), decimal.Parse(txtImpuesto.Text)).ToString();
+                }
+            }
         }
 
         private void txtDescuento_TextChanged(object sender, EventArgs e)
         {
+            if (txtDescuento.Text == "")
+            {
+                lblTotalVenta.Text = "-";
+            }
+            else if (txtImpuesto.Text != "" && txtCantidad.Text != "" && txtPrecioUnitario.Text != "")
+            {
+                lblTotalVenta.Text = cl_ventasdetalle.MtdCalcularTotalVenta(decimal.Parse(lblTotal.Text), decimal.Parse(txtDescuento.Text), decimal.Parse(txtImpuesto.Text)).ToString();
 
+                if (txtCantidad.Text != "" && txtPrecioUnitario.Text != "")
+                {
+                    lblTotal.Text = cl_ventasdetalle.MtdCalcularTotal(decimal.Parse(txtCantidad.Text), decimal.Parse(txtPrecioUnitario.Text)).ToString();
+                }
+            }
         }
 
         private void txtImpuesto_TextChanged(object sender, EventArgs e)
         {
-
+            if (txtImpuesto.Text == "")
+            {
+                lblTotalVenta.Text = "-";
+            }
+            else if (txtDescuento.Text != "" && txtCantidad.Text != "" && txtPrecioUnitario.Text != "")
+            {
+                lblTotalVenta.Text = cl_ventasdetalle.MtdCalcularTotalVenta(decimal.Parse(lblTotal.Text), decimal.Parse(txtDescuento.Text), decimal.Parse(txtImpuesto.Text)).ToString();
+                
+                if (txtCantidad.Text != "" && txtPrecioUnitario.Text != "")
+                {
+                    lblTotal.Text = cl_ventasdetalle.MtdCalcularTotal(decimal.Parse(txtCantidad.Text), decimal.Parse(txtPrecioUnitario.Text)).ToString();
+                }
+            }
         }
 
 
