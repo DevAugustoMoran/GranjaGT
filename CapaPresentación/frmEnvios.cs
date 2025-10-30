@@ -77,54 +77,70 @@ namespace CapaPresentación
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            try
+            if (cboxCodigoVenta.Text == "" || cboxCodigoEmpleado.Text == "" || txtDireccionEnvio.Text == "" || cboxTipoTransporte.Text == "" ||
+                txtPlacaTransporte.Text == "" || txtObservacion.Text == "" || cboxEstado.Text == "")
             {
-                int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
-                int CodigoEmpleado = int.Parse(cboxCodigoEmpleado.Text.Split('-')[0].Trim());
-                DateTime FechaEnvio = dtpFechaEnvio.Value;
-                string DireccionEnvio = txtDireccionEnvio.Text;
-                string TipoTransporte = cboxTipoTransporte.Text;
-                string PlacaTransporte = txtPlacaTransporte.Text;
-                string Observacion = txtObservacion.Text;
-                string Estado = cboxEstado.Text;
-                string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
-                DateTime FechaAuditoria = cl_envios.MtdFechaActual();
-
-                cd_envios.MtdAgregarEnvios(CodigoVenta, CodigoEmpleado, FechaEnvio, DireccionEnvio, TipoTransporte, PlacaTransporte, Observacion, Estado, UsuarioAuditoria, FechaAuditoria);
-                MessageBox.Show("Envío agregado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MtdConsultarEnvios();
-                MtdLimpiarCampos();
+                MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
+                    int CodigoEmpleado = int.Parse(cboxCodigoEmpleado.Text.Split('-')[0].Trim());
+                    DateTime FechaEnvio = dtpFechaEnvio.Value;
+                    string DireccionEnvio = txtDireccionEnvio.Text;
+                    string TipoTransporte = cboxTipoTransporte.Text;
+                    string PlacaTransporte = txtPlacaTransporte.Text;
+                    string Observacion = txtObservacion.Text;
+                    string Estado = cboxEstado.Text;
+                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    DateTime FechaAuditoria = cl_envios.MtdFechaActual();
+
+                    cd_envios.MtdAgregarEnvios(CodigoVenta, CodigoEmpleado, FechaEnvio, DireccionEnvio, TipoTransporte, PlacaTransporte, Observacion, Estado, UsuarioAuditoria, FechaAuditoria);
+                    MessageBox.Show("Envío agregado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarEnvios();
+                    MtdLimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            try
+            if (cboxCodigoVenta.Text == "" || cboxCodigoEmpleado.Text == "" || txtDireccionEnvio.Text == "" || cboxTipoTransporte.Text == "" ||
+                txtPlacaTransporte.Text == "" || txtObservacion.Text == "" || cboxEstado.Text == "")
             {
-                int CodigoEnvio = int.Parse(txtCodigoEnvio.Text);
-                int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
-                int CodigoEmpleado = int.Parse(cboxCodigoEmpleado.Text.Split('-')[0].Trim());
-                DateTime FechaEnvio = dtpFechaEnvio.Value;
-                string DireccionEnvio = txtDireccionEnvio.Text;
-                string TipoTransporte = cboxTipoTransporte.Text;
-                string PlacaTransporte = txtPlacaTransporte.Text;
-                string Observacion = txtObservacion.Text;
-                string Estado = cboxEstado.Text;
-                string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
-                DateTime FechaAuditoria = cl_envios.MtdFechaActual();
-
-                cd_envios.MtdActualizarEnvios(CodigoEnvio, CodigoVenta, CodigoEmpleado, FechaEnvio, DireccionEnvio, TipoTransporte, PlacaTransporte, Observacion, Estado, UsuarioAuditoria, FechaAuditoria);
-                MessageBox.Show("Envío actualizado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MtdConsultarEnvios();
-                MtdLimpiarCampos();
+                MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    int CodigoEnvio = int.Parse(txtCodigoEnvio.Text);
+                    int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
+                    int CodigoEmpleado = int.Parse(cboxCodigoEmpleado.Text.Split('-')[0].Trim());
+                    DateTime FechaEnvio = dtpFechaEnvio.Value;
+                    string DireccionEnvio = txtDireccionEnvio.Text;
+                    string TipoTransporte = cboxTipoTransporte.Text;
+                    string PlacaTransporte = txtPlacaTransporte.Text;
+                    string Observacion = txtObservacion.Text;
+                    string Estado = cboxEstado.Text;
+                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    DateTime FechaAuditoria = cl_envios.MtdFechaActual();
+
+                    cd_envios.MtdActualizarEnvios(CodigoEnvio, CodigoVenta, CodigoEmpleado, FechaEnvio, DireccionEnvio, TipoTransporte, PlacaTransporte, Observacion, Estado, UsuarioAuditoria, FechaAuditoria);
+                    MessageBox.Show("Envío actualizado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarEnvios();
+                    MtdLimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

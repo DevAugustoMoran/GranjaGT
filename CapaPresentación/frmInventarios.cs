@@ -77,52 +77,68 @@ namespace CapaPresentación
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            try
+            if (cboxCodigoGranja.Text == "" || cboxCodigoInsumo.Text == "" || txtCantidadDisponible.Text == "" || txtCostoUnitario.Text == "" || 
+                cboxEstado.Text == "")
             {
-                int CodigoGranja = int.Parse(cboxCodigoGranja.Text.Split('-')[0].Trim());
-                int CodigoInsumo = int.Parse(cboxCodigoInsumo.Text.Split('-')[0].Trim());
-                decimal CantidadDisponible = decimal.Parse(txtCantidadDisponible.Text);
-                decimal CostoUnitario = decimal.Parse(txtCostoUnitario.Text);
-                decimal CostoTotal = 20; //Hay que cambiarlo
-                DateTime FechaRegistro = dtpFechaRegistro.Value;
-                string Estado = cboxEstado.Text;
-                string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
-                DateTime FechaAuditoria = cl_inventarios.MtdFechaActual();
-
-                cd_inventarios.MtdAgregarInventario(CodigoGranja, CodigoInsumo, CantidadDisponible, CostoUnitario, CostoTotal, FechaRegistro, Estado, UsuarioAuditoria, FechaAuditoria);
-                MessageBox.Show("inventario agregado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MtdConsultarInventarios();
-                MtdLimpiarCampos();
+                MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    int CodigoGranja = int.Parse(cboxCodigoGranja.Text.Split('-')[0].Trim());
+                    int CodigoInsumo = int.Parse(cboxCodigoInsumo.Text.Split('-')[0].Trim());
+                    decimal CantidadDisponible = decimal.Parse(txtCantidadDisponible.Text);
+                    decimal CostoUnitario = decimal.Parse(txtCostoUnitario.Text);
+                    decimal CostoTotal = 20; //Hay que cambiarlo
+                    DateTime FechaRegistro = dtpFechaRegistro.Value;
+                    string Estado = cboxEstado.Text;
+                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    DateTime FechaAuditoria = cl_inventarios.MtdFechaActual();
+
+                    cd_inventarios.MtdAgregarInventario(CodigoGranja, CodigoInsumo, CantidadDisponible, CostoUnitario, CostoTotal, FechaRegistro, Estado, UsuarioAuditoria, FechaAuditoria);
+                    MessageBox.Show("inventario agregado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarInventarios();
+                    MtdLimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            try
+            if (cboxCodigoGranja.Text == "" || cboxCodigoInsumo.Text == "" || txtCantidadDisponible.Text == "" || txtCostoUnitario.Text == "" ||
+                cboxEstado.Text == "")
             {
-                int CodigoInventario = int.Parse(txtCodigoInventario.Text);
-                int CodigoGranja = int.Parse(cboxCodigoGranja.Text.Split('-')[0].Trim());
-                int CodigoInsumo = int.Parse(cboxCodigoInsumo.Text.Split('-')[0].Trim());
-                decimal CantidadDisponible = decimal.Parse(txtCantidadDisponible.Text);
-                decimal CostoUnitario = decimal.Parse(txtCostoUnitario.Text);
-                decimal CostoTotal = 20; //Hay que cambiarlo
-                DateTime FechaRegistro = dtpFechaRegistro.Value;
-                string Estado = cboxEstado.Text;
-                string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
-                DateTime FechaAuditoria = cl_inventarios.MtdFechaActual();
-
-                cd_inventarios.MtdActualizarInventario(CodigoInventario, CodigoGranja, CodigoInsumo, CantidadDisponible, CostoUnitario, CostoTotal, FechaRegistro, Estado, UsuarioAuditoria, FechaAuditoria);
-                MessageBox.Show("inventario actualizado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MtdConsultarInventarios();
-                MtdLimpiarCampos();
+                MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    int CodigoInventario = int.Parse(txtCodigoInventario.Text);
+                    int CodigoGranja = int.Parse(cboxCodigoGranja.Text.Split('-')[0].Trim());
+                    int CodigoInsumo = int.Parse(cboxCodigoInsumo.Text.Split('-')[0].Trim());
+                    decimal CantidadDisponible = decimal.Parse(txtCantidadDisponible.Text);
+                    decimal CostoUnitario = decimal.Parse(txtCostoUnitario.Text);
+                    decimal CostoTotal = 20; //Hay que cambiarlo
+                    DateTime FechaRegistro = dtpFechaRegistro.Value;
+                    string Estado = cboxEstado.Text;
+                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    DateTime FechaAuditoria = cl_inventarios.MtdFechaActual();
+
+                    cd_inventarios.MtdActualizarInventario(CodigoInventario, CodigoGranja, CodigoInsumo, CantidadDisponible, CostoUnitario, CostoTotal, FechaRegistro, Estado, UsuarioAuditoria, FechaAuditoria);
+                    MessageBox.Show("inventario actualizado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarInventarios();
+                    MtdLimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
