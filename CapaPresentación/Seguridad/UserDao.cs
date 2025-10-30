@@ -32,7 +32,7 @@ namespace CapaPresentacion.Seguridad
                             UserCache.Nombre = reader.GetString(2);
                             UserCache.FechaRegistro = reader.GetString(3);
                             UserCache.Estado = reader.GetString(4);
-                            UserCache.Contrasena = reader.GetString(5);
+                            UserCache.Contrasena = reader.GetString(7);
                         }
                         return true;
                     }
