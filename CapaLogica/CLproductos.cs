@@ -12,5 +12,18 @@ namespace CapaLogica
         {
             return DateTime.Today;
         }
+
+        public DateTime MtdCalcularVencimiento(DateTime fechaIngreso, DateTime fechaVencimiento)
+        {
+            if (fechaVencimiento < fechaIngreso)
+            {
+                throw new ArgumentException("La fecha de vencimiento no puede ser anterior a la fecha de ingreso.");
+                fechaVencimiento = fechaIngreso;
+
+            }
+
+            return fechaVencimiento;
+        }
+
     }
 }
