@@ -61,7 +61,7 @@ namespace CapaDatos
 
         public void MtdActualizarPagosVentas(int CodigoPago, int CodigoVenta, decimal Monto, string TipoPago, string NumReferencia, DateTime FechaPago, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
-            string QueryActualizarPagosVentas = "Update tbl_PagosVentass set CodigoVenta = @CodigoVenta, Monto = @Monto, TipoPago = @TipoPago, NumReferencia = @NumReferencia, FechaPago = @FechaPago, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoPago = @CodigoPago";
+            string QueryActualizarPagosVentas = "Update tbl_PagosVentas set CodigoVenta = @CodigoVenta, Monto = @Monto, TipoPago = @TipoPago, NumReferencia = @NumReferencia, FechaPago = @FechaPago, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoPago = @CodigoPago";
             SqlCommand CommandActualizarPagosVentas = new SqlCommand(QueryActualizarPagosVentas, cd_conexion.MtdAbrirConexion());
             CommandActualizarPagosVentas.Parameters.AddWithValue("@CodigoPago", CodigoPago);
             CommandActualizarPagosVentas.Parameters.AddWithValue("@CodigoVenta", CodigoVenta);
@@ -83,6 +83,28 @@ namespace CapaDatos
             CommandEliminarPagosVentas.Parameters.AddWithValue("@CodigoPago", CodigoPago);
             CommandEliminarPagosVentas.ExecuteNonQuery();
             cd_conexion.MtdCerrarConexion();
+        }
+
+        public Decimal MtdMonto(int CodigoVenta)
+        {
+            decimal montototal = 0;
+
+            string QueryConsultarMonto = "SELECT TotalVenta FROM tbl_Ventas WHERE CodigoVenta = @CodigoVenta";
+            SqlCommand CommandMonto = new SqlCommand(QueryConsultarMonto, cd_conexion.MtdAbrirConexion());
+            CommandMonto.Parameters.AddWithValue("@CodigoVenta", CodigoVenta);
+            SqlDataReader reader = CommandMonto.ExecuteReader();
+
+            if (reader.Read())
+            {
+                montototal = decimal.Parse(reader["TotalVenta"].ToString());
+            }
+            else
+            {
+                montototal = 0;
+            }
+
+            cd_conexion.MtdCerrarConexion();
+            return montototal;
         }
     }
 }
