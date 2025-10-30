@@ -173,6 +173,7 @@
             this.txtCostoUnitario.Name = "txtCostoUnitario";
             this.txtCostoUnitario.Size = new System.Drawing.Size(156, 20);
             this.txtCostoUnitario.TabIndex = 84;
+            this.txtCostoUnitario.TextChanged += new System.EventHandler(this.txtCostoUnitario_TextChanged);
             // 
             // txtCantidadDisponible
             // 
@@ -180,6 +181,7 @@
             this.txtCantidadDisponible.Name = "txtCantidadDisponible";
             this.txtCantidadDisponible.Size = new System.Drawing.Size(156, 20);
             this.txtCantidadDisponible.TabIndex = 83;
+            this.txtCantidadDisponible.TextChanged += new System.EventHandler(this.txtCantidadDisponible_TextChanged);
             // 
             // dtpFechaRegistro
             // 
