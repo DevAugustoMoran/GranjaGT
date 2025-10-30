@@ -197,6 +197,11 @@
             // 
             this.cboxTipoTransporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxTipoTransporte.FormattingEnabled = true;
+            this.cboxTipoTransporte.Items.AddRange(new object[] {
+            "Por Carretera",
+            "Ferroviario",
+            "Marítimo",
+            "Aéreo"});
             this.cboxTipoTransporte.Location = new System.Drawing.Point(708, 30);
             this.cboxTipoTransporte.Name = "cboxTipoTransporte";
             this.cboxTipoTransporte.Size = new System.Drawing.Size(156, 23);
