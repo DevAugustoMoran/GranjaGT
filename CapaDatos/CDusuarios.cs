@@ -44,9 +44,9 @@ namespace CapaDatos
             return dt_usuario;
         }
 
-        public void MtdAgregarUsuario(int CodigoRol, string Nombre, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria, DateTime FechaRegistro)
+        public void MtdAgregarUsuario(int CodigoRol, string Nombre, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria, DateTime FechaRegistro, string Contrasena)
         {
-            string QueryAgregarUsuario = "Insert into tbl_Usuarios(CodigoRol, Nombre, Estado, UsuarioAuditoria, FechaAuditoria, FechaRegistro) values (@CodigoRol, @Nombre, @Estado, @UsuarioAuditoria, @FechaAuditoria, @FechaRegistro)";
+            string QueryAgregarUsuario = "Insert into tbl_Usuarios(CodigoRol, Nombre, Estado, UsuarioAuditoria, FechaAuditoria, FechaRegistro, Contrasena) values (@CodigoRol, @Nombre, @Estado, @UsuarioAuditoria, @FechaAuditoria, @FechaRegistro, @Contrasena)";
             SqlCommand CommandAgregarUsuario = new SqlCommand(QueryAgregarUsuario, cd_conexion.MtdAbrirConexion());
             CommandAgregarUsuario.Parameters.AddWithValue("@CodigoRol", CodigoRol);
             CommandAgregarUsuario.Parameters.AddWithValue("@Nombre", Nombre);
@@ -54,13 +54,14 @@ namespace CapaDatos
             CommandAgregarUsuario.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
             CommandAgregarUsuario.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
             CommandAgregarUsuario.Parameters.AddWithValue("@FechaRegistro", FechaRegistro);
+            CommandAgregarUsuario.Parameters.AddWithValue("@Contrasena", Contrasena);
             CommandAgregarUsuario.ExecuteNonQuery();
             cd_conexion.MtdCerrarConexion();
         }
 
-        public void MtdActualizarUsuario(int CodigoUsuario, int CodigoRol, string Nombre, string Estado, string UsuarioSistema, DateTime FechaAuditoria, DateTime FechaRegistro)
+        public void MtdActualizarUsuario(int CodigoUsuario, int CodigoRol, string Nombre, string Estado, string UsuarioSistema, DateTime FechaAuditoria, DateTime FechaRegistro, string Contrasena)
         {
-            string QueryActualizarUsuario = "Update tbl_Usuarios set CodigoRol= @CodigoRol, Nombre = @Nombre, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria, FechaRegistro = @FechaRegistro where CodigoUsuario = @CodigoUsuario";
+            string QueryActualizarUsuario = "Update tbl_Usuarios set CodigoRol= @CodigoRol, Nombre = @Nombre, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria, FechaRegistro = @FechaRegistro, Contrasena = @Contrasena where CodigoUsuario = @CodigoUsuario";
             SqlCommand CommandActualizarUsuario = new SqlCommand(QueryActualizarUsuario, cd_conexion.MtdAbrirConexion());
             CommandActualizarUsuario.Parameters.AddWithValue("@CodigoUsuario", CodigoUsuario);
             CommandActualizarUsuario.Parameters.AddWithValue("@CodigoRol", CodigoRol);
@@ -69,6 +70,7 @@ namespace CapaDatos
             CommandActualizarUsuario.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioSistema);
             CommandActualizarUsuario.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
             CommandActualizarUsuario.Parameters.AddWithValue("@FechaRegistro", FechaRegistro);
+            CommandActualizarUsuario.Parameters.AddWithValue("@Contrasena", Contrasena);
             CommandActualizarUsuario.ExecuteNonQuery();
             cd_conexion.MtdCerrarConexion();
         }

@@ -67,7 +67,7 @@ namespace CapaPresentación
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (cboxCodigoRol.Text == "" || txtNombre.Text == "" || cboxEstado.Text == "" || dtpFechaRegistro.Text == "")
+            if (cboxCodigoRol.Text == "" || txtNombre.Text == "" || cboxEstado.Text == "" || dtpFechaRegistro.Text == "" || txtContrasena.Text == "")
             {
                 MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -81,8 +81,9 @@ namespace CapaPresentación
                     string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
                     DateTime FechaAuditoria = cl_usuarios.MtdFechaActual();
                     DateTime FechaRegistro = dtpFechaRegistro.Value;
+                    string Contrasena = txtContrasena.Text;
 
-                    cd_usuarios.MtdAgregarUsuario(CodigoRol, Nombre, Estado, UsuarioAuditoria, FechaAuditoria, FechaRegistro);
+                    cd_usuarios.MtdAgregarUsuario(CodigoRol, Nombre, Estado, UsuarioAuditoria, FechaAuditoria, FechaRegistro, Contrasena);
                     MessageBox.Show("Usuario agregado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MtdConsultarUsuario();
                     mtdLimpiarCampos();
@@ -96,7 +97,7 @@ namespace CapaPresentación
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (cboxCodigoRol.Text == "" || txtNombre.Text == "" || cboxEstado.Text == "" || dtpFechaRegistro.Text == "")
+            if (cboxCodigoRol.Text == "" || txtNombre.Text == "" || cboxEstado.Text == "" || dtpFechaRegistro.Text == "" || txtContrasena.Text == "")
             {
                 MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -111,8 +112,9 @@ namespace CapaPresentación
                     string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
                     DateTime FechaAuditoria = cl_usuarios.MtdFechaActual();
                     DateTime FechaRegistro = dtpFechaRegistro.Value;
+                    string Contrasena = txtContrasena.Text;
 
-                    cd_usuarios.MtdActualizarUsuario(CodigoUsuario, CodigoRol, Nombre, Estado, UsuarioAuditoria, FechaAuditoria, FechaRegistro);
+                    cd_usuarios.MtdActualizarUsuario(CodigoUsuario, CodigoRol, Nombre, Estado, UsuarioAuditoria, FechaAuditoria, FechaRegistro, Contrasena);
                     MessageBox.Show("Usuario actualizado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MtdConsultarUsuario();
                     mtdLimpiarCampos();
@@ -146,6 +148,7 @@ namespace CapaPresentación
             txtNombre.Text = dgvRegistroUsuarios.SelectedCells[2].Value.ToString();
             cboxEstado.Text = dgvRegistroUsuarios.SelectedCells[3].Value.ToString();
             dtpFechaRegistro.Text = dgvRegistroUsuarios.SelectedCells[6].Value.ToString();
+            txtContrasena.Text = dgvRegistroUsuarios.SelectedCells[7].Value.ToString();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
