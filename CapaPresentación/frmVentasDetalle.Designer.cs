@@ -163,6 +163,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(154, 20);
             this.txtCantidad.TabIndex = 102;
+            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             // 
             // label15
             // 
@@ -180,6 +181,7 @@
             this.txtImpuesto.Name = "txtImpuesto";
             this.txtImpuesto.Size = new System.Drawing.Size(154, 20);
             this.txtImpuesto.TabIndex = 99;
+            this.txtImpuesto.TextChanged += new System.EventHandler(this.txtImpuesto_TextChanged);
             // 
             // label14
             // 
@@ -214,6 +216,7 @@
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.Size = new System.Drawing.Size(154, 20);
             this.txtDescuento.TabIndex = 95;
+            this.txtDescuento.TextChanged += new System.EventHandler(this.txtDescuento_TextChanged);
             // 
             // label12
             // 
@@ -297,6 +300,7 @@
             this.txtPrecioUnitario.Name = "txtPrecioUnitario";
             this.txtPrecioUnitario.Size = new System.Drawing.Size(154, 20);
             this.txtPrecioUnitario.TabIndex = 72;
+            this.txtPrecioUnitario.TextChanged += new System.EventHandler(this.txtPrecioUnitario_TextChanged);
             // 
             // btnEditar
             // 

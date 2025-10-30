@@ -12,5 +12,15 @@ namespace CapaLogica
         {
             return DateTime.Today;
         }
+
+        public decimal MtdCalcularTotal(decimal Cantidad, decimal PrecioUnitario)
+        {
+            return Cantidad * PrecioUnitario;
+        }
+
+        public decimal MtdCalcularTotalVenta(decimal Total, decimal Descuento, decimal Impuesto)
+        {
+            return Total - Descuento + Impuesto;
+        }
     }
 }

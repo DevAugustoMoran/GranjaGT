@@ -217,5 +217,33 @@ namespace CapaPresentación
             lblTotalVenta.Text = dgvVentasDetalle.SelectedCells[10].Value.ToString();
             cboxEstado.Text = dgvVentasDetalle.SelectedCells[11].Value.ToString();
         }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCantidad.Text == "")
+            {
+                lblTotal.Text = "-";
+            }else
+            {
+                
+            }
+        }
+
+        private void txtPrecioUnitario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescuento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtImpuesto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
