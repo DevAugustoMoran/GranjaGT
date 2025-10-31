@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -85,7 +86,7 @@ namespace CapaPresentación
                     string TipoVenta = cboxTipoVenta.Text;
                     decimal TotalVenta = decimal.Parse(txtTotalVenta.Text);
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_ventas.MtdFechaActual();
 
                     cd_ventas.MtdAgregarVenta(CodigoCliente, CodigoGranja, FechaVenta, TipoVenta, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
@@ -117,7 +118,7 @@ namespace CapaPresentación
                     string TipoVenta = cboxTipoVenta.Text;
                     decimal TotalVenta = decimal.Parse(txtTotalVenta.Text);
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_ventas.MtdFechaActual();
 
                     cd_ventas.MtdActualizarVenta(CodigoVenta, CodigoCliente, CodigoGranja, FechaVenta, TipoVenta, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);

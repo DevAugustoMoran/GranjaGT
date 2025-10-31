@@ -288,8 +288,8 @@
             this.cboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxEstado.FormattingEnabled = true;
             this.cboxEstado.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
+            "Disponible",
+            "Agotado"});
             this.cboxEstado.Location = new System.Drawing.Point(528, 165);
             this.cboxEstado.Name = "cboxEstado";
             this.cboxEstado.Size = new System.Drawing.Size(116, 23);
@@ -300,10 +300,13 @@
             this.cboxTipoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxTipoProducto.FormattingEnabled = true;
             this.cboxTipoProducto.Items.AddRange(new object[] {
-            "Herramienta",
-            "Alimento",
-            "Accesorios",
-            "Medicina"});
+            "Lacteo",
+            "Avicola",
+            "Carnico",
+            "Grano Basico",
+            "Vegetal",
+            "Grano",
+            "Insumo (Venta)"});
             this.cboxTipoProducto.Location = new System.Drawing.Point(179, 119);
             this.cboxTipoProducto.Name = "cboxTipoProducto";
             this.cboxTipoProducto.Size = new System.Drawing.Size(112, 23);

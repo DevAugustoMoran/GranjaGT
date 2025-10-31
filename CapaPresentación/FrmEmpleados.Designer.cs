@@ -42,9 +42,7 @@
             this.cboxCodigoGranja = new System.Windows.Forms.ComboBox();
             this.cboxCargo = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtSalarioBase = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtSalario = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -170,7 +168,7 @@
             // dtpFechaIngreso
             // 
             this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(532, 134);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(532, 118);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(108, 20);
             this.dtpFechaIngreso.TabIndex = 67;
@@ -202,9 +200,7 @@
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.cboxCargo);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.txtSalarioBase);
             this.groupBox1.Controls.Add(this.txtCorreo);
-            this.groupBox1.Controls.Add(this.txtSalario);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.label7);
@@ -219,9 +215,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(17, 81);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(894, 210);
             this.groupBox1.TabIndex = 81;
             this.groupBox1.TabStop = false;
@@ -230,7 +226,7 @@
             // 
             this.cboxCodigoUsuario.FormattingEnabled = true;
             this.cboxCodigoUsuario.Location = new System.Drawing.Point(152, 97);
-            this.cboxCodigoUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxCodigoUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.cboxCodigoUsuario.Name = "cboxCodigoUsuario";
             this.cboxCodigoUsuario.Size = new System.Drawing.Size(108, 21);
             this.cboxCodigoUsuario.TabIndex = 90;
@@ -239,7 +235,7 @@
             // 
             this.cboxCodigoGranja.FormattingEnabled = true;
             this.cboxCodigoGranja.Location = new System.Drawing.Point(152, 60);
-            this.cboxCodigoGranja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxCodigoGranja.Margin = new System.Windows.Forms.Padding(2);
             this.cboxCodigoGranja.Name = "cboxCodigoGranja";
             this.cboxCodigoGranja.Size = new System.Drawing.Size(108, 21);
             this.cboxCodigoGranja.TabIndex = 89;
@@ -255,8 +251,8 @@
             "Capataz",
             "Agronomo",
             "Secretaria"});
-            this.cboxCargo.Location = new System.Drawing.Point(532, 60);
-            this.cboxCargo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxCargo.Location = new System.Drawing.Point(532, 68);
+            this.cboxCargo.Margin = new System.Windows.Forms.Padding(2);
             this.cboxCargo.Name = "cboxCargo";
             this.cboxCargo.Size = new System.Drawing.Size(108, 21);
             this.cboxCargo.TabIndex = 78;
@@ -272,39 +268,19 @@
             this.label9.TabIndex = 72;
             this.label9.Text = "Correo:";
             // 
-            // txtSalarioBase
-            // 
-            this.txtSalarioBase.AcceptsReturn = true;
-            this.txtSalarioBase.Location = new System.Drawing.Point(532, 98);
-            this.txtSalarioBase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtSalarioBase.Name = "txtSalarioBase";
-            this.txtSalarioBase.Size = new System.Drawing.Size(108, 20);
-            this.txtSalarioBase.TabIndex = 77;
-            // 
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(532, 20);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(108, 20);
             this.txtCorreo.TabIndex = 73;
-            // 
-            // txtSalario
-            // 
-            this.txtSalario.AutoSize = true;
-            this.txtSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalario.Location = new System.Drawing.Point(389, 100);
-            this.txtSalario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(64, 17);
-            this.txtSalario.TabIndex = 76;
-            this.txtSalario.Text = "Salario:";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(389, 60);
+            this.label12.Location = new System.Drawing.Point(389, 68);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(56, 17);
@@ -314,7 +290,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(152, 172);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(108, 20);
             this.txtTelefono.TabIndex = 71;
@@ -345,7 +321,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(152, 134);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(108, 20);
             this.txtNombre.TabIndex = 69;
@@ -354,7 +330,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(390, 136);
+            this.label5.Location = new System.Drawing.Point(390, 120);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 17);
@@ -368,7 +344,7 @@
             "Activo",
             "Inactivo"});
             this.cboxEstado.Location = new System.Drawing.Point(532, 171);
-            this.cboxEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cboxEstado.Name = "cboxEstado";
             this.cboxEstado.Size = new System.Drawing.Size(108, 21);
             this.cboxEstado.TabIndex = 5;
@@ -387,7 +363,7 @@
             // txtCodigoEmpleado
             // 
             this.txtCodigoEmpleado.Location = new System.Drawing.Point(152, 20);
-            this.txtCodigoEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodigoEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigoEmpleado.Name = "txtCodigoEmpleado";
             this.txtCodigoEmpleado.ReadOnly = true;
             this.txtCodigoEmpleado.Size = new System.Drawing.Size(108, 20);
@@ -451,7 +427,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmEmpleados";
             this.Text = "FrmEmpleados";
             this.Load += new System.EventHandler(this.FrmEmpleados_Load);
@@ -488,9 +464,7 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ComboBox cboxCargo;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtSalarioBase;
         private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Label txtSalario;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cboxCodigoUsuario;
         private System.Windows.Forms.ComboBox cboxCodigoGranja;
