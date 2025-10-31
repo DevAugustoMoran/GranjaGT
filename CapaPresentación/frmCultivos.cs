@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -65,7 +66,7 @@ namespace CapaPresentación
                     string Ubicacion = txtUbicacion.Text;
                     string Observacion = txtObservacion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clcultivos.MtdFechaActual();
                     cdcultivos.MtdAgregarCultivo(TipoCultivo, Fechasiembra, FechaCosecha, CantidadCosecha, Precio, Ubicacion, Observacion, Estado, UsuarioAuditoria, FechaAuditoria);
                     MessageBox.Show("Cultivo agregado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -111,7 +112,7 @@ namespace CapaPresentación
                     string Ubicacion = txtUbicacion.Text;
                     string Observacion = txtObservacion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clcultivos.MtdFechaActual();
                     cdcultivos.MtdActualizarCultivo(CodigoCultivo, TipoCultivo, Fechasiembra, FechaCosecha, CantidadCosecha, Precio, Ubicacion, Observacion, Estado, UsuarioAuditoria, FechaAuditoria);
                     MessageBox.Show("Cultivo actualizado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);

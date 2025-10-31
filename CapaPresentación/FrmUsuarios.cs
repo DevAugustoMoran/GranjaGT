@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,7 +79,7 @@ namespace CapaPresentación
                     int CodigoRol = int.Parse(cboxCodigoRol.Text.Split('-')[0].Trim());
                     string Nombre = txtNombre.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_usuarios.MtdFechaActual();
                     DateTime FechaRegistro = dtpFechaRegistro.Value;
                     string Contrasena = txtContrasena.Text;
@@ -109,7 +110,7 @@ namespace CapaPresentación
                     int CodigoRol = int.Parse(cboxCodigoRol.Text.Split('-')[0].Trim());
                     string Nombre = txtNombre.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_usuarios.MtdFechaActual();
                     DateTime FechaRegistro = dtpFechaRegistro.Value;
                     string Contrasena = txtContrasena.Text;

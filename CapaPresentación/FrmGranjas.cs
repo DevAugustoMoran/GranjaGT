@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,7 +60,7 @@ namespace CapaPresentación
                     string Telefono = txtTelefono.Text;
                     string Correo = txtCorreo.Text;
                     string EstadoGranja = cboxEstadoGranja.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = DateTime.Today;
                     cdgranjas.MtdAgregarGranja(Nombre, Direccion, Telefono, Correo, EstadoGranja, UsuarioAuditoria, FechaAuditoria.ToString());
                     MessageBox.Show("Granja agregada correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -99,7 +100,7 @@ namespace CapaPresentación
                     string Telefono = txtTelefono.Text;
                     string Correo = txtCorreo.Text;
                     string EstadoGranja = cboxEstadoGranja.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = DateTime.Today;
                     cdgranjas.MtdActualizarGranja(CodigoGranja, Nombre, Direccion, Telefono, Correo, EstadoGranja, UsuarioAuditoria, FechaAuditoria.ToString());
                     MessageBox.Show("Granja actualizada correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);

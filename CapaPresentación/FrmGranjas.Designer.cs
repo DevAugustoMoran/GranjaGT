@@ -239,8 +239,9 @@
             // 
             this.cboxEstadoGranja.FormattingEnabled = true;
             this.cboxEstadoGranja.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
+            "Activa",
+            "Inactiva",
+            "En Mantenimiento"});
             this.cboxEstadoGranja.Location = new System.Drawing.Point(672, 102);
             this.cboxEstadoGranja.Margin = new System.Windows.Forms.Padding(2);
             this.cboxEstadoGranja.Name = "cboxEstadoGranja";
