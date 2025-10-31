@@ -66,7 +66,7 @@
             this.btnSalir.IconColor = System.Drawing.Color.Black;
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 25;
-            this.btnSalir.Location = new System.Drawing.Point(1114, 613);
+            this.btnSalir.Location = new System.Drawing.Point(793, 549);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(118, 40);
             this.btnSalir.TabIndex = 84;
@@ -81,7 +81,7 @@
             this.btnEliminar.IconColor = System.Drawing.Color.Black;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 25;
-            this.btnEliminar.Location = new System.Drawing.Point(977, 613);
+            this.btnEliminar.Location = new System.Drawing.Point(656, 549);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(118, 40);
             this.btnEliminar.TabIndex = 83;
@@ -99,7 +99,7 @@
             this.dgvEnvios.ReadOnly = true;
             this.dgvEnvios.RowHeadersWidth = 51;
             this.dgvEnvios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEnvios.Size = new System.Drawing.Size(1240, 288);
+            this.dgvEnvios.Size = new System.Drawing.Size(899, 240);
             this.dgvEnvios.TabIndex = 78;
             this.dgvEnvios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnvios_CellClick);
             // 
@@ -107,7 +107,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calisto MT", 20F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(559, 25);
+            this.label11.Location = new System.Drawing.Point(321, 34);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(120, 31);
             this.label11.TabIndex = 82;
@@ -117,7 +117,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label10.Location = new System.Drawing.Point(942, 34);
+            this.label10.Location = new System.Drawing.Point(629, 60);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(117, 22);
             this.label10.TabIndex = 80;
@@ -127,7 +127,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.lblFecha.Location = new System.Drawing.Point(1065, 34);
+            this.lblFecha.Location = new System.Drawing.Point(752, 60);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(137, 22);
             this.lblFecha.TabIndex = 79;
@@ -158,36 +158,36 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 85);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1240, 212);
+            this.groupBox1.Size = new System.Drawing.Size(899, 212);
             this.groupBox1.TabIndex = 81;
             this.groupBox1.TabStop = false;
             // 
             // txtObservacion
             // 
-            this.txtObservacion.Location = new System.Drawing.Point(706, 121);
+            this.txtObservacion.Location = new System.Drawing.Point(551, 123);
             this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(156, 20);
+            this.txtObservacion.Size = new System.Drawing.Size(125, 20);
             this.txtObservacion.TabIndex = 91;
             // 
             // txtPlacaTransporte
             // 
-            this.txtPlacaTransporte.Location = new System.Drawing.Point(708, 77);
+            this.txtPlacaTransporte.Location = new System.Drawing.Point(553, 79);
             this.txtPlacaTransporte.Name = "txtPlacaTransporte";
-            this.txtPlacaTransporte.Size = new System.Drawing.Size(156, 20);
+            this.txtPlacaTransporte.Size = new System.Drawing.Size(125, 20);
             this.txtPlacaTransporte.TabIndex = 90;
             // 
             // txtDireccionEnvio
             // 
-            this.txtDireccionEnvio.Location = new System.Drawing.Point(271, 167);
+            this.txtDireccionEnvio.Location = new System.Drawing.Point(184, 173);
             this.txtDireccionEnvio.Name = "txtDireccionEnvio";
-            this.txtDireccionEnvio.Size = new System.Drawing.Size(156, 20);
+            this.txtDireccionEnvio.Size = new System.Drawing.Size(116, 20);
             this.txtDireccionEnvio.TabIndex = 89;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label8.Location = new System.Drawing.Point(535, 121);
+            this.label8.Location = new System.Drawing.Point(385, 120);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(116, 22);
             this.label8.TabIndex = 87;
@@ -202,16 +202,16 @@
             "Ferroviario",
             "Marítimo",
             "Aéreo"});
-            this.cboxTipoTransporte.Location = new System.Drawing.Point(708, 30);
+            this.cboxTipoTransporte.Location = new System.Drawing.Point(553, 32);
             this.cboxTipoTransporte.Name = "cboxTipoTransporte";
-            this.cboxTipoTransporte.Size = new System.Drawing.Size(156, 23);
+            this.cboxTipoTransporte.Size = new System.Drawing.Size(125, 23);
             this.cboxTipoTransporte.TabIndex = 84;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label12.Location = new System.Drawing.Point(535, 77);
+            this.label12.Location = new System.Drawing.Point(385, 76);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(151, 22);
             this.label12.TabIndex = 82;
@@ -221,7 +221,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label13.Location = new System.Drawing.Point(535, 32);
+            this.label13.Location = new System.Drawing.Point(385, 31);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(144, 22);
             this.label13.TabIndex = 81;
@@ -231,7 +231,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label6.Location = new System.Drawing.Point(98, 164);
+            this.label6.Location = new System.Drawing.Point(11, 170);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(143, 22);
             this.label6.TabIndex = 79;
@@ -243,7 +243,7 @@
             this.btnCancelar.IconColor = System.Drawing.Color.Black;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 25;
-            this.btnCancelar.Location = new System.Drawing.Point(1102, 153);
+            this.btnCancelar.Location = new System.Drawing.Point(759, 154);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(118, 40);
             this.btnCancelar.TabIndex = 78;
@@ -262,9 +262,9 @@
             "Finalizado",
             "Cancelado",
             "Facturado"});
-            this.cboxEstado.Location = new System.Drawing.Point(708, 162);
+            this.cboxEstado.Location = new System.Drawing.Point(553, 164);
             this.cboxEstado.Name = "cboxEstado";
-            this.cboxEstado.Size = new System.Drawing.Size(154, 23);
+            this.cboxEstado.Size = new System.Drawing.Size(123, 23);
             this.cboxEstado.TabIndex = 68;
             // 
             // btnEditar
@@ -273,7 +273,7 @@
             this.btnEditar.IconColor = System.Drawing.Color.Black;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 25;
-            this.btnEditar.Location = new System.Drawing.Point(1102, 93);
+            this.btnEditar.Location = new System.Drawing.Point(759, 94);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(118, 40);
             this.btnEditar.TabIndex = 77;
@@ -288,7 +288,7 @@
             this.btnAgregar.IconColor = System.Drawing.Color.Black;
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 25;
-            this.btnAgregar.Location = new System.Drawing.Point(1102, 29);
+            this.btnAgregar.Location = new System.Drawing.Point(759, 30);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(118, 40);
             this.btnAgregar.TabIndex = 76;
@@ -300,34 +300,34 @@
             // dtpFechaEnvio
             // 
             this.dtpFechaEnvio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEnvio.Location = new System.Drawing.Point(272, 127);
+            this.dtpFechaEnvio.Location = new System.Drawing.Point(185, 133);
             this.dtpFechaEnvio.Name = "dtpFechaEnvio";
-            this.dtpFechaEnvio.Size = new System.Drawing.Size(154, 20);
+            this.dtpFechaEnvio.Size = new System.Drawing.Size(114, 20);
             this.dtpFechaEnvio.TabIndex = 66;
             // 
             // cboxCodigoEmpleado
             // 
             this.cboxCodigoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxCodigoEmpleado.FormattingEnabled = true;
-            this.cboxCodigoEmpleado.Location = new System.Drawing.Point(271, 88);
+            this.cboxCodigoEmpleado.Location = new System.Drawing.Point(184, 94);
             this.cboxCodigoEmpleado.Name = "cboxCodigoEmpleado";
-            this.cboxCodigoEmpleado.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoEmpleado.Size = new System.Drawing.Size(116, 23);
             this.cboxCodigoEmpleado.TabIndex = 64;
             // 
             // cboxCodigoVenta
             // 
             this.cboxCodigoVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxCodigoVenta.FormattingEnabled = true;
-            this.cboxCodigoVenta.Location = new System.Drawing.Point(271, 51);
+            this.cboxCodigoVenta.Location = new System.Drawing.Point(184, 57);
             this.cboxCodigoVenta.Name = "cboxCodigoVenta";
-            this.cboxCodigoVenta.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoVenta.Size = new System.Drawing.Size(116, 23);
             this.cboxCodigoVenta.TabIndex = 58;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label7.Location = new System.Drawing.Point(99, 125);
+            this.label7.Location = new System.Drawing.Point(12, 131);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 22);
             this.label7.TabIndex = 22;
@@ -335,17 +335,17 @@
             // 
             // txtCodigoEnvio
             // 
-            this.txtCodigoEnvio.Location = new System.Drawing.Point(271, 17);
+            this.txtCodigoEnvio.Location = new System.Drawing.Point(184, 23);
             this.txtCodigoEnvio.Name = "txtCodigoEnvio";
             this.txtCodigoEnvio.ReadOnly = true;
-            this.txtCodigoEnvio.Size = new System.Drawing.Size(156, 20);
+            this.txtCodigoEnvio.Size = new System.Drawing.Size(116, 20);
             this.txtCodigoEnvio.TabIndex = 15;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label5.Location = new System.Drawing.Point(534, 163);
+            this.label5.Location = new System.Drawing.Point(384, 162);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 22);
             this.label5.TabIndex = 7;
@@ -355,7 +355,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label4.Location = new System.Drawing.Point(98, 90);
+            this.label4.Location = new System.Drawing.Point(11, 96);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 22);
             this.label4.TabIndex = 5;
@@ -365,7 +365,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label2.Location = new System.Drawing.Point(98, 53);
+            this.label2.Location = new System.Drawing.Point(11, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 22);
             this.label2.TabIndex = 2;
@@ -375,7 +375,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label1.Location = new System.Drawing.Point(98, 16);
+            this.label1.Location = new System.Drawing.Point(11, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 22);
             this.label1.TabIndex = 1;
@@ -385,7 +385,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(935, 601);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvEnvios);

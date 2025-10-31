@@ -63,7 +63,7 @@
             this.btnSalir.IconColor = System.Drawing.Color.Black;
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 25;
-            this.btnSalir.Location = new System.Drawing.Point(812, 495);
+            this.btnSalir.Location = new System.Drawing.Point(786, 553);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(125, 36);
             this.btnSalir.TabIndex = 84;
@@ -78,7 +78,7 @@
             this.btnEliminar.IconColor = System.Drawing.Color.Black;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 25;
-            this.btnEliminar.Location = new System.Drawing.Point(675, 495);
+            this.btnEliminar.Location = new System.Drawing.Point(649, 553);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(125, 36);
             this.btnEliminar.TabIndex = 83;
@@ -91,7 +91,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calisto MT", 20F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(390, 27);
+            this.label11.Location = new System.Drawing.Point(323, 27);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(226, 31);
             this.label11.TabIndex = 82;
@@ -101,7 +101,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(710, 27);
+            this.label10.Location = new System.Drawing.Point(667, 47);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(100, 19);
             this.label10.TabIndex = 80;
@@ -111,7 +111,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(825, 27);
+            this.lblFecha.Location = new System.Drawing.Point(782, 47);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(119, 19);
             this.lblFecha.TabIndex = 79;
@@ -136,36 +136,36 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 72);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(943, 178);
+            this.groupBox1.Size = new System.Drawing.Size(899, 178);
             this.groupBox1.TabIndex = 81;
             this.groupBox1.TabStop = false;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(608, 69);
+            this.txtDireccion.Location = new System.Drawing.Point(522, 68);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(156, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(115, 20);
             this.txtDireccion.TabIndex = 82;
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(608, 29);
+            this.txtCorreo.Location = new System.Drawing.Point(522, 28);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(156, 20);
+            this.txtCorreo.Size = new System.Drawing.Size(115, 20);
             this.txtCorreo.TabIndex = 81;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(181, 107);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(156, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(108, 20);
             this.txtTelefono.TabIndex = 80;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(181, 68);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(156, 20);
+            this.txtNombre.Size = new System.Drawing.Size(108, 20);
             this.txtNombre.TabIndex = 79;
             // 
             // btnCancelar
@@ -174,7 +174,7 @@
             this.btnCancelar.IconColor = System.Drawing.Color.Black;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 25;
-            this.btnCancelar.Location = new System.Drawing.Point(800, 120);
+            this.btnCancelar.Location = new System.Drawing.Point(745, 118);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(123, 33);
             this.btnCancelar.TabIndex = 78;
@@ -190,9 +190,9 @@
             this.cboxEstado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cboxEstado.Location = new System.Drawing.Point(608, 105);
+            this.cboxEstado.Location = new System.Drawing.Point(522, 104);
             this.cboxEstado.Name = "cboxEstado";
-            this.cboxEstado.Size = new System.Drawing.Size(154, 23);
+            this.cboxEstado.Size = new System.Drawing.Size(113, 23);
             this.cboxEstado.TabIndex = 68;
             // 
             // btnEditar
@@ -201,7 +201,7 @@
             this.btnEditar.IconColor = System.Drawing.Color.Black;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 25;
-            this.btnEditar.Location = new System.Drawing.Point(800, 75);
+            this.btnEditar.Location = new System.Drawing.Point(745, 73);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(123, 33);
             this.btnEditar.TabIndex = 77;
@@ -216,7 +216,7 @@
             this.btnAgregar.IconColor = System.Drawing.Color.Black;
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 25;
-            this.btnAgregar.Location = new System.Drawing.Point(800, 29);
+            this.btnAgregar.Location = new System.Drawing.Point(745, 27);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(123, 33);
             this.btnAgregar.TabIndex = 76;
@@ -229,7 +229,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label7.Location = new System.Drawing.Point(419, 67);
+            this.label7.Location = new System.Drawing.Point(380, 68);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 22);
             this.label7.TabIndex = 22;
@@ -239,7 +239,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label3.Location = new System.Drawing.Point(419, 25);
+            this.label3.Location = new System.Drawing.Point(380, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 22);
             this.label3.TabIndex = 20;
@@ -250,14 +250,14 @@
             this.txtCodigoProveedor.Location = new System.Drawing.Point(181, 25);
             this.txtCodigoProveedor.Name = "txtCodigoProveedor";
             this.txtCodigoProveedor.ReadOnly = true;
-            this.txtCodigoProveedor.Size = new System.Drawing.Size(156, 20);
+            this.txtCodigoProveedor.Size = new System.Drawing.Size(108, 20);
             this.txtCodigoProveedor.TabIndex = 15;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label5.Location = new System.Drawing.Point(419, 108);
+            this.label5.Location = new System.Drawing.Point(380, 109);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 22);
             this.label5.TabIndex = 7;
@@ -302,7 +302,7 @@
             this.dgvProveedores.ReadOnly = true;
             this.dgvProveedores.RowHeadersWidth = 51;
             this.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProveedores.Size = new System.Drawing.Size(943, 233);
+            this.dgvProveedores.Size = new System.Drawing.Size(899, 291);
             this.dgvProveedores.TabIndex = 85;
             this.dgvProveedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProveedores_CellClick);
             // 
@@ -310,9 +310,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(276, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(209, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(108, 86);
+            this.pictureBox1.Size = new System.Drawing.Size(73, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 86;
             this.pictureBox1.TabStop = false;
@@ -321,7 +321,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 541);
+            this.ClientSize = new System.Drawing.Size(935, 601);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvProveedores);
             this.Controls.Add(this.btnSalir);

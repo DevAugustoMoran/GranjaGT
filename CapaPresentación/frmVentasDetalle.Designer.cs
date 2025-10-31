@@ -77,7 +77,7 @@
             this.dgvVentasDetalle.ReadOnly = true;
             this.dgvVentasDetalle.RowHeadersWidth = 51;
             this.dgvVentasDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVentasDetalle.Size = new System.Drawing.Size(1240, 306);
+            this.dgvVentasDetalle.Size = new System.Drawing.Size(899, 228);
             this.dgvVentasDetalle.TabIndex = 81;
             this.dgvVentasDetalle.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentasDetalle_CellClick);
             // 
@@ -85,7 +85,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calisto MT", 20F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(450, 44);
+            this.label11.Location = new System.Drawing.Point(206, 44);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(305, 31);
             this.label11.TabIndex = 85;
@@ -95,7 +95,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label10.Location = new System.Drawing.Point(942, 53);
+            this.label10.Location = new System.Drawing.Point(627, 79);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(117, 22);
             this.label10.TabIndex = 83;
@@ -105,7 +105,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.lblFecha.Location = new System.Drawing.Point(1065, 53);
+            this.lblFecha.Location = new System.Drawing.Point(750, 79);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(137, 22);
             this.lblFecha.TabIndex = 82;
@@ -144,14 +144,14 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 104);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1240, 212);
+            this.groupBox1.Size = new System.Drawing.Size(899, 212);
             this.groupBox1.TabIndex = 84;
             this.groupBox1.TabStop = false;
             // 
             // lblTotalVenta
             // 
             this.lblTotalVenta.AutoSize = true;
-            this.lblTotalVenta.Location = new System.Drawing.Point(857, 149);
+            this.lblTotalVenta.Location = new System.Drawing.Point(597, 150);
             this.lblTotalVenta.Name = "lblTotalVenta";
             this.lblTotalVenta.Size = new System.Drawing.Size(10, 13);
             this.lblTotalVenta.TabIndex = 104;
@@ -159,9 +159,9 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(271, 174);
+            this.txtCantidad.Location = new System.Drawing.Point(180, 179);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(154, 20);
+            this.txtCantidad.Size = new System.Drawing.Size(108, 20);
             this.txtCantidad.TabIndex = 102;
             this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             // 
@@ -169,7 +169,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label15.Location = new System.Drawing.Point(607, 141);
+            this.label15.Location = new System.Drawing.Point(360, 143);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(109, 22);
             this.label15.TabIndex = 100;
@@ -177,9 +177,9 @@
             // 
             // txtImpuesto
             // 
-            this.txtImpuesto.Location = new System.Drawing.Point(780, 113);
+            this.txtImpuesto.Location = new System.Drawing.Point(533, 115);
             this.txtImpuesto.Name = "txtImpuesto";
-            this.txtImpuesto.Size = new System.Drawing.Size(154, 20);
+            this.txtImpuesto.Size = new System.Drawing.Size(145, 20);
             this.txtImpuesto.TabIndex = 99;
             this.txtImpuesto.TextChanged += new System.EventHandler(this.txtImpuesto_TextChanged);
             // 
@@ -187,7 +187,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label14.Location = new System.Drawing.Point(607, 110);
+            this.label14.Location = new System.Drawing.Point(360, 112);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(90, 22);
             this.label14.TabIndex = 98;
@@ -212,9 +212,9 @@
             // 
             // txtDescuento
             // 
-            this.txtDescuento.Location = new System.Drawing.Point(780, 86);
+            this.txtDescuento.Location = new System.Drawing.Point(533, 88);
             this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(154, 20);
+            this.txtDescuento.Size = new System.Drawing.Size(145, 20);
             this.txtDescuento.TabIndex = 95;
             this.txtDescuento.TextChanged += new System.EventHandler(this.txtDescuento_TextChanged);
             // 
@@ -222,7 +222,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label12.Location = new System.Drawing.Point(607, 83);
+            this.label12.Location = new System.Drawing.Point(360, 85);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(100, 22);
             this.label12.TabIndex = 94;
@@ -232,7 +232,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label9.Location = new System.Drawing.Point(98, 170);
+            this.label9.Location = new System.Drawing.Point(7, 175);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 22);
             this.label9.TabIndex = 92;
@@ -242,25 +242,25 @@
             // 
             this.cboxCodigoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxCodigoProducto.FormattingEnabled = true;
-            this.cboxCodigoProducto.Location = new System.Drawing.Point(271, 139);
+            this.cboxCodigoProducto.Location = new System.Drawing.Point(180, 144);
             this.cboxCodigoProducto.Name = "cboxCodigoProducto";
-            this.cboxCodigoProducto.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoProducto.Size = new System.Drawing.Size(110, 23);
             this.cboxCodigoProducto.TabIndex = 91;
             // 
             // cboxCodigoCultivo
             // 
             this.cboxCodigoCultivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxCodigoCultivo.FormattingEnabled = true;
-            this.cboxCodigoCultivo.Location = new System.Drawing.Point(271, 108);
+            this.cboxCodigoCultivo.Location = new System.Drawing.Point(180, 113);
             this.cboxCodigoCultivo.Name = "cboxCodigoCultivo";
-            this.cboxCodigoCultivo.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoCultivo.Size = new System.Drawing.Size(110, 23);
             this.cboxCodigoCultivo.TabIndex = 90;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label6.Location = new System.Drawing.Point(98, 141);
+            this.label6.Location = new System.Drawing.Point(7, 146);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(152, 22);
             this.label6.TabIndex = 89;
@@ -270,7 +270,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label7.Location = new System.Drawing.Point(98, 110);
+            this.label7.Location = new System.Drawing.Point(7, 115);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 22);
             this.label7.TabIndex = 88;
@@ -285,9 +285,9 @@
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 25;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.Location = new System.Drawing.Point(1072, 144);
+            this.btnCancelar.Location = new System.Drawing.Point(754, 150);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(145, 32);
+            this.btnCancelar.Size = new System.Drawing.Size(121, 32);
             this.btnCancelar.TabIndex = 78;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -296,9 +296,9 @@
             // 
             // txtPrecioUnitario
             // 
-            this.txtPrecioUnitario.Location = new System.Drawing.Point(780, 20);
+            this.txtPrecioUnitario.Location = new System.Drawing.Point(533, 22);
             this.txtPrecioUnitario.Name = "txtPrecioUnitario";
-            this.txtPrecioUnitario.Size = new System.Drawing.Size(154, 20);
+            this.txtPrecioUnitario.Size = new System.Drawing.Size(145, 20);
             this.txtPrecioUnitario.TabIndex = 72;
             this.txtPrecioUnitario.TextChanged += new System.EventHandler(this.txtPrecioUnitario_TextChanged);
             // 
@@ -311,9 +311,9 @@
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 24;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.Location = new System.Drawing.Point(1072, 83);
+            this.btnEditar.Location = new System.Drawing.Point(754, 89);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(145, 33);
+            this.btnEditar.Size = new System.Drawing.Size(121, 33);
             this.btnEditar.TabIndex = 87;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -324,7 +324,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label8.Location = new System.Drawing.Point(607, 20);
+            this.label8.Location = new System.Drawing.Point(360, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(139, 22);
             this.label8.TabIndex = 71;
@@ -339,9 +339,9 @@
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 24;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardar.Location = new System.Drawing.Point(1072, 26);
+            this.btnGuardar.Location = new System.Drawing.Point(754, 32);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(145, 33);
+            this.btnGuardar.Size = new System.Drawing.Size(121, 33);
             this.btnGuardar.TabIndex = 86;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -352,15 +352,15 @@
             // 
             this.cboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxEstado.FormattingEnabled = true;
-            this.cboxEstado.Location = new System.Drawing.Point(780, 177);
+            this.cboxEstado.Location = new System.Drawing.Point(533, 179);
             this.cboxEstado.Name = "cboxEstado";
-            this.cboxEstado.Size = new System.Drawing.Size(154, 23);
+            this.cboxEstado.Size = new System.Drawing.Size(145, 23);
             this.cboxEstado.TabIndex = 68;
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(857, 56);
+            this.lblTotal.Location = new System.Drawing.Point(597, 57);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(10, 13);
             this.lblTotal.TabIndex = 67;
@@ -370,25 +370,25 @@
             // 
             this.cboxCodigoAnimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxCodigoAnimal.FormattingEnabled = true;
-            this.cboxCodigoAnimal.Location = new System.Drawing.Point(271, 77);
+            this.cboxCodigoAnimal.Location = new System.Drawing.Point(180, 82);
             this.cboxCodigoAnimal.Name = "cboxCodigoAnimal";
-            this.cboxCodigoAnimal.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoAnimal.Size = new System.Drawing.Size(110, 23);
             this.cboxCodigoAnimal.TabIndex = 64;
             // 
             // cboxCodigoVenta
             // 
             this.cboxCodigoVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxCodigoVenta.FormattingEnabled = true;
-            this.cboxCodigoVenta.Location = new System.Drawing.Point(271, 46);
+            this.cboxCodigoVenta.Location = new System.Drawing.Point(180, 51);
             this.cboxCodigoVenta.Name = "cboxCodigoVenta";
-            this.cboxCodigoVenta.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoVenta.Size = new System.Drawing.Size(110, 23);
             this.cboxCodigoVenta.TabIndex = 58;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label3.Location = new System.Drawing.Point(607, 53);
+            this.label3.Location = new System.Drawing.Point(360, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 22);
             this.label3.TabIndex = 20;
@@ -396,17 +396,17 @@
             // 
             // txtCodigoDetalle
             // 
-            this.txtCodigoDetalle.Location = new System.Drawing.Point(271, 17);
+            this.txtCodigoDetalle.Location = new System.Drawing.Point(180, 22);
             this.txtCodigoDetalle.Name = "txtCodigoDetalle";
             this.txtCodigoDetalle.ReadOnly = true;
-            this.txtCodigoDetalle.Size = new System.Drawing.Size(156, 20);
+            this.txtCodigoDetalle.Size = new System.Drawing.Size(110, 20);
             this.txtCodigoDetalle.TabIndex = 15;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label5.Location = new System.Drawing.Point(607, 178);
+            this.label5.Location = new System.Drawing.Point(360, 180);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 22);
             this.label5.TabIndex = 7;
@@ -416,7 +416,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label4.Location = new System.Drawing.Point(98, 79);
+            this.label4.Location = new System.Drawing.Point(7, 84);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(138, 22);
             this.label4.TabIndex = 5;
@@ -426,7 +426,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label2.Location = new System.Drawing.Point(98, 48);
+            this.label2.Location = new System.Drawing.Point(7, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 22);
             this.label2.TabIndex = 2;
@@ -436,7 +436,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label1.Location = new System.Drawing.Point(98, 16);
+            this.label1.Location = new System.Drawing.Point(7, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 22);
             this.label1.TabIndex = 1;
@@ -451,7 +451,7 @@
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 24;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.Location = new System.Drawing.Point(1033, 634);
+            this.btnEliminar.Location = new System.Drawing.Point(701, 556);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(102, 33);
             this.btnEliminar.TabIndex = 89;
@@ -469,7 +469,7 @@
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 24;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalir.Location = new System.Drawing.Point(1141, 634);
+            this.btnSalir.Location = new System.Drawing.Point(809, 556);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(102, 33);
             this.btnSalir.TabIndex = 90;
@@ -482,7 +482,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1266, 688);
+            this.ClientSize = new System.Drawing.Size(935, 601);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvVentasDetalle);
             this.Controls.Add(this.btnSalir);
