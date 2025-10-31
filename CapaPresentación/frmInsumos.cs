@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -138,12 +139,27 @@ namespace CapaPresentación
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int CodigoInsumo = int.Parse(txtCodigoInsumo.Text);
+            try
+            {
+                int CodigoInsumo = int.Parse(txtCodigoInsumo.Text);
 
-            cd_insumos.MtdEliminarInsumos(CodigoInsumo);
-            MessageBox.Show("Insumo eliminado correctamente", "Eliminar Insumo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            MtdConsultarInventarios();
-            MtdLimpiarCampos();
+                if (cd_insumos.MtdConsultarInventario(CodigoInsumo) == true)
+                {
+                    MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+
+                    cd_insumos.MtdEliminarInsumos(CodigoInsumo);
+                    MessageBox.Show("Insumo eliminado correctamente", "Eliminar Insumo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarInventarios();
+                    MtdLimpiarCampos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

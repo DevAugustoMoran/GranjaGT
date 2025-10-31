@@ -77,10 +77,18 @@ namespace CapaPresentación
                 try
                 {
                     int CodigoProducto = Convert.ToInt32(txtCodigoProducto.Text);
-                    cdproductos.MtdEliminarProducto(CodigoProducto);
-                    MessageBox.Show("Producto eliminado exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    mtdConsultarProductos();
-                    mtdLimpiarCampos();
+
+                    if (cdproductos.MtdConsultarVentasDetalle(CodigoProducto) == true)
+                    {
+                        MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        cdproductos.MtdEliminarProducto(CodigoProducto);
+                        MessageBox.Show("Producto eliminado exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mtdConsultarProductos();
+                        mtdLimpiarCampos();
+                    }
                 }
                 catch (Exception ex)
                 {

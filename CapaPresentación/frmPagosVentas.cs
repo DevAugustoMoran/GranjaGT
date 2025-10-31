@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,17 +19,17 @@ namespace CapaPresentación
         CLpagosVentas cl_pagosventas = new CLpagosVentas();
 
         //LLENAR COMBOBOX CON LISTA DE VENTAS
-        private void MtdMostrarListaVentas()
+        private void MtdMostrarListaDetallesVentas()
         {
-            var ListaVentas = cd_pagosventas.MtdListarVentas();
+            var ListaDetalles = cd_pagosventas.MtdListarDetallesVentas();
 
-            foreach (var Ventas in ListaVentas)
+            foreach (var Detalles in ListaDetalles)
             {
-                cboxCodigoVenta.Items.Add(Ventas);
+                cboxCodigoDetalle.Items.Add(Detalles);
             }
 
-            cboxCodigoVenta.DisplayMember = "Text";
-            cboxCodigoVenta.ValueMember = "Value";
+            cboxCodigoDetalle.DisplayMember = "Text";
+            cboxCodigoDetalle.ValueMember = "Value";
         }
 
         private void MtdConsultarVentas()
@@ -44,7 +45,7 @@ namespace CapaPresentación
 
         private void frmPagosVentas_Load(object sender, EventArgs e)
         {
-            MtdMostrarListaVentas();
+            MtdMostrarListaDetallesVentas();
             MtdConsultarVentas();
             lblFecha.Text = cl_pagosventas.MtdFechaActual().ToString("dd/MM/yyyy");
         }
@@ -52,7 +53,7 @@ namespace CapaPresentación
         private void mtdLimpiarCampos()
         {
             txtCodigoPago.Text = "";
-            cboxCodigoVenta.Text = "";
+            cboxCodigoDetalle.Text = "";
             lblMonto.Text = "";
             cboxTipoPago.Text = "";
             txtNumReferencia.Text = "";
@@ -61,7 +62,7 @@ namespace CapaPresentación
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (cboxCodigoVenta.Text == "" || cboxTipoPago.Text == "" || txtNumReferencia.Text == "" || dtpFechaPago.Text == "" || cboxEstado.Text == "")
+            if (cboxCodigoDetalle.Text == "" || cboxTipoPago.Text == "" || txtNumReferencia.Text == "" || dtpFechaPago.Text == "" || cboxEstado.Text == "")
             {
                 MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -69,16 +70,17 @@ namespace CapaPresentación
             {
                 try
                 {
-                    int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
+                    int CodigoVenta = int.Parse(cboxCodigoDetalle.Text.Split('-')[0].Trim());
                     decimal Monto = decimal.Parse(lblMonto.Text);
                     string TipoPago = cboxTipoPago.Text;
                     string NumReferencia = txtNumReferencia.Text;
                     DateTime FechaPago = dtpFechaPago.Value;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_pagosventas.MtdFechaActual();
+                    int CodigoDetalle = int.Parse(cboxCodigoDetalle.Text.Split('-')[0].Trim());
 
-                    cd_pagosventas.MtdAgregarPagosVentas(CodigoVenta, Monto, TipoPago, NumReferencia, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria);
+                    cd_pagosventas.MtdAgregarPagosVentas(Monto, TipoPago, NumReferencia, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria, CodigoDetalle);
                     MessageBox.Show("Pago agregado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MtdConsultarVentas();
                     mtdLimpiarCampos();
@@ -93,7 +95,7 @@ namespace CapaPresentación
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (cboxCodigoVenta.Text == "" || cboxTipoPago.Text == "" || txtNumReferencia.Text == "" || dtpFechaPago.Text == "" || cboxEstado.Text == "")
+            if (cboxCodigoDetalle.Text == "" || cboxTipoPago.Text == "" || txtNumReferencia.Text == "" || dtpFechaPago.Text == "" || cboxEstado.Text == "")
             {
                 MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -102,16 +104,17 @@ namespace CapaPresentación
                 try
                 {
                     int CodigoPago = int.Parse(txtCodigoPago.Text);
-                    int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
+                    int CodigoVenta = int.Parse(cboxCodigoDetalle.Text.Split('-')[0].Trim());
                     decimal Monto = decimal.Parse(lblMonto.Text);
                     string TipoPago = cboxTipoPago.Text;
                     string NumReferencia = txtNumReferencia.Text;
                     DateTime FechaPago = dtpFechaPago.Value;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_pagosventas.MtdFechaActual();
+                    int CodigoDetalle = int.Parse(cboxCodigoDetalle.Text.Split('-')[0].Trim());
 
-                    cd_pagosventas.MtdActualizarPagosVentas(CodigoPago, CodigoVenta, Monto, TipoPago, NumReferencia, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria);
+                    cd_pagosventas.MtdActualizarPagosVentas(CodigoPago, Monto, TipoPago, NumReferencia, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria, CodigoDetalle);
                     MessageBox.Show("Pago actualizado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MtdConsultarVentas();
                     mtdLimpiarCampos();
@@ -146,17 +149,17 @@ namespace CapaPresentación
         private void dgvPagosVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtCodigoPago.Text = dgvPagosVentas.SelectedCells[0].Value.ToString();
-            cboxCodigoVenta.Text = dgvPagosVentas.SelectedCells[1].Value.ToString();
-            lblMonto.Text = dgvPagosVentas.SelectedCells[2].Value.ToString();
-            cboxTipoPago.Text = dgvPagosVentas.SelectedCells[3].Value.ToString();
-            txtNumReferencia.Text = dgvPagosVentas.SelectedCells[4].Value.ToString();
-            dtpFechaPago.Text = dgvPagosVentas.SelectedCells[5].Value.ToString();
-            cboxEstado.Text = dgvPagosVentas.SelectedCells[6].Value.ToString();
+            cboxCodigoDetalle.Text = dgvPagosVentas.SelectedCells[8].Value.ToString();
+            lblMonto.Text = dgvPagosVentas.SelectedCells[1].Value.ToString();
+            cboxTipoPago.Text = dgvPagosVentas.SelectedCells[2].Value.ToString();
+            txtNumReferencia.Text = dgvPagosVentas.SelectedCells[3].Value.ToString();
+            dtpFechaPago.Text = dgvPagosVentas.SelectedCells[4].Value.ToString();
+            cboxEstado.Text = dgvPagosVentas.SelectedCells[5].Value.ToString();
         }
 
-        private void cboxCodigoVenta_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboxCodigoDetalle_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblMonto.Text = cd_pagosventas.MtdMonto(int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim())).ToString("0.00");
+            lblMonto.Text = cd_pagosventas.MtdMonto(int.Parse(cboxCodigoDetalle.Text.Split('-')[0].Trim())).ToString("0.00");
         }
     }
 }

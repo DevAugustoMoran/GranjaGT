@@ -133,11 +133,19 @@ namespace CapaPresentación
             {
                 try
                 {
-                    int CodigoCliente = Convert.ToInt32(txtCodigoCliente.Text);
-                    cdclientes.MtdEliminarCliente(CodigoCliente);
-                    MessageBox.Show("Cliente eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    mtdConsultarClientes();
-                    mtdLimpiarCampos();
+                    int CodigoCliente = int.Parse(txtCodigoCliente.Text);
+
+                    if (cdclientes.MtdConsultarVentas(CodigoCliente) == true)
+                    {
+                        MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        cdclientes.MtdEliminarCliente(CodigoCliente);
+                        MessageBox.Show("Cliente eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mtdConsultarClientes();
+                        mtdLimpiarCampos();
+                    }
                 }
                 catch (Exception ex)
                 {

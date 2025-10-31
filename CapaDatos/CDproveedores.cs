@@ -61,6 +61,24 @@ namespace CapaDatos
             CommandEliminarProveedor.ExecuteNonQuery();
             cd_conexion.MtdCerrarConexion();
         }
-        
+
+        public bool MtdConsultarInsumos(int CodigoProveedor)
+        {
+            string QueryConsultarProveedor = "SELECT 1 FROM tbl_Insumos WHERE CodigoProveedor = @CodigoProveedor";
+            SqlCommand CommandEliminarProveedor = new SqlCommand(QueryConsultarProveedor, cd_conexion.MtdAbrirConexion());
+            CommandEliminarProveedor.Parameters.AddWithValue("@CodigoProveedor", CodigoProveedor);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarProveedor.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace CapaPresentacion.Seguridad
             if (txtuser.Text == "Usuario")
             {
                 txtuser.Text = "";
-                txtuser.ForeColor = Color.LightGray;
+                txtuser.ForeColor = Color.Green;
             }
         }
 
@@ -44,7 +44,7 @@ namespace CapaPresentacion.Seguridad
             if (txtpass.Text == "Contraseña")
             {
                 txtpass.Text = "";
-                txtpass.ForeColor = Color.LightGray;
+                txtpass.ForeColor = Color.Green;
                 txtpass.UseSystemPasswordChar = true;
             }
         }
@@ -106,7 +106,9 @@ namespace CapaPresentacion.Seguridad
                     else
                     {
                         msgError("Usuario o Contraseña incorrecta.");
-                        txtpass.Text = "Password";
+                        //txtpass.Text = "Password";
+                        txtuser.Text = "";
+                        txtpass.Text = "";
                         txtpass.UseSystemPasswordChar = false;
                         txtuser.Focus();
                     }
