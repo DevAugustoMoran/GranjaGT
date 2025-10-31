@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,12 +45,26 @@ namespace CapaPresentación
         private void FrmPagosEmpleados_Load(object sender, EventArgs e)
         {
             lblFecha.Text = clpagosempleados.MtdFechaActual().ToString("dd/MM/yyyy");
+            MtdMostrarListaEmpleados();
             MtdConsultarPagosEmpleados();
+        }
+
+        private void MtdMostrarListaEmpleados()
+        {
+            var ListaEmpleados = cdpagosempleados.MtdListarEmpleados();
+
+            foreach (var Empleados in ListaEmpleados)
+            {
+                cboxCodigoEmpleado.Items.Add(Empleados);
+            }
+
+            cboxCodigoEmpleado.DisplayMember = "Text";
+            cboxCodigoEmpleado.ValueMember = "Value";
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtSalario.Text == "" || txtHorasExtra.Text == "" || txtBonos.Text == "" || txtDescuentos.Text == "" || lblSalarioFinal.Text == "ImprimirSalario" || cbxEstado.Text == "")
+            if (txtSalario.Text == "" || txtHorasExtra.Text == "" || txtBonos.Text == "" || txtDescuentos.Text == "" || lblSalarioFinal.Text == "ImprimirSalario" || cbxEstado.Text == "" || cboxCodigoEmpleado.Text == "")
             {
                 MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -64,9 +79,10 @@ namespace CapaPresentación
                     Decimal salarioFinal = Convert.ToDecimal(lblSalarioFinal.Text);
                     DateTime FechaPago = dtpFechaPago.Value;
                     string Estado = cbxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clpagosempleados.MtdFechaActual();
-                    cdpagosempleados.MtdAgregarPagoEmpleado(salario, horasExtra, bonos, descuentos, salarioFinal, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria);
+                    int CodigoEmpleado = int.Parse(cboxCodigoEmpleado.Text.Split('-')[0].Trim());
+                    cdpagosempleados.MtdAgregarPagoEmpleado(salario, horasExtra, bonos, descuentos, salarioFinal, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria, CodigoEmpleado);
                     MessageBox.Show("Pago de empleado agregado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MtdConsultarPagosEmpleados();
                     mtdLimpiarCampos();
@@ -88,11 +104,12 @@ namespace CapaPresentación
             lblSalarioFinal.Text = dgvPagoEmpleados.SelectedCells[5].Value.ToString();
             dtpFechaPago.Value = Convert.ToDateTime(dgvPagoEmpleados.SelectedCells[6].Value);
             cbxEstado.Text = dgvPagoEmpleados.SelectedCells[7].Value.ToString();
+            cboxCodigoEmpleado.Text = dgvPagoEmpleados.SelectedCells[10].Value.ToString();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (txtCodigoPagoEmpleado.Text == "" || txtSalario.Text == "" || txtHorasExtra.Text == "" || txtBonos.Text == "" || txtDescuentos.Text == "" || lblSalarioFinal.Text == "ImprimirSalario" || cbxEstado.Text == "")
+            if (txtCodigoPagoEmpleado.Text == "" || txtSalario.Text == "" || txtHorasExtra.Text == "" || txtBonos.Text == "" || txtDescuentos.Text == "" || lblSalarioFinal.Text == "ImprimirSalario" || cbxEstado.Text == "" || cboxCodigoEmpleado.Text == "")
             {
                 MessageBox.Show("Por favor seleccione un pago de empleado para editar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -108,9 +125,10 @@ namespace CapaPresentación
                     Decimal SalarioFinal = Convert.ToDecimal(lblSalarioFinal.Text);
                     DateTime FechaPago = dtpFechaPago.Value;
                     string Estado = cbxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clpagosempleados.MtdFechaActual();
-                    cdpagosempleados.MtdActualizarPagoEmpleado(CodigoPagoEmpleado, Salario, HorasExtras, Bonos, Descuentos, SalarioFinal, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria);
+                    int CodigoEmpleado = int.Parse(cboxCodigoEmpleado.Text.Split('-')[0].Trim());
+                    cdpagosempleados.MtdActualizarPagoEmpleado(CodigoPagoEmpleado, Salario, HorasExtras, Bonos, Descuentos, SalarioFinal, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria, CodigoEmpleado);
                     MessageBox.Show("Pago de empleado actualizado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MtdConsultarPagosEmpleados();
                     mtdLimpiarCampos();

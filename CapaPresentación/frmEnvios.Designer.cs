@@ -258,7 +258,7 @@
             this.cboxEstado.FormattingEnabled = true;
             this.cboxEstado.Items.AddRange(new object[] {
             "Solicitado",
-            "Progreso",
+            "En Progreso",
             "Finalizado",
             "Cancelado",
             "Facturado"});

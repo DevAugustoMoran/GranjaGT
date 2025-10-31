@@ -59,6 +59,13 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelContenedorForm = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.lblRol = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelMenuLateral.SuspendLayout();
             this.panelCinco.SuspendLayout();
             this.panelCuatro.SuspendLayout();
@@ -67,12 +74,20 @@
             this.panelUno.SuspendLayout();
             this.panelContenedorForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenuLateral
             // 
             this.panelMenuLateral.AutoScroll = true;
             this.panelMenuLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(121)))), ((int)(((byte)(1)))));
+            this.panelMenuLateral.Controls.Add(this.lblEstado);
+            this.panelMenuLateral.Controls.Add(this.lblRol);
+            this.panelMenuLateral.Controls.Add(this.lblUsuario);
+            this.panelMenuLateral.Controls.Add(this.label3);
+            this.panelMenuLateral.Controls.Add(this.label2);
+            this.panelMenuLateral.Controls.Add(this.label1);
+            this.panelMenuLateral.Controls.Add(this.pictureBox2);
             this.panelMenuLateral.Controls.Add(this.panelCinco);
             this.panelMenuLateral.Controls.Add(this.btnCinco);
             this.panelMenuLateral.Controls.Add(this.panelCuatro);
@@ -566,6 +581,90 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblEstado.Location = new System.Drawing.Point(140, 57);
+            this.lblEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(11, 13);
+            this.lblEstado.TabIndex = 20;
+            this.lblEstado.Text = ".";
+            // 
+            // lblRol
+            // 
+            this.lblRol.AutoSize = true;
+            this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblRol.Location = new System.Drawing.Point(140, 39);
+            this.lblRol.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(11, 13);
+            this.lblRol.TabIndex = 19;
+            this.lblRol.Text = ".";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblUsuario.Location = new System.Drawing.Point(140, 24);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(11, 13);
+            this.lblUsuario.TabIndex = 18;
+            this.lblUsuario.Text = ".";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkGray;
+            this.label3.Location = new System.Drawing.Point(76, 57);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Estado:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkGray;
+            this.label2.Location = new System.Drawing.Point(76, 38);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Rol:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkGray;
+            this.label1.Location = new System.Drawing.Point(76, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Usuario:";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(23, 24);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(41, 46);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -580,6 +679,7 @@
             this.Text = "FrmMenuPrincipal";
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
             this.panelMenuLateral.ResumeLayout(false);
+            this.panelMenuLateral.PerformLayout();
             this.panelCinco.ResumeLayout(false);
             this.panelCuatro.ResumeLayout(false);
             this.panelTres.ResumeLayout(false);
@@ -588,6 +688,7 @@
             this.panelContenedorForm.ResumeLayout(false);
             this.panelContenedorForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -624,5 +725,12 @@
         private System.Windows.Forms.Button btnCuatro;
         private System.Windows.Forms.Panel panelContenedorForm;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.Label lblRol;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

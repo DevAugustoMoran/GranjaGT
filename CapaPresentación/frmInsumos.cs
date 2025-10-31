@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 
 namespace CapaPresentación
 {
@@ -80,7 +81,7 @@ namespace CapaPresentación
                     decimal Peso = decimal.Parse(txtPeso.Text);
                     string Observacion = txtObservacion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_insumos.MtdFechaActual();
 
                     cd_insumos.MtdAgregarInsumos(CodigoProveedor, Nombre, TipoInsumo, CostoUnitario, UnidadMedida, Peso, Observacion, Estado, UsuarioAuditoria, FechaAuditoria);
@@ -115,7 +116,7 @@ namespace CapaPresentación
                     decimal Peso = decimal.Parse(txtPeso.Text);
                     string Observacion = txtObservacion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_insumos.MtdFechaActual();
 
                     cd_insumos.MtdActualizarInsumos(CodigoInsumo, CodigoProveedor, Nombre, TipoInsumo, CostoUnitario, UnidadMedida, Peso, Observacion, Estado, UsuarioAuditoria, FechaAuditoria);

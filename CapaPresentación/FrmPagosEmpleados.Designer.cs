@@ -54,6 +54,8 @@
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvPagoEmpleados = new System.Windows.Forms.DataGridView();
+            this.cboxCodigoEmpleado = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagoEmpleados)).BeginInit();
             this.SuspendLayout();
@@ -190,6 +192,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboxCodigoEmpleado);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.lblSalarioFinal);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnEditar);
@@ -294,8 +298,8 @@
             // 
             this.cbxEstado.FormattingEnabled = true;
             this.cbxEstado.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
+            "Pagado",
+            "Pendiente"});
             this.cbxEstado.Location = new System.Drawing.Point(556, 140);
             this.cbxEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cbxEstado.Name = "cbxEstado";
@@ -315,7 +319,7 @@
             // 
             // txtHorasExtra
             // 
-            this.txtHorasExtra.Location = new System.Drawing.Point(180, 98);
+            this.txtHorasExtra.Location = new System.Drawing.Point(180, 108);
             this.txtHorasExtra.Margin = new System.Windows.Forms.Padding(2);
             this.txtHorasExtra.Name = "txtHorasExtra";
             this.txtHorasExtra.Size = new System.Drawing.Size(104, 20);
@@ -334,7 +338,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 100);
+            this.label4.Location = new System.Drawing.Point(4, 110);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 17);
@@ -345,7 +349,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 60);
+            this.label2.Location = new System.Drawing.Point(4, 80);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 17);
@@ -354,7 +358,7 @@
             // 
             // txtSalario
             // 
-            this.txtSalario.Location = new System.Drawing.Point(180, 60);
+            this.txtSalario.Location = new System.Drawing.Point(180, 80);
             this.txtSalario.Margin = new System.Windows.Forms.Padding(2);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(104, 20);
@@ -383,6 +387,26 @@
             this.dgvPagoEmpleados.Size = new System.Drawing.Size(899, 274);
             this.dgvPagoEmpleados.TabIndex = 91;
             this.dgvPagoEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagoEmpleados_CellClick);
+            // 
+            // cboxCodigoEmpleado
+            // 
+            this.cboxCodigoEmpleado.FormattingEnabled = true;
+            this.cboxCodigoEmpleado.Location = new System.Drawing.Point(180, 50);
+            this.cboxCodigoEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.cboxCodigoEmpleado.Name = "cboxCodigoEmpleado";
+            this.cboxCodigoEmpleado.Size = new System.Drawing.Size(104, 21);
+            this.cboxCodigoEmpleado.TabIndex = 94;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(5, 51);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(139, 17);
+            this.label11.TabIndex = 93;
+            this.label11.Text = "Codigo Empleado:";
             // 
             // FrmPagosEmpleados
             // 
@@ -436,5 +460,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgvPagoEmpleados;
         private System.Windows.Forms.Label lblSalarioFinal;
+        private System.Windows.Forms.ComboBox cboxCodigoEmpleado;
+        private System.Windows.Forms.Label label11;
     }
 }

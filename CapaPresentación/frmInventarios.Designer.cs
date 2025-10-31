@@ -206,11 +206,9 @@
             this.cboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxEstado.FormattingEnabled = true;
             this.cboxEstado.Items.AddRange(new object[] {
-            "Solicitado",
-            "Progreso",
-            "Finalizado",
-            "Cancelado",
-            "Facturado"});
+            "En Stock",
+            "Bajo Stock",
+            "Agotado"});
             this.cboxEstado.Location = new System.Drawing.Point(590, 156);
             this.cboxEstado.Name = "cboxEstado";
             this.cboxEstado.Size = new System.Drawing.Size(114, 23);

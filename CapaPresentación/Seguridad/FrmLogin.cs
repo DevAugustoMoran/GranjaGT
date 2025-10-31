@@ -98,7 +98,7 @@ namespace CapaPresentacion.Seguridad
                     if (validLogin == true)
                     {
                         FrmMenuPrincipal mainMenu = new FrmMenuPrincipal();
-                        MessageBox.Show("Bienvenido " + UserCache.Nombre + ", " + UserCache.CodigoRol);
+                        MessageBox.Show("Bienvenido " + UserCache.Nombre + ", " + UserCache.NombreRol);
                         mainMenu.Show();
                         mainMenu.FormClosed += Logout;
                         this.Hide();

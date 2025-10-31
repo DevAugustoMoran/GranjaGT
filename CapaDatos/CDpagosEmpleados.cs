@@ -12,6 +12,26 @@ namespace CapaDatos
     {
         CDconexion cd_conexion = new CDconexion();
 
+        public List<dynamic> MtdListarEmpleados()
+        {
+            List<dynamic> ListaEmpleados = new List<dynamic>();
+            string QueryListaEmpleados = "Select CodigoEmpleado, Nombre from tbl_Empleados";
+            SqlCommand cmd = new SqlCommand(QueryListaEmpleados, cd_conexion.MtdAbrirConexion());
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListaEmpleados.Add(new
+                {
+                    Value = reader["CodigoEmpleado"],
+                    Text = $"{reader["CodigoEmpleado"]} - {reader["Nombre"]}"
+                });
+            }
+
+            cd_conexion.MtdCerrarConexion();
+            return ListaEmpleados;
+        }
+
         public DataTable MtdConsultarPagosEmpleados()
         {
             string QueryConsultarPagosEmpleados = "Select * from tbl_Pagos_Empleados";
@@ -23,9 +43,9 @@ namespace CapaDatos
         }
 
 
-        public void MtdAgregarPagoEmpleado(Decimal Salario, Decimal HorasExtras, Decimal Bonos, Decimal Descuentos, Decimal SalarioFinal, DateTime FechaPago, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
+        public void MtdAgregarPagoEmpleado(Decimal Salario, Decimal HorasExtras, Decimal Bonos, Decimal Descuentos, Decimal SalarioFinal, DateTime FechaPago, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria, int CodigoEmpleado)
         {
-            string QueryAgregarPagoEmpleado = "Insert into tbl_Pagos_Empleados(Salario, HorasExtras, Bonos, Descuentos, SalarioFinal, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria) values (@Salario, @HorasExtras, @Bonos, @Descuentos, @SalarioFinal, @FechaPago, @Estado, @UsuarioAuditoria, @FechaAuditoria)";
+            string QueryAgregarPagoEmpleado = "Insert into tbl_Pagos_Empleados(Salario, HorasExtras, Bonos, Descuentos, SalarioFinal, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria, CodigoEmpleado) values (@Salario, @HorasExtras, @Bonos, @Descuentos, @SalarioFinal, @FechaPago, @Estado, @UsuarioAuditoria, @FechaAuditoria, @CodigoEmpleado)";
             SqlCommand CommandAgregarPagoEmpleado = new SqlCommand(QueryAgregarPagoEmpleado, cd_conexion.MtdAbrirConexion());
             CommandAgregarPagoEmpleado.Parameters.AddWithValue("@Salario", Salario);
             CommandAgregarPagoEmpleado.Parameters.AddWithValue("@HorasExtras", HorasExtras);
@@ -36,14 +56,15 @@ namespace CapaDatos
             CommandAgregarPagoEmpleado.Parameters.AddWithValue("@Estado", Estado);
             CommandAgregarPagoEmpleado.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
             CommandAgregarPagoEmpleado.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
+            CommandAgregarPagoEmpleado.Parameters.AddWithValue("@CodigoEmpleado", CodigoEmpleado);
             CommandAgregarPagoEmpleado.ExecuteNonQuery();
             cd_conexion.MtdCerrarConexion();
         }
 
 
-        public void MtdActualizarPagoEmpleado(int CodigoPagoEmpleado, Decimal Salario, Decimal HorasExtras, Decimal Bonos, Decimal Descuentos, Decimal SalarioFinal, DateTime FechaPago, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
+        public void MtdActualizarPagoEmpleado(int CodigoPagoEmpleado, Decimal Salario, Decimal HorasExtras, Decimal Bonos, Decimal Descuentos, Decimal SalarioFinal, DateTime FechaPago, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria, int CodigoEmpleado)
         {
-            string QueryActualizarPagoEmpleado = "Update tbl_Pagos_Empleados set Salario = @Salario, HorasExtras = @HorasExtras, Bonos = @Bonos, Descuentos = @Descuentos, SalarioFinal = @SalarioFinal, FechaPago = @FechaPago, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoPagoEmpleado = @CodigoPagoEmpleado";
+            string QueryActualizarPagoEmpleado = "Update tbl_Pagos_Empleados set Salario = @Salario, HorasExtras = @HorasExtras, Bonos = @Bonos, Descuentos = @Descuentos, SalarioFinal = @SalarioFinal, FechaPago = @FechaPago, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria, CodigoEmpleado = @CodigoEmpleado where CodigoPagoEmpleado = @CodigoPagoEmpleado";
             SqlCommand CommandActualizarPagoEmpleado = new SqlCommand(QueryActualizarPagoEmpleado, cd_conexion.MtdAbrirConexion());
             CommandActualizarPagoEmpleado.Parameters.AddWithValue("@CodigoPagoEmpleado", CodigoPagoEmpleado);
             CommandActualizarPagoEmpleado.Parameters.AddWithValue("@Salario", Salario);
@@ -55,6 +76,7 @@ namespace CapaDatos
             CommandActualizarPagoEmpleado.Parameters.AddWithValue("@Estado", Estado);
             CommandActualizarPagoEmpleado.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
             CommandActualizarPagoEmpleado.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
+            CommandActualizarPagoEmpleado.Parameters.AddWithValue("@CodigoEmpleado", CodigoEmpleado);
             CommandActualizarPagoEmpleado.ExecuteNonQuery();
             cd_conexion.MtdCerrarConexion();
         }
