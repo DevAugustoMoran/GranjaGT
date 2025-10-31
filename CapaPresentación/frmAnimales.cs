@@ -150,5 +150,20 @@ namespace CapaPresentación
         {
             this.Close();
         }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboxEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

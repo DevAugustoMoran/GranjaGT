@@ -71,7 +71,7 @@
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 24;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.Location = new System.Drawing.Point(771, 136);
+            this.btnCancelar.Location = new System.Drawing.Point(735, 136);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(145, 33);
             this.btnCancelar.TabIndex = 88;
@@ -89,7 +89,7 @@
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 24;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.Location = new System.Drawing.Point(771, 90);
+            this.btnEditar.Location = new System.Drawing.Point(735, 90);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(145, 33);
             this.btnEditar.TabIndex = 87;
@@ -107,7 +107,7 @@
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 24;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardar.Location = new System.Drawing.Point(771, 43);
+            this.btnGuardar.Location = new System.Drawing.Point(735, 43);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(145, 33);
             this.btnGuardar.TabIndex = 86;
@@ -125,7 +125,7 @@
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 24;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalir.Location = new System.Drawing.Point(843, 477);
+            this.btnSalir.Location = new System.Drawing.Point(795, 546);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(102, 33);
             this.btnSalir.TabIndex = 90;
@@ -138,27 +138,29 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(741, 65);
+            this.label10.Location = new System.Drawing.Point(688, 65);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(76, 14);
             this.label10.TabIndex = 85;
             this.label10.Text = "Fecha actual:";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(864, 65);
+            this.lblFecha.Location = new System.Drawing.Point(811, 65);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(86, 14);
             this.lblFecha.TabIndex = 84;
             this.lblFecha.Text = "Imprimir Fecha";
+            this.lblFecha.Click += new System.EventHandler(this.lblFecha_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(296, 20);
+            this.label6.Location = new System.Drawing.Point(256, 22);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(316, 31);
@@ -182,7 +184,7 @@
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 24;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.Location = new System.Drawing.Point(735, 477);
+            this.btnEliminar.Location = new System.Drawing.Point(687, 546);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(102, 33);
             this.btnEliminar.TabIndex = 89;
@@ -220,7 +222,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(928, 210);
+            this.groupBox1.Size = new System.Drawing.Size(894, 210);
             this.groupBox1.TabIndex = 81;
             this.groupBox1.TabStop = false;
             // 
@@ -433,7 +435,7 @@
             this.dgvRegistroEmpleados.ReadOnly = true;
             this.dgvRegistroEmpleados.RowHeadersWidth = 51;
             this.dgvRegistroEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRegistroEmpleados.Size = new System.Drawing.Size(916, 174);
+            this.dgvRegistroEmpleados.Size = new System.Drawing.Size(894, 243);
             this.dgvRegistroEmpleados.TabIndex = 92;
             this.dgvRegistroEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroEmpleados_CellContentClick);
             // 
@@ -441,7 +443,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 527);
+            this.ClientSize = new System.Drawing.Size(935, 601);
             this.Controls.Add(this.dgvRegistroEmpleados);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label10);

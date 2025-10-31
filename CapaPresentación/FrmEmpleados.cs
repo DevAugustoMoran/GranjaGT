@@ -183,5 +183,15 @@ namespace CapaPresentación
             dtpFechaIngreso.Text = dgvRegistroEmpleados.SelectedCells[9].Value.ToString();
 
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFecha_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

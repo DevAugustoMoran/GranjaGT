@@ -57,10 +57,7 @@ namespace CapaPresentación
 
         private void button10_Click(object sender, EventArgs e)
         {
-            frmInventarios formulario = new frmInventarios();
-            formulario.Show();
-
-            MtdOcultarSubMenu();
+            MtdAbrirContenedorFormulario(new frmInventarios());
         }
 
         private void panelMenuLateral_Paint(object sender, PaintEventArgs e)
@@ -80,42 +77,37 @@ namespace CapaPresentación
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmClientes formulario = new frmClientes();
-            formulario.Show();
+            MtdAbrirContenedorFormulario(new frmClientes());
 
-            MtdOcultarSubMenu();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FrmEmpleados formulario = new FrmEmpleados();
-            formulario.Show();
+            MtdAbrirContenedorFormulario(new FrmEmpleados());
 
-            MtdOcultarSubMenu();
+           
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            FrmPagosEmpleados formulario = new FrmPagosEmpleados();
-            formulario.Show();
+            MtdAbrirContenedorFormulario(new FrmPagosEmpleados());
 
-            MtdOcultarSubMenu();
+           
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            frmPagosVentas formulario = new frmPagosVentas();
-            formulario.Show();
+            MtdAbrirContenedorFormulario(new frmPagosVentas());
 
-            MtdOcultarSubMenu();
+           
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            frmProveedores formulario = new frmProveedores();
-            formulario.Show();
+            MtdAbrirContenedorFormulario(new frmProveedores());
 
-            MtdOcultarSubMenu();
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -125,18 +117,83 @@ namespace CapaPresentación
 
         private void button11_Click(object sender, EventArgs e)
         {
-            frmInsumos formulario = new frmInsumos();
-            formulario.Show();
-
-            MtdOcultarSubMenu();
+            MtdAbrirContenedorFormulario(new frmInsumos());
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            frmProductos formulario = new frmProductos();
-            formulario.Show();
+            MtdAbrirContenedorFormulario(new frmProductos());
+        }
 
-            MtdOcultarSubMenu();
+        private void btnTres_Click(object sender, EventArgs e)
+        {
+            MtdMostrarSubMenu(panelTres);
+        }
+
+        private void btnCuatro_Click(object sender, EventArgs e)
+        {
+            MtdMostrarSubMenu(panelCuatro);
+        }
+
+        private void btnCinco_Click(object sender, EventArgs e)
+        {
+            MtdMostrarSubMenu(panelCinco);
+        }
+
+
+        private Form FormActivo = null;
+        private void MtdAbrirContenedorFormulario(Form formularioHijo)
+        {
+            if(FormActivo != null)
+                FormActivo.Close();
+            FormActivo = formularioHijo;
+            formularioHijo.TopLevel = false;
+            formularioHijo.FormBorderStyle = FormBorderStyle.None;
+            formularioHijo.Dock = DockStyle.Fill;
+            panelContenedorForm.Controls.Add(formularioHijo);
+            panelContenedorForm.Tag = formularioHijo;
+            formularioHijo.BringToFront();
+            formularioHijo.Show();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            MtdAbrirContenedorFormulario(new frmVentas());
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            MtdAbrirContenedorFormulario(new frmVentasDetalle());
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            MtdAbrirContenedorFormulario(new frmEnvios());
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            MtdAbrirContenedorFormulario(new frmAnimales());
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            MtdAbrirContenedorFormulario(new frmCultivos());
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            MtdAbrirContenedorFormulario(new FrmGranjas());
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            MtdAbrirContenedorFormulario(new frmRoles());
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            MtdAbrirContenedorFormulario(new FrmUsuarios());
         }
     }
 }
