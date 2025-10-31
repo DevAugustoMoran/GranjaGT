@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,7 +64,7 @@ namespace CapaPresentación
                     string Correo = txtCorreo.Text;
                     string Direccion = txtDireccion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clproveedores.MtdFechaActual();
 
                     cdproveedores.MtdAgregarProveedor(Nombre, Telefono, Correo, Direccion, Estado, UsuarioAuditoria, FechaAuditoria);
@@ -104,7 +105,7 @@ namespace CapaPresentación
                     string Correo = txtCorreo.Text;
                     string Direccion = txtDireccion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clproveedores.MtdFechaActual();
                     cdproveedores.MtdActualizarProveedor(CodigoProveedor, Nombre, Telefono, Correo, Direccion, Estado, UsuarioAuditoria, FechaAuditoria);
                     MessageBox.Show("Proveedor actualizado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);

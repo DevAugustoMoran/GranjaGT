@@ -18,7 +18,22 @@ namespace CapaPresentacion.Seguridad
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "Select * from tbl_Usuarios where Nombre = @Nombre and Contrasena = @Contrasena";
+                    command.CommandText = @"
+                    Select
+                    u.CodigoUsuario,
+                    u.CodigoRol,
+                    u.Nombre,
+                    u.Estado,
+                    u.FechaRegistro,
+                    u.Contrasena,
+                    r.NombreRol
+                    from
+                    tbl_Usuarios as u
+                    Inner join
+                    tbl_Roles as r on u.CodigoRol = r.CodigoRol
+                    where
+                    u.Nombre = @Nombre and u.Contrasena = @Contrasena";
+
                     command.Parameters.AddWithValue("@Nombre", Nombre);
                     command.Parameters.AddWithValue("@Contrasena", Contrasena);
                     command.CommandType = CommandType.Text;
@@ -27,12 +42,13 @@ namespace CapaPresentacion.Seguridad
                     {
                         while (reader.Read())
                         {
-                            UserCache.CodigoUsuario = reader.GetInt32(0);
-                            UserCache.CodigoRol = reader.GetInt32(1);
-                            UserCache.Nombre = reader.GetString(2);
-                            UserCache.FechaRegistro = reader.GetString(3);
-                            UserCache.Estado = reader.GetString(4);
-                            UserCache.Contrasena = reader.GetString(7);
+                            UserCache.CodigoUsuario = reader.GetInt32(reader.GetOrdinal("CodigoUsuario"));
+                            UserCache.CodigoRol = reader.GetInt32(reader.GetOrdinal("CodigoRol"));
+                            UserCache.Nombre = reader.GetString(reader.GetOrdinal("Nombre"));
+                            UserCache.Estado = reader.GetString(reader.GetOrdinal("Estado"));
+                            UserCache.Contrasena = reader.GetString(reader.GetOrdinal("Contrasena"));
+                            UserCache.FechaRegistro = reader.GetDateTime(reader.GetOrdinal("FechaRegistro"));
+                            UserCache.NombreRol = reader.GetString(reader.GetOrdinal("NombreRol"));
                         }
                         return true;
                     }

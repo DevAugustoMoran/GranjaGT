@@ -114,8 +114,19 @@
             // cboxTipoVenta
             // 
             this.cboxTipoVenta.FormattingEnabled = true;
+            this.cboxTipoVenta.Items.AddRange(new object[] {
+            "Mayoreo (Ganado)",
+            "Contado (Cultivos)",
+            "Credito (Insumos)",
+            "Mayoreo (Aves)",
+            "Contado (Cerdos)",
+            "Contado (Menudeo)",
+            "Credito (Lacteos)",
+            "Mayoreo (Ganado)",
+            "Contado (Huevos)",
+            "Mayoreo (Embutidos)"});
             this.cboxTipoVenta.Location = new System.Drawing.Point(536, 39);
-            this.cboxTipoVenta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxTipoVenta.Margin = new System.Windows.Forms.Padding(2);
             this.cboxTipoVenta.Name = "cboxTipoVenta";
             this.cboxTipoVenta.Size = new System.Drawing.Size(118, 21);
             this.cboxTipoVenta.TabIndex = 93;
@@ -214,11 +225,9 @@
             this.cboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxEstado.FormattingEnabled = true;
             this.cboxEstado.Items.AddRange(new object[] {
-            "Solicitado",
-            "Progreso",
-            "Finalizado",
-            "Cancelado",
-            "Facturado"});
+            "Completada",
+            "Pendiente de Pago",
+            "Anulada"});
             this.cboxEstado.Location = new System.Drawing.Point(536, 138);
             this.cboxEstado.Name = "cboxEstado";
             this.cboxEstado.Size = new System.Drawing.Size(118, 23);

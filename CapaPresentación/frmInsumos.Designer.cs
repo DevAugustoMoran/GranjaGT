@@ -194,6 +194,12 @@
             // 
             this.cboxUnidadMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxUnidadMedida.FormattingEnabled = true;
+            this.cboxUnidadMedida.Items.AddRange(new object[] {
+            "Quintal (Q)",
+            "Mililítros (ML)",
+            "Kilogramo (KG)",
+            "Galon (GL)",
+            "Libras (LB)"});
             this.cboxUnidadMedida.Location = new System.Drawing.Point(563, 59);
             this.cboxUnidadMedida.Name = "cboxUnidadMedida";
             this.cboxUnidadMedida.Size = new System.Drawing.Size(125, 23);
@@ -223,6 +229,13 @@
             // 
             this.cboxTipoInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxTipoInsumo.FormattingEnabled = true;
+            this.cboxTipoInsumo.Items.AddRange(new object[] {
+            "Alimento Animal",
+            "Medicamento Veterinario",
+            "Fertilizante Quimico",
+            "Semilla",
+            "Agroquimico",
+            "Combustible"});
             this.cboxTipoInsumo.Location = new System.Drawing.Point(183, 174);
             this.cboxTipoInsumo.Name = "cboxTipoInsumo";
             this.cboxTipoInsumo.Size = new System.Drawing.Size(120, 23);
@@ -258,11 +271,9 @@
             this.cboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxEstado.FormattingEnabled = true;
             this.cboxEstado.Items.AddRange(new object[] {
-            "Solicitado",
-            "Progreso",
-            "Finalizado",
-            "Cancelado",
-            "Facturado"});
+            "En Stock",
+            "Bajo Stock",
+            "Agotado"});
             this.cboxEstado.Location = new System.Drawing.Point(562, 175);
             this.cboxEstado.Name = "cboxEstado";
             this.cboxEstado.Size = new System.Drawing.Size(123, 23);

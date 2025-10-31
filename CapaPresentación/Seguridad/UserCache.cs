@@ -10,8 +10,10 @@ namespace CapaPresentacion.Seguridad
     {
         public static int CodigoUsuario { get; set; }
         public static int CodigoRol { get; set; }
+
+        public static string NombreRol { get; set; }
         public static string Nombre { get; set; }
-        public static string FechaRegistro { get; set; }
+        public static DateTime FechaRegistro { get; set; }
         public static string Estado { get; set; }
         public static string Contrasena { get; set; }
 

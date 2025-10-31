@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -93,7 +94,7 @@ namespace CapaPresentación
                     decimal CostoTotal = cl_inventarios.MtdCalcularCostoTotal(CantidadDisponible, CostoUnitario);
                     DateTime FechaRegistro = dtpFechaRegistro.Value;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_inventarios.MtdFechaActual();
 
                     cd_inventarios.MtdAgregarInventario(CodigoGranja, CodigoInsumo, CantidadDisponible, CostoUnitario, CostoTotal, FechaRegistro, Estado, UsuarioAuditoria, FechaAuditoria);
@@ -127,7 +128,7 @@ namespace CapaPresentación
                     decimal CostoTotal = cl_inventarios.MtdCalcularCostoTotal(CantidadDisponible, CostoUnitario);
                     DateTime FechaRegistro = dtpFechaRegistro.Value;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_inventarios.MtdFechaActual();
 
                     cd_inventarios.MtdActualizarInventario(CodigoInventario, CodigoGranja, CodigoInsumo, CantidadDisponible, CostoUnitario, CostoTotal, FechaRegistro, Estado, UsuarioAuditoria, FechaAuditoria);

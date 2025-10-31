@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaPresentacion.Seguridad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -67,7 +68,7 @@ namespace CapaPresentación
 
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
-
+            LoadUserData();
         }
 
         private void btnUno_Click(object sender, EventArgs e)
@@ -194,6 +195,18 @@ namespace CapaPresentación
         private void button20_Click(object sender, EventArgs e)
         {
             MtdAbrirContenedorFormulario(new FrmUsuarios());
+        }
+
+        private void LoadUserData()
+        {
+            lblUsuario.Text = UserCache.Nombre;
+            lblRol.Text = UserCache.NombreRol;
+            lblEstado.Text = UserCache.Estado;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
