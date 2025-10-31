@@ -84,5 +84,23 @@ namespace CapaDatos
             cd_conexion.MtdCerrarConexion();
         }
 
+        public bool MtdConsultarEmpleados(int CodigoUsuario)
+        {
+            string QueryConsultarEncabezado = "SELECT 1 FROM tbl_Empleados WHERE CodigoUsuario = @CodigoUsuario";
+            SqlCommand CommandEliminarMesa = new SqlCommand(QueryConsultarEncabezado, cd_conexion.MtdAbrirConexion());
+            CommandEliminarMesa.Parameters.AddWithValue("@CodigoUsuario", CodigoUsuario);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarMesa.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

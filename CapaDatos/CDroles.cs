@@ -64,5 +64,23 @@ namespace CapaDatos
             cd_conexion.MtdCerrarConexion();
         }
 
+        public bool MtdConsultarUsuarios(int CodigoRol)
+        {
+            string QueryConsultarUsuarios = "SELECT 1 FROM tbl_Usuarios WHERE CodigoRol = @CodigoRol";
+            SqlCommand CommandEliminarRol = new SqlCommand(QueryConsultarUsuarios, cd_conexion.MtdAbrirConexion());
+            CommandEliminarRol.Parameters.AddWithValue("@CodigoRol", CodigoRol);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarRol.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

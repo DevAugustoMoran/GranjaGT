@@ -134,12 +134,27 @@ namespace CapaPresentación
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int CodigoUsuario = int.Parse(txtCodigoUsuario.Text);
+            try
+            {
+                int CodigoUsuario = int.Parse(txtCodigoUsuario.Text);
 
-            cd_usuarios.MtdEliminarUsuario(CodigoUsuario);
-            MessageBox.Show("Usuario eliminado correctamente", "Eliminar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            MtdConsultarUsuario();
-            mtdLimpiarCampos();
+
+                if (cd_usuarios.MtdConsultarEmpleados(CodigoUsuario) == true)
+                {
+                    MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    cd_usuarios.MtdEliminarUsuario(CodigoUsuario);
+                    MessageBox.Show("Usuario eliminado correctamente", "Eliminar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarUsuario();
+                    mtdLimpiarCampos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgvRegistroUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)

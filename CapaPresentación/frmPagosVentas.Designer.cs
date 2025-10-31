@@ -44,7 +44,7 @@
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
-            this.cboxCodigoVenta = new System.Windows.Forms.ComboBox();
+            this.cboxCodigoDetalle = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCodigoPago = new System.Windows.Forms.TextBox();
@@ -140,7 +140,7 @@
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.dtpFechaPago);
-            this.groupBox1.Controls.Add(this.cboxCodigoVenta);
+            this.groupBox1.Controls.Add(this.cboxCodigoDetalle);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtCodigoPago);
@@ -157,7 +157,7 @@
             // txtNumReferencia
             // 
             this.txtNumReferencia.Location = new System.Drawing.Point(557, 41);
-            this.txtNumReferencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNumReferencia.Margin = new System.Windows.Forms.Padding(2);
             this.txtNumReferencia.Name = "txtNumReferencia";
             this.txtNumReferencia.Size = new System.Drawing.Size(128, 20);
             this.txtNumReferencia.TabIndex = 84;
@@ -165,7 +165,7 @@
             // lblMonto
             // 
             this.lblMonto.AutoSize = true;
-            this.lblMonto.Location = new System.Drawing.Point(214, 128);
+            this.lblMonto.Location = new System.Drawing.Point(233, 128);
             this.lblMonto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMonto.Name = "lblMonto";
             this.lblMonto.Size = new System.Drawing.Size(16, 13);
@@ -182,7 +182,7 @@
             "Transferencia",
             "Cheque",
             "Pago QR"});
-            this.cboxTipoPago.Location = new System.Drawing.Point(154, 163);
+            this.cboxTipoPago.Location = new System.Drawing.Point(173, 163);
             this.cboxTipoPago.Name = "cboxTipoPago";
             this.cboxTipoPago.Size = new System.Drawing.Size(134, 23);
             this.cboxTipoPago.TabIndex = 82;
@@ -191,7 +191,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label6.Location = new System.Drawing.Point(374, 37);
+            this.label6.Location = new System.Drawing.Point(393, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(153, 22);
             this.label6.TabIndex = 79;
@@ -265,21 +265,21 @@
             this.dtpFechaPago.Size = new System.Drawing.Size(128, 20);
             this.dtpFechaPago.TabIndex = 66;
             // 
-            // cboxCodigoVenta
+            // cboxCodigoDetalle
             // 
-            this.cboxCodigoVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxCodigoVenta.FormattingEnabled = true;
-            this.cboxCodigoVenta.Location = new System.Drawing.Point(154, 79);
-            this.cboxCodigoVenta.Name = "cboxCodigoVenta";
-            this.cboxCodigoVenta.Size = new System.Drawing.Size(134, 23);
-            this.cboxCodigoVenta.TabIndex = 58;
-            this.cboxCodigoVenta.SelectedIndexChanged += new System.EventHandler(this.cboxCodigoVenta_SelectedIndexChanged);
+            this.cboxCodigoDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxCodigoDetalle.FormattingEnabled = true;
+            this.cboxCodigoDetalle.Location = new System.Drawing.Point(173, 79);
+            this.cboxCodigoDetalle.Name = "cboxCodigoDetalle";
+            this.cboxCodigoDetalle.Size = new System.Drawing.Size(134, 23);
+            this.cboxCodigoDetalle.TabIndex = 58;
+            this.cboxCodigoDetalle.SelectedIndexChanged += new System.EventHandler(this.cboxCodigoDetalle_SelectedIndexChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label7.Location = new System.Drawing.Point(374, 101);
+            this.label7.Location = new System.Drawing.Point(393, 101);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 22);
             this.label7.TabIndex = 22;
@@ -297,7 +297,7 @@
             // 
             // txtCodigoPago
             // 
-            this.txtCodigoPago.Location = new System.Drawing.Point(154, 38);
+            this.txtCodigoPago.Location = new System.Drawing.Point(173, 38);
             this.txtCodigoPago.Name = "txtCodigoPago";
             this.txtCodigoPago.ReadOnly = true;
             this.txtCodigoPago.Size = new System.Drawing.Size(134, 20);
@@ -307,7 +307,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calisto MT", 14F);
-            this.label5.Location = new System.Drawing.Point(374, 168);
+            this.label5.Location = new System.Drawing.Point(393, 168);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 22);
             this.label5.TabIndex = 7;
@@ -329,9 +329,9 @@
             this.label2.Font = new System.Drawing.Font("Calisto MT", 14F);
             this.label2.Location = new System.Drawing.Point(8, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 22);
+            this.label2.Size = new System.Drawing.Size(160, 22);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Codigo Venta:";
+            this.label2.Text = "Codigo de Detalle:";
             // 
             // label1
             // 
@@ -380,7 +380,7 @@
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnAgregar;
         private System.Windows.Forms.DateTimePicker dtpFechaPago;
-        private System.Windows.Forms.ComboBox cboxCodigoVenta;
+        private System.Windows.Forms.ComboBox cboxCodigoDetalle;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCodigoPago;

@@ -239,12 +239,27 @@ namespace CapaPresentación
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int CodigoDetalle = int.Parse(txtCodigoDetalle.Text);
+            try
+            {
+                int CodigoDetalle = int.Parse(txtCodigoDetalle.Text);
 
-            cd_ventasdetalle.MtdEliminarVentasDetalle(CodigoDetalle);
-            MessageBox.Show("Detalle de venta eliminado correctamente", "Eliminar Detalle", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            mtdConsultarVentasDetalle();
-            mtdLimpiarCampos();
+                if (cd_ventasdetalle.MtdConsultarPagosVentas(CodigoDetalle) == true)
+                {
+                    MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    cd_ventasdetalle.MtdEliminarVentasDetalle(CodigoDetalle);
+                    MessageBox.Show("Detalle de venta eliminado correctamente", "Eliminar Detalle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    mtdConsultarVentasDetalle();
+                    mtdLimpiarCampos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

@@ -87,5 +87,24 @@ namespace CapaDatos
             CommandEliminarInsumos.ExecuteNonQuery();
             cd_conexion.MtdCerrarConexion();
         }
+
+        public bool MtdConsultarInventario(int CodigoInsumo)
+        {
+            string QueryConsultarInventario = "SELECT 1 FROM tbl_Inventario WHERE CodigoInsumo = @CodigoInsumo";
+            SqlCommand CommandEliminarInventario = new SqlCommand(QueryConsultarInventario, cd_conexion.MtdAbrirConexion());
+            CommandEliminarInventario.Parameters.AddWithValue("@CodigoInsumo", CodigoInsumo);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarInventario.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

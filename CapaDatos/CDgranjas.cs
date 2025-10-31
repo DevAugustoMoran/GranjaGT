@@ -62,5 +62,61 @@ namespace CapaDatos
             cd_conexion.MtdCerrarConexion();
         }
 
+        public bool MtdConsultarEmpleados(int CodigoGranja)
+        {
+            string QueryConsultarEmpleado = "SELECT 1 FROM tbl_Empleados WHERE CodigoGranja = @CodigoGranja";
+            SqlCommand CommandEliminarGranja = new SqlCommand(QueryConsultarEmpleado, cd_conexion.MtdAbrirConexion());
+            CommandEliminarGranja.Parameters.AddWithValue("@CodigoGranja", CodigoGranja);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarGranja.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool MtdConsultarInventarios(int CodigoGranja)
+        {
+            string QueryConsultarInventario = "SELECT 1 FROM tbl_Inventarios WHERE CodigoGranja = @CodigoGranja";
+            SqlCommand CommandEliminarGranja = new SqlCommand(QueryConsultarInventario, cd_conexion.MtdAbrirConexion());
+            CommandEliminarGranja.Parameters.AddWithValue("@CodigoGranja", CodigoGranja);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarGranja.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool MtdConsultarVenta(int CodigoGranja)
+        {
+            string QueryConsultarVenta = "SELECT 1 FROM tbl_Ventas WHERE CodigoGranja = @CodigoGranja";
+            SqlCommand CommandEliminarGranja = new SqlCommand(QueryConsultarVenta, cd_conexion.MtdAbrirConexion());
+            CommandEliminarGranja.Parameters.AddWithValue("@CodigoGranja", CodigoGranja);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarGranja.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

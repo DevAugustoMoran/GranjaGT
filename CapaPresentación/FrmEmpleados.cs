@@ -153,12 +153,27 @@ namespace CapaPresentación
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int CodigoEmpleado = int.Parse(txtCodigoEmpleado.Text);
+            try
+            {
+                int CodigoEmpleado = int.Parse(txtCodigoEmpleado.Text);
 
-            cd_empleados.MtdEliminarEmpleado(CodigoEmpleado);
-            MessageBox.Show("Empleado eliminado correctamente", "Eliminar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            MtdConsultarEmpleados();
-            mtdLimpiarCampos();
+                if (cd_empleados.MtdConsultarEnvios(CodigoEmpleado) == true || cd_empleados.MtdConsultarPagoEmpleados(CodigoEmpleado) == true)
+                {
+                    MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+
+                    cd_empleados.MtdEliminarEmpleado(CodigoEmpleado);
+                    MessageBox.Show("Empleado eliminado correctamente", "Eliminar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarEmpleados();
+                    mtdLimpiarCampos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

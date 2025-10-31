@@ -66,13 +66,12 @@ namespace CapaPresentación
             cboxCodigoCliente.Text = "";
             cboxCodigoGranja.Text = "";
             cboxTipoVenta.Text = "";
-            txtTotalVenta.Text = "";
             cboxEstado.Text = "";
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (cboxCodigoCliente.Text == "" || cboxCodigoGranja.Text == "" || dtpFechaVenta.Text == "" || cboxTipoVenta.Text == "" || txtTotalVenta.Text == "" || cboxEstado.Text == "")
+            if (cboxCodigoCliente.Text == "" || cboxCodigoGranja.Text == "" || dtpFechaVenta.Text == "" || cboxTipoVenta.Text == ""  || cboxEstado.Text == "")
             {
                 MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -84,12 +83,11 @@ namespace CapaPresentación
                     int CodigoGranja = int.Parse(cboxCodigoGranja.Text.Split('-')[0].Trim());
                     DateTime FechaVenta = dtpFechaVenta.Value;
                     string TipoVenta = cboxTipoVenta.Text;
-                    decimal TotalVenta = decimal.Parse(txtTotalVenta.Text);
                     string Estado = cboxEstado.Text;
                     string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_ventas.MtdFechaActual();
 
-                    cd_ventas.MtdAgregarVenta(CodigoCliente, CodigoGranja, FechaVenta, TipoVenta, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
+                    cd_ventas.MtdAgregarVenta(CodigoCliente, CodigoGranja, FechaVenta, TipoVenta, Estado, UsuarioAuditoria, FechaAuditoria);
                     MessageBox.Show("Venta agregada correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MtdConsultarVenta();
                     mtdLimpiarCampos();
@@ -103,7 +101,7 @@ namespace CapaPresentación
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (cboxCodigoCliente.Text == "" || cboxCodigoGranja.Text == "" || dtpFechaVenta.Text == "" || cboxTipoVenta.Text == "" || txtTotalVenta.Text == "" || cboxEstado.Text == "")
+            if (cboxCodigoCliente.Text == "" || cboxCodigoGranja.Text == "" || dtpFechaVenta.Text == "" || cboxTipoVenta.Text == "" || cboxEstado.Text == "")
             {
                 MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -116,12 +114,11 @@ namespace CapaPresentación
                     int CodigoGranja = int.Parse(cboxCodigoGranja.Text.Split('-')[0].Trim());
                     DateTime FechaVenta = dtpFechaVenta.Value;
                     string TipoVenta = cboxTipoVenta.Text;
-                    decimal TotalVenta = decimal.Parse(txtTotalVenta.Text);
                     string Estado = cboxEstado.Text;
                     string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_ventas.MtdFechaActual();
 
-                    cd_ventas.MtdActualizarVenta(CodigoVenta, CodigoCliente, CodigoGranja, FechaVenta, TipoVenta, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
+                    cd_ventas.MtdActualizarVenta(CodigoVenta, CodigoCliente, CodigoGranja, FechaVenta, TipoVenta, Estado, UsuarioAuditoria, FechaAuditoria);
                     MessageBox.Show("Venta actualizada correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MtdConsultarVenta();
                     mtdLimpiarCampos();
@@ -140,12 +137,26 @@ namespace CapaPresentación
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int CodigoVenta = int.Parse(txtCodigoVenta.Text);
+            try
+            {
+                int CodigoVenta = int.Parse(txtCodigoVenta.Text);
 
-            cd_ventas.MtdEliminarVenta(CodigoVenta);
-            MessageBox.Show("Venta eliminada correctamente", "Eliminar Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            MtdConsultarVenta();
-            mtdLimpiarCampos();
+                if (cd_ventas.MtdConsultarEnvios(CodigoVenta) == true || cd_ventas.MtdConsultarVentaDetalle(CodigoVenta) == true)
+                {
+                    MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    cd_ventas.MtdEliminarVenta(CodigoVenta);
+                    MessageBox.Show("Venta eliminada correctamente", "Eliminar Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarVenta();
+                    mtdLimpiarCampos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -160,8 +171,7 @@ namespace CapaPresentación
             cboxCodigoGranja.Text = dgvVentas.SelectedCells[2].Value.ToString();
             dtpFechaVenta.Text = dgvVentas.SelectedCells[3].Value.ToString();
             cboxTipoVenta.Text = dgvVentas.SelectedCells[4].Value.ToString();
-            txtTotalVenta.Text = dgvVentas.SelectedCells[5].Value.ToString();
-            cboxEstado.Text = dgvVentas.SelectedCells[6].Value.ToString();
+            cboxEstado.Text = dgvVentas.SelectedCells[5].Value.ToString();
         }
     }
 }

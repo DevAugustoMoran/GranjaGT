@@ -39,7 +39,6 @@
             this.txtUbicacion = new System.Windows.Forms.TextBox();
             this.dtpFechaCosecha = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaSiembra = new System.Windows.Forms.DateTimePicker();
-            this.cboxEstado = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
+            this.cboxEstado = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCultivos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -194,20 +194,6 @@
             this.dtpFechaSiembra.Name = "dtpFechaSiembra";
             this.dtpFechaSiembra.Size = new System.Drawing.Size(123, 20);
             this.dtpFechaSiembra.TabIndex = 97;
-            // 
-            // cboxEstado
-            // 
-            this.cboxEstado.FormattingEnabled = true;
-            this.cboxEstado.Items.AddRange(new object[] {
-            "Cosechado",
-            "En crecimiento",
-            "Listo para cosechar",
-            "Perdido"});
-            this.cboxEstado.Location = new System.Drawing.Point(751, 126);
-            this.cboxEstado.Margin = new System.Windows.Forms.Padding(2);
-            this.cboxEstado.Name = "cboxEstado";
-            this.cboxEstado.Size = new System.Drawing.Size(116, 21);
-            this.cboxEstado.TabIndex = 96;
             // 
             // label6
             // 
@@ -386,6 +372,20 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // cboxEstado
+            // 
+            this.cboxEstado.FormattingEnabled = true;
+            this.cboxEstado.Items.AddRange(new object[] {
+            "Cosechado",
+            "En crecimiento",
+            "Listo para cosechar",
+            "Perdido"});
+            this.cboxEstado.Location = new System.Drawing.Point(496, 165);
+            this.cboxEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.cboxEstado.Name = "cboxEstado";
+            this.cboxEstado.Size = new System.Drawing.Size(116, 21);
+            this.cboxEstado.TabIndex = 96;
+            // 
             // frmCultivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,11 +433,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTipoCultivo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cboxEstado;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtpFechaCosecha;
         private System.Windows.Forms.DateTimePicker dtpFechaSiembra;
         private System.Windows.Forms.TextBox txtObservacion;
         private System.Windows.Forms.TextBox txtUbicacion;
+        private System.Windows.Forms.ComboBox cboxEstado;
     }
 }

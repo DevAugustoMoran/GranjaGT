@@ -64,5 +64,24 @@ namespace CapaDatos
             cd_conexion.MtdCerrarConexion();
         }
 
+        public bool MtdConsultarVentasDetalle(int CodigoAnimal)
+        {
+            string QueryConsultarVentasDetalle = "SELECT 1 FROM tbl_VentasDetalle WHERE CodigoAnimal = @CodigoAnimal";
+            SqlCommand CommandEliminarAnimal = new SqlCommand(QueryConsultarVentasDetalle, cd_conexion.MtdAbrirConexion());
+            CommandEliminarAnimal.Parameters.AddWithValue("@CodigoAnimal", CodigoAnimal);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarAnimal.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

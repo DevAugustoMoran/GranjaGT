@@ -133,11 +133,19 @@ namespace CapaPresentación
             {
                 try
                 {
-                    int CodigoAnimal = Convert.ToInt32(txtCodigoAnimal.Text);
-                    cdanimales.MtdEliminarAnimal(CodigoAnimal);
-                    MessageBox.Show("Animal eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    mtdConsultarAnimales();
-                    mtdLimpiarCampos();
+                    int CodigoAnimal = int.Parse(txtCodigoAnimal.Text);
+
+                    if (cdanimales.MtdConsultarVentasDetalle(CodigoAnimal) == true)
+                    {
+                        MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        cdanimales.MtdEliminarAnimal(CodigoAnimal);
+                        MessageBox.Show("Animal eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mtdConsultarAnimales();
+                        mtdLimpiarCampos();
+                    }
                 }
                 catch (Exception ex)
                 {
