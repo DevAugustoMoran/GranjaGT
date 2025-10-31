@@ -247,6 +247,14 @@
             // cboxCargo
             // 
             this.cboxCargo.FormattingEnabled = true;
+            this.cboxCargo.Items.AddRange(new object[] {
+            "Admin",
+            "Veterinar",
+            "Operario",
+            "Consultor",
+            "Capataz",
+            "Agronomo",
+            "Secretaria"});
             this.cboxCargo.Location = new System.Drawing.Point(532, 60);
             this.cboxCargo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboxCargo.Name = "cboxCargo";
@@ -356,6 +364,9 @@
             // cboxEstado
             // 
             this.cboxEstado.FormattingEnabled = true;
+            this.cboxEstado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
             this.cboxEstado.Location = new System.Drawing.Point(532, 171);
             this.cboxEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboxEstado.Name = "cboxEstado";

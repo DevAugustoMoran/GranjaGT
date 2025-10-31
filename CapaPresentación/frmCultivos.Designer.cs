@@ -199,9 +199,11 @@
             // 
             this.cboxEstado.FormattingEnabled = true;
             this.cboxEstado.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cboxEstado.Location = new System.Drawing.Point(496, 165);
+            "Cosechado",
+            "En crecimiento",
+            "Listo para cosechar",
+            "Perdido"});
+            this.cboxEstado.Location = new System.Drawing.Point(751, 126);
             this.cboxEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cboxEstado.Name = "cboxEstado";
             this.cboxEstado.Size = new System.Drawing.Size(116, 21);

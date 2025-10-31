@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,7 +62,7 @@ namespace CapaPresentación
                     decimal Precio = Convert.ToDecimal(txtPrecio.Text);
                     string Descripcion = txtDescripcion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clanimales.MtdFechaActual();
                     cdanimales.MtdAgregarAnimal(TipoAnimal, Raza, FechaNacimiento, Precio, Descripcion, Estado, UsuarioAuditoria, FechaAuditoria.ToString());
                     MessageBox.Show("Animal agregado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -103,7 +104,7 @@ namespace CapaPresentación
                     decimal Precio = Convert.ToDecimal(txtPrecio.Text);
                     string Descripcion = txtDescripcion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clanimales.MtdFechaActual();
                     cdanimales.MtdActualizarAnimal(CodigoAnimal, TipoAnimal, Raza, FechaNacimiento, Precio, Descripcion, Estado, UsuarioAuditoria, FechaAuditoria.ToString());
                     MessageBox.Show("Animal actualizado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);

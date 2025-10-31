@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -97,7 +98,7 @@ namespace CapaPresentación
                     string Cargo = cboxCargo.Text;
                     decimal SalarioBase = decimal.Parse(txtSalarioBase.Text);
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_empleados.MtdFechaActual();
                     DateTime FechaRegistro = cl_empleados.MtdFechaActual();
 
@@ -133,7 +134,7 @@ namespace CapaPresentación
                     string Estado = cboxEstado.Text;
                     decimal SalarioBase = decimal.Parse(txtSalarioBase.Text);
                     DateTime FechaIngreso = dtpFechaIngreso.Value;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_empleados.MtdFechaActual();
 
                     cd_empleados.MtdActualizarEmpleado(CodigoEmpleado, CodigoGranja, CodigoUsuario, Nombre, Telefono, Correo, Cargo, Estado, SalarioBase, FechaIngreso, UsuarioAuditoria, FechaAuditoria);

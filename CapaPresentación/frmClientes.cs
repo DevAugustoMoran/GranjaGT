@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,7 +62,7 @@ namespace CapaPresentación
                     string Correo = txtCorreo.Text;
                     string Direccion = txtDireccion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clclientes.MtdFechaActual();
                     cdclientes.MtdAgregarCliente(Nombre, Tipo, Telefono, Correo, Direccion, Estado, UsuarioAuditoria, FechaAuditoria.ToString());
                     MessageBox.Show("Cliente agregado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -103,7 +104,7 @@ namespace CapaPresentación
                     string Correo = txtCorreo.Text;
                     string Direccion = txtDireccion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clclientes.MtdFechaActual();
                     cdclientes.MtdActualizarCliente(CodigoCliente, Nombre, Tipo, Telefono, Correo, Direccion, Estado, UsuarioAuditoria, FechaAuditoria.ToString());
                     MessageBox.Show("Cliente actualizado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
