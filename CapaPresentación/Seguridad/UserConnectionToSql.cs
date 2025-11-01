@@ -13,7 +13,7 @@ namespace CapaPresentacion.Seguridad
         private readonly string connectionString;
         public UserConnectionToSql()
         {
-            connectionString = "Data Source=dbgranjagt.cr2wcaoq65ff.us-east-2.rds.amazonaws.com;Initial Catalog=dbGranjaGT;User ID=admin;Password=Pass$2025;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True";
+            connectionString = "Data Source=dbgranjagt.cr2wcaoq65ff.us-east-2.rds.amazonaws.com;Initial Catalog=dbGranjaGT;User ID=admin;Password=Pass$2024;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True";
         }
         protected SqlConnection GetConnection()
         {
