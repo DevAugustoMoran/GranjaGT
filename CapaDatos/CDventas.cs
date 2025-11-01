@@ -65,15 +65,14 @@ namespace CapaDatos
             return dt_Venta;
         }
 
-        public void MtdAgregarVenta(int CodigoCliente, int CodigoGranja, DateTime FechaVenta, string TipoVenta, decimal TotalVenta, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
+        public void MtdAgregarVenta(int CodigoCliente, int CodigoGranja, DateTime FechaVenta, string TipoVenta, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
-            string QueryAgregarVenta = "Insert into tbl_Ventas(CodigoCliente, CodigoGranja, FechaVenta, TipoVenta, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria) values (@CodigoCliente, @CodigoGranja, @FechaVenta, @TipoVenta, @TotalVenta, @Estado, @UsuarioAuditoria, @FechaAuditoria)";
+            string QueryAgregarVenta = "Insert into tbl_Ventas(CodigoCliente, CodigoGranja, FechaVenta, TipoVenta, Estado, UsuarioAuditoria, FechaAuditoria) values (@CodigoCliente, @CodigoGranja, @FechaVenta, @TipoVenta, @TotalVenta, @Estado, @UsuarioAuditoria, @FechaAuditoria)";
             SqlCommand CommandAgregarVenta = new SqlCommand(QueryAgregarVenta, cd_conexion.MtdAbrirConexion());
             CommandAgregarVenta.Parameters.AddWithValue("@CodigoCliente", CodigoCliente);
             CommandAgregarVenta.Parameters.AddWithValue("@CodigoGranja", CodigoGranja);
             CommandAgregarVenta.Parameters.AddWithValue("@FechaVenta", FechaVenta);
             CommandAgregarVenta.Parameters.AddWithValue("@TipoVenta", TipoVenta);
-            CommandAgregarVenta.Parameters.AddWithValue("@TotalVenta", TotalVenta);
             CommandAgregarVenta.Parameters.AddWithValue("@Estado", Estado);
             CommandAgregarVenta.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
             CommandAgregarVenta.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
@@ -81,16 +80,15 @@ namespace CapaDatos
             cd_conexion.MtdCerrarConexion();
         }
 
-        public void MtdActualizarVenta(int CodigoVenta, int CodigoCliente, int CodigoGranja, DateTime FechaVenta, string TipoVenta, decimal TotalVenta, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
+        public void MtdActualizarVenta(int CodigoVenta, int CodigoCliente, int CodigoGranja, DateTime FechaVenta, string TipoVenta, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
-            string QueryActualizarVenta = "Update tbl_Ventas set CodigoCliente = @CodigoCliente, CodigoGranja = @CodigoGranja, FechaVenta = @FechaVenta, TipoVenta = @TipoVenta, TotalVenta = @TotalVenta, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoVenta = @CodigoVenta";
+            string QueryActualizarVenta = "Update tbl_Ventas set CodigoCliente = @CodigoCliente, CodigoGranja = @CodigoGranja, FechaVenta = @FechaVenta, TipoVenta = @TipoVenta, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoVenta = @CodigoVenta";
             SqlCommand CommandActualizarVenta = new SqlCommand(QueryActualizarVenta, cd_conexion.MtdAbrirConexion());
             CommandActualizarVenta.Parameters.AddWithValue("@CodigoVenta", CodigoVenta);
             CommandActualizarVenta.Parameters.AddWithValue("@CodigoCliente", CodigoCliente);
             CommandActualizarVenta.Parameters.AddWithValue("@CodigoGranja", CodigoGranja);
             CommandActualizarVenta.Parameters.AddWithValue("@FechaVenta", FechaVenta);
             CommandActualizarVenta.Parameters.AddWithValue("@TipoVenta", TipoVenta);
-            CommandActualizarVenta.Parameters.AddWithValue("@TotalVenta", TotalVenta);
             CommandActualizarVenta.Parameters.AddWithValue("@Estado", Estado);
             CommandActualizarVenta.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
             CommandActualizarVenta.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
@@ -105,6 +103,44 @@ namespace CapaDatos
             CommandEliminarVenta.Parameters.AddWithValue("@CodigoVenta", CodigoVenta);
             CommandEliminarVenta.ExecuteNonQuery();
             cd_conexion.MtdCerrarConexion();
+        }
+
+        public bool MtdConsultarEnvios(int CodigoVenta)
+        {
+            string QueryConsultarEnvio = "SELECT 1 FROM tbl_Envios WHERE CodigoVenta = @CodigoVenta";
+            SqlCommand CommandEliminarVenta = new SqlCommand(QueryConsultarEnvio, cd_conexion.MtdAbrirConexion());
+            CommandEliminarVenta.Parameters.AddWithValue("@CodigoVenta", CodigoVenta);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarVenta.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool MtdConsultarVentaDetalle(int CodigoVenta)
+        {
+            string QueryConsultarVentaDetalle = "SELECT 1 FROM tbl_VentasDetalle WHERE CodigoVenta = @CodigoVenta";
+            SqlCommand CommandEliminarVenta = new SqlCommand(QueryConsultarVentaDetalle, cd_conexion.MtdAbrirConexion());
+            CommandEliminarVenta.Parameters.AddWithValue("@CodigoVenta", CodigoVenta);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarVenta.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

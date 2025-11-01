@@ -154,10 +154,18 @@ namespace CapaPresentación
                 try
                 {
                     int CodigoRol = int.Parse(txtCodigoRol.Text);
-                    cdroles.MtdEliminarRol(CodigoRol);
-                    MessageBox.Show("Rol eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    mtdConsultarRoles();
-                    mtdLimpiarCampos();
+
+                    if (cdroles.MtdConsultarUsuarios(CodigoRol) == true)
+                    {
+                        MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        cdroles.MtdEliminarRol(CodigoRol);
+                        MessageBox.Show("Rol eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mtdConsultarRoles();
+                        mtdLimpiarCampos();
+                    }
                 }
                 catch (Exception ex)
                 {

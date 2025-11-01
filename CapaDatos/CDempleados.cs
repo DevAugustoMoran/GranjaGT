@@ -110,5 +110,43 @@ namespace CapaDatos
             CommandEliminarEmpleado.ExecuteNonQuery();
             cd_conexion.MtdCerrarConexion();
         }
+
+        public bool MtdConsultarEnvios(int CodigoEmpleado)
+        {
+            string QueryConsultarEnvio = "SELECT 1 FROM tbl_Envios WHERE CodigoEmpleado = @CodigoEmpleado";
+            SqlCommand CommandEliminarEmpleado = new SqlCommand(QueryConsultarEnvio, cd_conexion.MtdAbrirConexion());
+            CommandEliminarEmpleado.Parameters.AddWithValue("@CodigoEmpleado", CodigoEmpleado);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarEmpleado.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool MtdConsultarPagoEmpleados(int CodigoEmpleado)
+        {
+            string QueryConsultarPagoEmpleado = "SELECT 1 FROM tbl_Pagos_Empleados WHERE CodigoEmpleado = @CodigoEmpleado";
+            SqlCommand CommandEliminarEmpleado = new SqlCommand(QueryConsultarPagoEmpleado, cd_conexion.MtdAbrirConexion());
+            CommandEliminarEmpleado.Parameters.AddWithValue("@CodigoEmpleado", CodigoEmpleado);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarEmpleado.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

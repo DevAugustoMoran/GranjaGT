@@ -291,7 +291,7 @@
             "Vendido",
             "En producción",
             "En engorde"});
-            this.cboxEstado.Location = new System.Drawing.Point(711, 140);
+            this.cboxEstado.Location = new System.Drawing.Point(532, 144);
             this.cboxEstado.Name = "cboxEstado";
             this.cboxEstado.Size = new System.Drawing.Size(134, 23);
             this.cboxEstado.TabIndex = 68;

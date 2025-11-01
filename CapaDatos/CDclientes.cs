@@ -64,5 +64,23 @@ namespace CapaDatos
             cd_conexion.MtdCerrarConexion();
         }
 
+        public bool MtdConsultarVentas(int CodigoCliente)
+        {
+            string QueryConsultarVentas = "SELECT 1 FROM tbl_Ventas WHERE CodigoCliente = @CodigoCliente";
+            SqlCommand CommandEliminarCliente = new SqlCommand(QueryConsultarVentas, cd_conexion.MtdAbrirConexion());
+            CommandEliminarCliente.Parameters.AddWithValue("@CodigoCliente", CodigoCliente);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarCliente.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

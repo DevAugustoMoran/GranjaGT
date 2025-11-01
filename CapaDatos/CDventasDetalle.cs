@@ -153,5 +153,24 @@ namespace CapaDatos
             CommandEliminarVentasDetalle.ExecuteNonQuery();
             cd_conexion.MtdCerrarConexion();
         }
+
+        public bool MtdConsultarPagosVentas(int CodigoDetalle)
+        {
+            string QueryConsultarPagosVentas = "SELECT 1 FROM tbl_PagosVentas WHERE CodigoDetalle = @CodigoDetalle";
+            SqlCommand CommandEliminarVentaDetalle = new SqlCommand(QueryConsultarPagosVentas, cd_conexion.MtdAbrirConexion());
+            CommandEliminarVentaDetalle.Parameters.AddWithValue("@CodigoDetalle", CodigoDetalle);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarVentaDetalle.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

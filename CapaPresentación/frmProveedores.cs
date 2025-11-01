@@ -134,11 +134,19 @@ namespace CapaPresentación
             {
                 try
                 {
-                    int CodigoProveedor = Convert.ToInt32(txtCodigoProveedor.Text);
-                    cdproveedores.MtdEliminarProveedor(CodigoProveedor);
-                    MessageBox.Show("Proveedor eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    mtdConsultarProveedores();
-                    mtdLimpiarCampos();
+                    int CodigoProveedor = int.Parse(txtCodigoProveedor.Text);
+
+                    if (cdproveedores.MtdConsultarInsumos(CodigoProveedor) == true)
+                    {
+                        MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        cdproveedores.MtdEliminarProveedor(CodigoProveedor);
+                        MessageBox.Show("Proveedor eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mtdConsultarProveedores();
+                        mtdLimpiarCampos();
+                    }
                 }
                 catch (Exception ex)
                 {

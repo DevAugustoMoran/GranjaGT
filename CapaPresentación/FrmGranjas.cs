@@ -129,11 +129,19 @@ namespace CapaPresentación
             {
                 try
                 {
-                    int CodigoGranja = Convert.ToInt32(txtCodigoGranja.Text);
-                    cdgranjas.MtdEliminarGranja(CodigoGranja);
-                    MessageBox.Show("Granja eliminada correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    MtdConsultarGranjas();
-                    MtdLimpiarCampos();
+                    int CodigoGranja = int.Parse(txtCodigoGranja.Text);
+
+                    if (cdgranjas.MtdConsultarEmpleados(CodigoGranja) == true || cdgranjas.MtdConsultarInventarios(CodigoGranja) == true || cdgranjas.MtdConsultarVenta(CodigoGranja) == true)
+                    {
+                        MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        cdgranjas.MtdEliminarGranja(CodigoGranja);
+                        MessageBox.Show("Granja eliminada correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MtdConsultarGranjas();
+                        MtdLimpiarCampos();
+                    }
                 }
                 catch (Exception ex)
                 {

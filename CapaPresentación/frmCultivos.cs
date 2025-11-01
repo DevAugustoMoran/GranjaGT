@@ -137,10 +137,18 @@ namespace CapaPresentación
                 try
                 {
                     int CodigoCultivo = Convert.ToInt32(txtCodigoCultivo.Text);
-                    cdcultivos.MtdEliminarCultivo(CodigoCultivo);
-                    MessageBox.Show("Cultivo eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    mtdConsultarCultivos();
-                    mtdLimpiarCampos();
+
+                    if (cdcultivos.MtdConsultarVentasDetalle(CodigoCultivo) == true)
+                    {
+                        MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        cdcultivos.MtdEliminarCultivo(CodigoCultivo);
+                        MessageBox.Show("Cultivo eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mtdConsultarCultivos();
+                        mtdLimpiarCampos();
+                    }
                 }
                 catch (Exception ex)
                 {
