@@ -113,7 +113,7 @@
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold);
             this.lblEstado.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblEstado.Location = new System.Drawing.Point(140, 57);
+            this.lblEstado.Location = new System.Drawing.Point(140, 100);
             this.lblEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(13, 17);
@@ -125,7 +125,7 @@
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold);
             this.lblRol.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblRol.Location = new System.Drawing.Point(140, 39);
+            this.lblRol.Location = new System.Drawing.Point(140, 58);
             this.lblRol.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(13, 17);
@@ -137,7 +137,7 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold);
             this.lblUsuario.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblUsuario.Location = new System.Drawing.Point(140, 24);
+            this.lblUsuario.Location = new System.Drawing.Point(140, 28);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(13, 17);
@@ -149,7 +149,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.DarkGray;
-            this.label3.Location = new System.Drawing.Point(59, 57);
+            this.label3.Location = new System.Drawing.Point(59, 100);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 17);
@@ -161,7 +161,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(59, 41);
+            this.label2.Location = new System.Drawing.Point(59, 60);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 17);
@@ -173,7 +173,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.DarkGray;
-            this.label1.Location = new System.Drawing.Point(59, 24);
+            this.label1.Location = new System.Drawing.Point(59, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 17);
@@ -184,10 +184,10 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(6, 24);
+            this.pictureBox2.Location = new System.Drawing.Point(6, 43);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(41, 46);
+            this.pictureBox2.Size = new System.Drawing.Size(49, 58);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
@@ -198,7 +198,7 @@
             this.panelCinco.Controls.Add(this.button20);
             this.panelCinco.Controls.Add(this.button21);
             this.panelCinco.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCinco.Location = new System.Drawing.Point(0, 727);
+            this.panelCinco.Location = new System.Drawing.Point(0, 842);
             this.panelCinco.Margin = new System.Windows.Forms.Padding(2);
             this.panelCinco.Name = "panelCinco";
             this.panelCinco.Size = new System.Drawing.Size(263, 58);
@@ -247,11 +247,11 @@
             this.btnCinco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCinco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCinco.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCinco.Location = new System.Drawing.Point(0, 690);
+            this.btnCinco.Location = new System.Drawing.Point(0, 782);
             this.btnCinco.Margin = new System.Windows.Forms.Padding(2);
             this.btnCinco.Name = "btnCinco";
             this.btnCinco.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnCinco.Size = new System.Drawing.Size(263, 37);
+            this.btnCinco.Size = new System.Drawing.Size(263, 60);
             this.btnCinco.TabIndex = 10;
             this.btnCinco.Text = "ADMINISTRACION DEL SISTEMA";
             this.btnCinco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -265,7 +265,7 @@
             this.panelCuatro.Controls.Add(this.button16);
             this.panelCuatro.Controls.Add(this.button17);
             this.panelCuatro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCuatro.Location = new System.Drawing.Point(0, 612);
+            this.panelCuatro.Location = new System.Drawing.Point(0, 704);
             this.panelCuatro.Margin = new System.Windows.Forms.Padding(2);
             this.panelCuatro.Name = "panelCuatro";
             this.panelCuatro.Size = new System.Drawing.Size(263, 78);
@@ -332,11 +332,11 @@
             this.btnCuatro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCuatro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCuatro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCuatro.Location = new System.Drawing.Point(0, 575);
+            this.btnCuatro.Location = new System.Drawing.Point(0, 644);
             this.btnCuatro.Margin = new System.Windows.Forms.Padding(2);
             this.btnCuatro.Name = "btnCuatro";
             this.btnCuatro.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnCuatro.Size = new System.Drawing.Size(263, 37);
+            this.btnCuatro.Size = new System.Drawing.Size(263, 60);
             this.btnCuatro.TabIndex = 8;
             this.btnCuatro.Text = "PRODUCCION";
             this.btnCuatro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -350,7 +350,7 @@
             this.panelTres.Controls.Add(this.button12);
             this.panelTres.Controls.Add(this.button13);
             this.panelTres.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTres.Location = new System.Drawing.Point(0, 497);
+            this.panelTres.Location = new System.Drawing.Point(0, 566);
             this.panelTres.Margin = new System.Windows.Forms.Padding(2);
             this.panelTres.Name = "panelTres";
             this.panelTres.Size = new System.Drawing.Size(263, 78);
@@ -417,11 +417,11 @@
             this.btnTres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTres.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTres.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnTres.Location = new System.Drawing.Point(0, 460);
+            this.btnTres.Location = new System.Drawing.Point(0, 506);
             this.btnTres.Margin = new System.Windows.Forms.Padding(2);
             this.btnTres.Name = "btnTres";
             this.btnTres.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnTres.Size = new System.Drawing.Size(263, 37);
+            this.btnTres.Size = new System.Drawing.Size(263, 60);
             this.btnTres.TabIndex = 6;
             this.btnTres.Text = "OPERACIONES Y VENTAS";
             this.btnTres.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -435,7 +435,7 @@
             this.panelDos.Controls.Add(this.button10);
             this.panelDos.Controls.Add(this.button11);
             this.panelDos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDos.Location = new System.Drawing.Point(0, 382);
+            this.panelDos.Location = new System.Drawing.Point(0, 428);
             this.panelDos.Margin = new System.Windows.Forms.Padding(2);
             this.panelDos.Name = "panelDos";
             this.panelDos.Size = new System.Drawing.Size(263, 78);
@@ -502,11 +502,11 @@
             this.btnDos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDos.Location = new System.Drawing.Point(0, 345);
+            this.btnDos.Location = new System.Drawing.Point(0, 368);
             this.btnDos.Margin = new System.Windows.Forms.Padding(2);
             this.btnDos.Name = "btnDos";
             this.btnDos.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnDos.Size = new System.Drawing.Size(263, 37);
+            this.btnDos.Size = new System.Drawing.Size(263, 60);
             this.btnDos.TabIndex = 4;
             this.btnDos.Text = "INVENTARIO Y PRODUCTOS";
             this.btnDos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -522,7 +522,7 @@
             this.panelUno.Controls.Add(this.button3);
             this.panelUno.Controls.Add(this.button2);
             this.panelUno.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelUno.Location = new System.Drawing.Point(0, 218);
+            this.panelUno.Location = new System.Drawing.Point(0, 241);
             this.panelUno.Margin = new System.Windows.Forms.Padding(2);
             this.panelUno.Name = "panelUno";
             this.panelUno.Size = new System.Drawing.Size(263, 127);
@@ -629,7 +629,7 @@
             this.btnUno.Margin = new System.Windows.Forms.Padding(2);
             this.btnUno.Name = "btnUno";
             this.btnUno.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnUno.Size = new System.Drawing.Size(263, 37);
+            this.btnUno.Size = new System.Drawing.Size(263, 60);
             this.btnUno.TabIndex = 2;
             this.btnUno.Text = "COLABORADORES Y PAGOS";
             this.btnUno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -657,6 +657,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(220, 33);
             this.pictureBox1.Name = "pictureBox1";
@@ -676,7 +677,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(1920, 1080);
             this.Name = "FrmMenuPrincipal";
-            this.Text = "FrmMenuPrincipal";
+            this.Text = "SISTEMA GRANJA";
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
             this.panelMenuLateral.ResumeLayout(false);
             this.panelMenuLateral.PerformLayout();
