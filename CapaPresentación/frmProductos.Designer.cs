@@ -156,7 +156,7 @@
             this.dtpFechaVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaVencimiento.Location = new System.Drawing.Point(617, 112);
             this.dtpFechaVencimiento.Name = "dtpFechaVencimiento";
-            this.dtpFechaVencimiento.Size = new System.Drawing.Size(154, 20);
+            this.dtpFechaVencimiento.Size = new System.Drawing.Size(116, 20);
             this.dtpFechaVencimiento.TabIndex = 99;
             this.dtpFechaVencimiento.ValueChanged += new System.EventHandler(this.dtpFechaVencimiento_ValueChanged);
             // 
@@ -175,7 +175,7 @@
             this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaIngreso.Location = new System.Drawing.Point(617, 70);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(154, 20);
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(116, 20);
             this.dtpFechaIngreso.TabIndex = 97;
             // 
             // label9
@@ -192,14 +192,14 @@
             // 
             this.txtPrecio.Location = new System.Drawing.Point(196, 150);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(154, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(110, 20);
             this.txtPrecio.TabIndex = 95;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(194, 70);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(154, 20);
+            this.txtNombre.Size = new System.Drawing.Size(110, 20);
             this.txtNombre.TabIndex = 94;
             // 
             // btnCancelar
@@ -260,7 +260,7 @@
             // 
             this.txtStock.Location = new System.Drawing.Point(617, 30);
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(154, 20);
+            this.txtStock.Size = new System.Drawing.Size(116, 20);
             this.txtStock.TabIndex = 72;
             // 
             // label8
@@ -288,11 +288,11 @@
             this.cboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxEstado.FormattingEnabled = true;
             this.cboxEstado.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
+            "Disponible",
+            "Agotado"});
             this.cboxEstado.Location = new System.Drawing.Point(617, 148);
             this.cboxEstado.Name = "cboxEstado";
-            this.cboxEstado.Size = new System.Drawing.Size(154, 23);
+            this.cboxEstado.Size = new System.Drawing.Size(116, 23);
             this.cboxEstado.TabIndex = 68;
             // 
             // cboxTipoProducto
@@ -300,13 +300,16 @@
             this.cboxTipoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxTipoProducto.FormattingEnabled = true;
             this.cboxTipoProducto.Items.AddRange(new object[] {
-            "Herramienta",
-            "Alimento",
-            "Accesorios",
-            "Medicina"});
+            "Lacteo",
+            "Avicola",
+            "Carnico",
+            "Grano Basico",
+            "Vegetal",
+            "Grano",
+            "Insumo (Venta)"});
             this.cboxTipoProducto.Location = new System.Drawing.Point(194, 108);
             this.cboxTipoProducto.Name = "cboxTipoProducto";
-            this.cboxTipoProducto.Size = new System.Drawing.Size(156, 23);
+            this.cboxTipoProducto.Size = new System.Drawing.Size(112, 23);
             this.cboxTipoProducto.TabIndex = 64;
             // 
             // txtCodigoProducto
@@ -314,7 +317,7 @@
             this.txtCodigoProducto.Location = new System.Drawing.Point(194, 29);
             this.txtCodigoProducto.Name = "txtCodigoProducto";
             this.txtCodigoProducto.ReadOnly = true;
-            this.txtCodigoProducto.Size = new System.Drawing.Size(156, 20);
+            this.txtCodigoProducto.Size = new System.Drawing.Size(112, 20);
             this.txtCodigoProducto.TabIndex = 15;
             // 
             // label5

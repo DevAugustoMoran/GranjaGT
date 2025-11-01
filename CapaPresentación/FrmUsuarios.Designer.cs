@@ -69,7 +69,7 @@
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.Location = new System.Drawing.Point(826, 116);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(145, 33);
+            this.btnCancelar.Size = new System.Drawing.Size(121, 33);
             this.btnCancelar.TabIndex = 88;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -87,7 +87,7 @@
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.Location = new System.Drawing.Point(826, 72);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(145, 33);
+            this.btnEditar.Size = new System.Drawing.Size(121, 33);
             this.btnEditar.TabIndex = 87;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -105,7 +105,7 @@
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.Location = new System.Drawing.Point(826, 28);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(145, 33);
+            this.btnGuardar.Size = new System.Drawing.Size(121, 33);
             this.btnGuardar.TabIndex = 86;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -161,6 +161,8 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.btnCancelar);
+            this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.txtContrasena);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnCancelar);

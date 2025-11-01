@@ -164,7 +164,7 @@
             // 
             this.txtCantidad.Location = new System.Drawing.Point(201, 166);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(154, 20);
+            this.txtCantidad.Size = new System.Drawing.Size(108, 20);
             this.txtCantidad.TabIndex = 102;
             this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             // 
@@ -182,7 +182,7 @@
             // 
             this.txtImpuesto.Location = new System.Drawing.Point(639, 102);
             this.txtImpuesto.Name = "txtImpuesto";
-            this.txtImpuesto.Size = new System.Drawing.Size(154, 20);
+            this.txtImpuesto.Size = new System.Drawing.Size(145, 20);
             this.txtImpuesto.TabIndex = 99;
             this.txtImpuesto.TextChanged += new System.EventHandler(this.txtImpuesto_TextChanged);
             // 
@@ -217,7 +217,7 @@
             // 
             this.txtDescuento.Location = new System.Drawing.Point(639, 74);
             this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(154, 20);
+            this.txtDescuento.Size = new System.Drawing.Size(145, 20);
             this.txtDescuento.TabIndex = 95;
             this.txtDescuento.TextChanged += new System.EventHandler(this.txtDescuento_TextChanged);
             // 
@@ -247,7 +247,7 @@
             this.cboxCodigoProducto.FormattingEnabled = true;
             this.cboxCodigoProducto.Location = new System.Drawing.Point(201, 134);
             this.cboxCodigoProducto.Name = "cboxCodigoProducto";
-            this.cboxCodigoProducto.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoProducto.Size = new System.Drawing.Size(110, 23);
             this.cboxCodigoProducto.TabIndex = 91;
             // 
             // cboxCodigoCultivo
@@ -256,7 +256,7 @@
             this.cboxCodigoCultivo.FormattingEnabled = true;
             this.cboxCodigoCultivo.Location = new System.Drawing.Point(201, 104);
             this.cboxCodigoCultivo.Name = "cboxCodigoCultivo";
-            this.cboxCodigoCultivo.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoCultivo.Size = new System.Drawing.Size(110, 23);
             this.cboxCodigoCultivo.TabIndex = 90;
             // 
             // label6
@@ -290,7 +290,7 @@
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.Location = new System.Drawing.Point(830, 125);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(145, 32);
+            this.btnCancelar.Size = new System.Drawing.Size(121, 32);
             this.btnCancelar.TabIndex = 78;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -301,7 +301,7 @@
             // 
             this.txtPrecioUnitario.Location = new System.Drawing.Point(639, 16);
             this.txtPrecioUnitario.Name = "txtPrecioUnitario";
-            this.txtPrecioUnitario.Size = new System.Drawing.Size(154, 20);
+            this.txtPrecioUnitario.Size = new System.Drawing.Size(145, 20);
             this.txtPrecioUnitario.TabIndex = 72;
             this.txtPrecioUnitario.TextChanged += new System.EventHandler(this.txtPrecioUnitario_TextChanged);
             // 
@@ -316,7 +316,7 @@
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.Location = new System.Drawing.Point(830, 76);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(145, 33);
+            this.btnEditar.Size = new System.Drawing.Size(121, 33);
             this.btnEditar.TabIndex = 87;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -344,7 +344,7 @@
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.Location = new System.Drawing.Point(830, 30);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(145, 33);
+            this.btnGuardar.Size = new System.Drawing.Size(121, 33);
             this.btnGuardar.TabIndex = 86;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -355,9 +355,13 @@
             // 
             this.cboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxEstado.FormattingEnabled = true;
+            this.cboxEstado.Items.AddRange(new object[] {
+            "Facturado",
+            "Pendiente",
+            "Anulado"});
             this.cboxEstado.Location = new System.Drawing.Point(639, 161);
             this.cboxEstado.Name = "cboxEstado";
-            this.cboxEstado.Size = new System.Drawing.Size(154, 23);
+            this.cboxEstado.Size = new System.Drawing.Size(145, 23);
             this.cboxEstado.TabIndex = 68;
             // 
             // lblTotal
@@ -375,7 +379,7 @@
             this.cboxCodigoAnimal.FormattingEnabled = true;
             this.cboxCodigoAnimal.Location = new System.Drawing.Point(201, 74);
             this.cboxCodigoAnimal.Name = "cboxCodigoAnimal";
-            this.cboxCodigoAnimal.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoAnimal.Size = new System.Drawing.Size(110, 23);
             this.cboxCodigoAnimal.TabIndex = 64;
             // 
             // cboxCodigoVenta
@@ -384,7 +388,7 @@
             this.cboxCodigoVenta.FormattingEnabled = true;
             this.cboxCodigoVenta.Location = new System.Drawing.Point(201, 43);
             this.cboxCodigoVenta.Name = "cboxCodigoVenta";
-            this.cboxCodigoVenta.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoVenta.Size = new System.Drawing.Size(110, 23);
             this.cboxCodigoVenta.TabIndex = 58;
             // 
             // label3
@@ -402,7 +406,7 @@
             this.txtCodigoDetalle.Location = new System.Drawing.Point(201, 15);
             this.txtCodigoDetalle.Name = "txtCodigoDetalle";
             this.txtCodigoDetalle.ReadOnly = true;
-            this.txtCodigoDetalle.Size = new System.Drawing.Size(156, 20);
+            this.txtCodigoDetalle.Size = new System.Drawing.Size(110, 20);
             this.txtCodigoDetalle.TabIndex = 15;
             // 
             // label5

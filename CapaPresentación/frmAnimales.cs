@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,7 +62,7 @@ namespace CapaPresentación
                     decimal Precio = Convert.ToDecimal(txtPrecio.Text);
                     string Descripcion = txtDescripcion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clanimales.MtdFechaActual();
                     cdanimales.MtdAgregarAnimal(TipoAnimal, Raza, FechaNacimiento, Precio, Descripcion, Estado, UsuarioAuditoria, FechaAuditoria.ToString());
                     MessageBox.Show("Animal agregado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -103,7 +104,7 @@ namespace CapaPresentación
                     decimal Precio = Convert.ToDecimal(txtPrecio.Text);
                     string Descripcion = txtDescripcion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clanimales.MtdFechaActual();
                     cdanimales.MtdActualizarAnimal(CodigoAnimal, TipoAnimal, Raza, FechaNacimiento, Precio, Descripcion, Estado, UsuarioAuditoria, FechaAuditoria.ToString());
                     MessageBox.Show("Animal actualizado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -132,11 +133,19 @@ namespace CapaPresentación
             {
                 try
                 {
-                    int CodigoAnimal = Convert.ToInt32(txtCodigoAnimal.Text);
-                    cdanimales.MtdEliminarAnimal(CodigoAnimal);
-                    MessageBox.Show("Animal eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    mtdConsultarAnimales();
-                    mtdLimpiarCampos();
+                    int CodigoAnimal = int.Parse(txtCodigoAnimal.Text);
+
+                    if (cdanimales.MtdConsultarVentasDetalle(CodigoAnimal) == true)
+                    {
+                        MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        cdanimales.MtdEliminarAnimal(CodigoAnimal);
+                        MessageBox.Show("Animal eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mtdConsultarAnimales();
+                        mtdLimpiarCampos();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -148,6 +157,21 @@ namespace CapaPresentación
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboxEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

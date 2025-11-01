@@ -37,7 +37,6 @@
             this.txtUbicacion = new System.Windows.Forms.TextBox();
             this.dtpFechaCosecha = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaSiembra = new System.Windows.Forms.DateTimePicker();
-            this.cboxEstado = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -137,7 +136,7 @@
             this.txtObservacion.Location = new System.Drawing.Point(716, 88);
             this.txtObservacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(108, 20);
+            this.txtObservacion.Size = new System.Drawing.Size(116, 20);
             this.txtObservacion.TabIndex = 100;
             // 
             // txtUbicacion
@@ -145,7 +144,7 @@
             this.txtUbicacion.Location = new System.Drawing.Point(716, 49);
             this.txtUbicacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtUbicacion.Name = "txtUbicacion";
-            this.txtUbicacion.Size = new System.Drawing.Size(108, 20);
+            this.txtUbicacion.Size = new System.Drawing.Size(116, 20);
             this.txtUbicacion.TabIndex = 99;
             // 
             // dtpFechaCosecha
@@ -153,7 +152,7 @@
             this.dtpFechaCosecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaCosecha.Location = new System.Drawing.Point(458, 54);
             this.dtpFechaCosecha.Name = "dtpFechaCosecha";
-            this.dtpFechaCosecha.Size = new System.Drawing.Size(108, 20);
+            this.dtpFechaCosecha.Size = new System.Drawing.Size(123, 20);
             this.dtpFechaCosecha.TabIndex = 98;
             this.dtpFechaCosecha.ValueChanged += new System.EventHandler(this.dtpFechaCosecha_ValueChanged);
             // 
@@ -162,7 +161,7 @@
             this.dtpFechaSiembra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaSiembra.Location = new System.Drawing.Point(155, 133);
             this.dtpFechaSiembra.Name = "dtpFechaSiembra";
-            this.dtpFechaSiembra.Size = new System.Drawing.Size(108, 20);
+            this.dtpFechaSiembra.Size = new System.Drawing.Size(123, 20);
             this.dtpFechaSiembra.TabIndex = 97;
             // 
             // cboxEstado
@@ -193,7 +192,7 @@
             this.txtPrecio.Location = new System.Drawing.Point(458, 131);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(108, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(116, 20);
             this.txtPrecio.TabIndex = 94;
             // 
             // label8
@@ -212,7 +211,7 @@
             this.txtCantidadCosecha.Location = new System.Drawing.Point(458, 91);
             this.txtCantidadCosecha.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadCosecha.Name = "txtCantidadCosecha";
-            this.txtCantidadCosecha.Size = new System.Drawing.Size(108, 20);
+            this.txtCantidadCosecha.Size = new System.Drawing.Size(123, 20);
             this.txtCantidadCosecha.TabIndex = 92;
             // 
             // label9
@@ -265,7 +264,7 @@
             this.txtCodigoCultivo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigoCultivo.Name = "txtCodigoCultivo";
             this.txtCodigoCultivo.ReadOnly = true;
-            this.txtCodigoCultivo.Size = new System.Drawing.Size(104, 20);
+            this.txtCodigoCultivo.Size = new System.Drawing.Size(123, 20);
             this.txtCodigoCultivo.TabIndex = 80;
             // 
             // label4
@@ -295,7 +294,7 @@
             this.txtTipoCultivo.Location = new System.Drawing.Point(155, 89);
             this.txtTipoCultivo.Margin = new System.Windows.Forms.Padding(2);
             this.txtTipoCultivo.Name = "txtTipoCultivo";
-            this.txtTipoCultivo.Size = new System.Drawing.Size(104, 20);
+            this.txtTipoCultivo.Size = new System.Drawing.Size(123, 20);
             this.txtTipoCultivo.TabIndex = 82;
             // 
             // label3
@@ -434,7 +433,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTipoCultivo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cboxEstado;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtpFechaCosecha;
         private System.Windows.Forms.DateTimePicker dtpFechaSiembra;

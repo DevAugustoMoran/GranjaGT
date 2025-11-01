@@ -146,28 +146,28 @@
             // 
             this.txtDireccion.Location = new System.Drawing.Point(607, 79);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(156, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(115, 20);
             this.txtDireccion.TabIndex = 82;
             // 
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(607, 39);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(156, 20);
+            this.txtCorreo.Size = new System.Drawing.Size(115, 20);
             this.txtCorreo.TabIndex = 81;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(190, 118);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(156, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(108, 20);
             this.txtTelefono.TabIndex = 80;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(190, 79);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(156, 20);
+            this.txtNombre.Size = new System.Drawing.Size(108, 20);
             this.txtNombre.TabIndex = 79;
             // 
             // btnCancelar
@@ -195,7 +195,7 @@
             "Inactivo"});
             this.cboxEstado.Location = new System.Drawing.Point(607, 115);
             this.cboxEstado.Name = "cboxEstado";
-            this.cboxEstado.Size = new System.Drawing.Size(154, 23);
+            this.cboxEstado.Size = new System.Drawing.Size(113, 23);
             this.cboxEstado.TabIndex = 68;
             // 
             // btnEditar
@@ -255,7 +255,7 @@
             this.txtCodigoProveedor.Location = new System.Drawing.Point(190, 36);
             this.txtCodigoProveedor.Name = "txtCodigoProveedor";
             this.txtCodigoProveedor.ReadOnly = true;
-            this.txtCodigoProveedor.Size = new System.Drawing.Size(156, 20);
+            this.txtCodigoProveedor.Size = new System.Drawing.Size(108, 20);
             this.txtCodigoProveedor.TabIndex = 15;
             // 
             // label5
@@ -317,7 +317,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(7, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(108, 86);
+            this.pictureBox1.Size = new System.Drawing.Size(73, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 86;
             this.pictureBox1.TabStop = false;

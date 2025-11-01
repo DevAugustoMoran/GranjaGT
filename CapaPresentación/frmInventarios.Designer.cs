@@ -173,7 +173,7 @@
             // 
             this.txtCostoUnitario.Location = new System.Drawing.Point(654, 24);
             this.txtCostoUnitario.Name = "txtCostoUnitario";
-            this.txtCostoUnitario.Size = new System.Drawing.Size(156, 20);
+            this.txtCostoUnitario.Size = new System.Drawing.Size(116, 20);
             this.txtCostoUnitario.TabIndex = 84;
             this.txtCostoUnitario.TextChanged += new System.EventHandler(this.txtCostoUnitario_TextChanged);
             // 
@@ -181,7 +181,7 @@
             // 
             this.txtCantidadDisponible.Location = new System.Drawing.Point(233, 154);
             this.txtCantidadDisponible.Name = "txtCantidadDisponible";
-            this.txtCantidadDisponible.Size = new System.Drawing.Size(156, 20);
+            this.txtCantidadDisponible.Size = new System.Drawing.Size(106, 20);
             this.txtCantidadDisponible.TabIndex = 83;
             this.txtCantidadDisponible.TextChanged += new System.EventHandler(this.txtCantidadDisponible_TextChanged);
             // 
@@ -190,7 +190,7 @@
             this.dtpFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaRegistro.Location = new System.Drawing.Point(654, 114);
             this.dtpFechaRegistro.Name = "dtpFechaRegistro";
-            this.dtpFechaRegistro.Size = new System.Drawing.Size(154, 20);
+            this.dtpFechaRegistro.Size = new System.Drawing.Size(114, 20);
             this.dtpFechaRegistro.TabIndex = 82;
             // 
             // label8
@@ -208,14 +208,12 @@
             this.cboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxEstado.FormattingEnabled = true;
             this.cboxEstado.Items.AddRange(new object[] {
-            "Solicitado",
-            "Progreso",
-            "Finalizado",
-            "Cancelado",
-            "Facturado"});
+            "En Stock",
+            "Bajo Stock",
+            "Agotado"});
             this.cboxEstado.Location = new System.Drawing.Point(654, 153);
             this.cboxEstado.Name = "cboxEstado";
-            this.cboxEstado.Size = new System.Drawing.Size(154, 23);
+            this.cboxEstado.Size = new System.Drawing.Size(114, 23);
             this.cboxEstado.TabIndex = 80;
             // 
             // label6
@@ -282,7 +280,7 @@
             this.cboxCodigoInsumo.FormattingEnabled = true;
             this.cboxCodigoInsumo.Location = new System.Drawing.Point(233, 111);
             this.cboxCodigoInsumo.Name = "cboxCodigoInsumo";
-            this.cboxCodigoInsumo.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoInsumo.Size = new System.Drawing.Size(106, 23);
             this.cboxCodigoInsumo.TabIndex = 64;
             // 
             // cboxCodigoGranja
@@ -291,7 +289,7 @@
             this.cboxCodigoGranja.FormattingEnabled = true;
             this.cboxCodigoGranja.Location = new System.Drawing.Point(233, 68);
             this.cboxCodigoGranja.Name = "cboxCodigoGranja";
-            this.cboxCodigoGranja.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoGranja.Size = new System.Drawing.Size(106, 23);
             this.cboxCodigoGranja.TabIndex = 58;
             // 
             // label7
@@ -319,7 +317,7 @@
             this.txtCodigoInventario.Location = new System.Drawing.Point(233, 25);
             this.txtCodigoInventario.Name = "txtCodigoInventario";
             this.txtCodigoInventario.ReadOnly = true;
-            this.txtCodigoInventario.Size = new System.Drawing.Size(156, 20);
+            this.txtCodigoInventario.Size = new System.Drawing.Size(106, 20);
             this.txtCodigoInventario.TabIndex = 15;
             // 
             // label5

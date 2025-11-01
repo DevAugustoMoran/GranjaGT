@@ -164,15 +164,16 @@
             // 
             this.txtRaza.Location = new System.Drawing.Point(186, 102);
             this.txtRaza.Name = "txtRaza";
-            this.txtRaza.Size = new System.Drawing.Size(154, 20);
+            this.txtRaza.Size = new System.Drawing.Size(106, 20);
             this.txtRaza.TabIndex = 102;
             // 
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(582, 38);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(154, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(134, 20);
             this.txtPrecio.TabIndex = 101;
+            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
             // 
             // label6
             // 
@@ -189,7 +190,7 @@
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(184, 143);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(154, 20);
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(106, 20);
             this.dtpFechaNacimiento.TabIndex = 99;
             // 
             // label3
@@ -206,7 +207,7 @@
             // 
             this.txtTipoAnimal.Location = new System.Drawing.Point(184, 58);
             this.txtTipoAnimal.Name = "txtTipoAnimal";
-            this.txtTipoAnimal.Size = new System.Drawing.Size(154, 20);
+            this.txtTipoAnimal.Size = new System.Drawing.Size(106, 20);
             this.txtTipoAnimal.TabIndex = 94;
             // 
             // btnCancelar
@@ -267,8 +268,9 @@
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(582, 80);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(154, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(134, 20);
             this.txtDescripcion.TabIndex = 72;
+            this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             // 
             // label8
             // 
@@ -285,19 +287,22 @@
             this.cboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxEstado.FormattingEnabled = true;
             this.cboxEstado.Items.AddRange(new object[] {
-            "Vivo",
-            "Muerto"});
+            "Activo",
+            "Vendido",
+            "En producción",
+            "En engorde"});
             this.cboxEstado.Location = new System.Drawing.Point(582, 123);
             this.cboxEstado.Name = "cboxEstado";
-            this.cboxEstado.Size = new System.Drawing.Size(154, 23);
+            this.cboxEstado.Size = new System.Drawing.Size(134, 23);
             this.cboxEstado.TabIndex = 68;
+            this.cboxEstado.SelectedIndexChanged += new System.EventHandler(this.cboxEstado_SelectedIndexChanged);
             // 
             // txtCodigoAnimal
             // 
             this.txtCodigoAnimal.Location = new System.Drawing.Point(184, 19);
             this.txtCodigoAnimal.Name = "txtCodigoAnimal";
             this.txtCodigoAnimal.ReadOnly = true;
-            this.txtCodigoAnimal.Size = new System.Drawing.Size(156, 20);
+            this.txtCodigoAnimal.Size = new System.Drawing.Size(108, 20);
             this.txtCodigoAnimal.TabIndex = 15;
             // 
             // label5

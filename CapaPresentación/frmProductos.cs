@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -76,10 +77,18 @@ namespace CapaPresentación
                 try
                 {
                     int CodigoProducto = Convert.ToInt32(txtCodigoProducto.Text);
-                    cdproductos.MtdEliminarProducto(CodigoProducto);
-                    MessageBox.Show("Producto eliminado exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    mtdConsultarProductos();
-                    mtdLimpiarCampos();
+
+                    if (cdproductos.MtdConsultarVentasDetalle(CodigoProducto) == true)
+                    {
+                        MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        cdproductos.MtdEliminarProducto(CodigoProducto);
+                        MessageBox.Show("Producto eliminado exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mtdConsultarProductos();
+                        mtdLimpiarCampos();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -110,7 +119,7 @@ namespace CapaPresentación
                     DateTime FechaIngreso = dtpFechaIngreso.Value;
                     DateTime FechaVencimiento = dtpFechaVencimiento.Value;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clproductos.MtdFechaActual();
                     cdproductos.MtdAgregarProducto(Nombre, TipoProducto, Precio, Stock, FechaIngreso, FechaVencimiento, Estado, UsuarioAuditoria, FechaAuditoria);
                     MessageBox.Show("Producto agregado exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -142,7 +151,7 @@ namespace CapaPresentación
                     DateTime FechaIngreso = dtpFechaIngreso.Value;
                     DateTime FechaVencimiento = dtpFechaVencimiento.Value;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clproductos.MtdFechaActual();
                     cdproductos.MtdActualizarProducto(CodigoProducto, Nombre, TipoProducto, Precio, Stock, FechaIngreso, FechaVencimiento, Estado, UsuarioAuditoria, FechaAuditoria);
                     MessageBox.Show("Producto actualizado exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);

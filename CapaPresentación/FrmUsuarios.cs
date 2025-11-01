@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,7 +79,7 @@ namespace CapaPresentación
                     int CodigoRol = int.Parse(cboxCodigoRol.Text.Split('-')[0].Trim());
                     string Nombre = txtNombre.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_usuarios.MtdFechaActual();
                     DateTime FechaRegistro = dtpFechaRegistro.Value;
                     string Contrasena = txtContrasena.Text;
@@ -109,7 +110,7 @@ namespace CapaPresentación
                     int CodigoRol = int.Parse(cboxCodigoRol.Text.Split('-')[0].Trim());
                     string Nombre = txtNombre.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_usuarios.MtdFechaActual();
                     DateTime FechaRegistro = dtpFechaRegistro.Value;
                     string Contrasena = txtContrasena.Text;
@@ -133,12 +134,27 @@ namespace CapaPresentación
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int CodigoUsuario = int.Parse(txtCodigoUsuario.Text);
+            try
+            {
+                int CodigoUsuario = int.Parse(txtCodigoUsuario.Text);
 
-            cd_usuarios.MtdEliminarUsuario(CodigoUsuario);
-            MessageBox.Show("Usuario eliminado correctamente", "Eliminar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            MtdConsultarUsuario();
-            mtdLimpiarCampos();
+
+                if (cd_usuarios.MtdConsultarEmpleados(CodigoUsuario) == true)
+                {
+                    MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    cd_usuarios.MtdEliminarUsuario(CodigoUsuario);
+                    MessageBox.Show("Usuario eliminado correctamente", "Eliminar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarUsuario();
+                    mtdLimpiarCampos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgvRegistroUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -34,7 +34,6 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboxTipoVenta = new System.Windows.Forms.ComboBox();
-            this.txtTotalVenta = new System.Windows.Forms.TextBox();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
@@ -44,7 +43,6 @@
             this.cboxEstado = new System.Windows.Forms.ComboBox();
             this.cboxCodigoGranja = new System.Windows.Forms.ComboBox();
             this.cboxCodigoCliente = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtCodigoVenta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -92,7 +90,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cboxTipoVenta);
-            this.groupBox1.Controls.Add(this.txtTotalVenta);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnGuardar);
@@ -102,7 +99,6 @@
             this.groupBox1.Controls.Add(this.cboxEstado);
             this.groupBox1.Controls.Add(this.cboxCodigoGranja);
             this.groupBox1.Controls.Add(this.cboxCodigoCliente);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtCodigoVenta);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -122,13 +118,17 @@
             this.cboxTipoVenta.Name = "cboxTipoVenta";
             this.cboxTipoVenta.Size = new System.Drawing.Size(154, 21);
             this.cboxTipoVenta.TabIndex = 93;
-            // 
-            // txtTotalVenta
-            // 
-            this.txtTotalVenta.Location = new System.Drawing.Point(594, 80);
-            this.txtTotalVenta.Name = "txtTotalVenta";
-            this.txtTotalVenta.Size = new System.Drawing.Size(154, 20);
-            this.txtTotalVenta.TabIndex = 92;
+                      this.cboxTipoVenta.Items.AddRange(new object[] {
+            "Mayoreo (Ganado)",
+            "Contado (Cultivos)",
+            "Credito (Insumos)",
+            "Mayoreo (Aves)",
+            "Contado (Cerdos)",
+            "Contado (Menudeo)",
+            "Credito (Lacteos)",
+            "Mayoreo (Ganado)",
+            "Contado (Huevos)",
+            "Mayoreo (Embutidos)"});
             // 
             // btnCancelar
             // 
@@ -217,11 +217,9 @@
             this.cboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxEstado.FormattingEnabled = true;
             this.cboxEstado.Items.AddRange(new object[] {
-            "Solicitado",
-            "Progreso",
-            "Finalizado",
-            "Cancelado",
-            "Facturado"});
+            "Completada",
+            "Pendiente de Pago",
+            "Anulada"});
             this.cboxEstado.Location = new System.Drawing.Point(594, 129);
             this.cboxEstado.Name = "cboxEstado";
             this.cboxEstado.Size = new System.Drawing.Size(154, 23);
@@ -396,7 +394,6 @@
         private System.Windows.Forms.ComboBox cboxEstado;
         private System.Windows.Forms.ComboBox cboxCodigoGranja;
         private System.Windows.Forms.ComboBox cboxCodigoCliente;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCodigoVenta;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -411,7 +408,6 @@
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnSalir;
         private System.Windows.Forms.DataGridView dgvVentas;
-        private System.Windows.Forms.TextBox txtTotalVenta;
         private System.Windows.Forms.ComboBox cboxTipoVenta;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

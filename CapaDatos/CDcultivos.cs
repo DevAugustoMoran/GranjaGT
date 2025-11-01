@@ -67,5 +67,24 @@ namespace CapaDatos
             CommandEliminarCultivo.ExecuteNonQuery();
             cd_conexion.MtdCerrarConexion();
         }
+
+        public bool MtdConsultarVentasDetalle(int CodigoCultivo)
+        {
+            string QueryConsultarVentasDetalle = "SELECT 1 FROM tbl_VentasDetalle WHERE CodigoCultivo = @CodigoCultivo";
+            SqlCommand CommandEliminarCultivos = new SqlCommand(QueryConsultarVentasDetalle, cd_conexion.MtdAbrirConexion());
+            CommandEliminarCultivos.Parameters.AddWithValue("@CodigoCultivo", CodigoCultivo);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarCultivos.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 
 namespace CapaPresentación
 {
@@ -25,6 +26,18 @@ namespace CapaPresentación
 
         private void frmVentasDetalle_Load(object sender, EventArgs e)
         {
+            cboxCodigoAnimal.Items.Add("Ninguno");
+            cboxCodigoCultivo.Items.Add("Ninguno");
+            cboxCodigoProducto.Items.Add("Ninguno");
+
+            cboxCodigoAnimal.SelectedIndex = 0;
+            cboxCodigoCultivo.SelectedIndex = 0;
+            cboxCodigoProducto.SelectedIndex = 0;
+
+            this.cboxCodigoAnimal.SelectedIndexChanged += new System.EventHandler(this.AnyComboBox_SelectedIndexChanged);
+            this.cboxCodigoCultivo.SelectedIndexChanged += new System.EventHandler(this.AnyComboBox_SelectedIndexChanged);
+            this.cboxCodigoProducto.SelectedIndexChanged += new System.EventHandler(this.AnyComboBox_SelectedIndexChanged);
+
             MtdMostrarListaVenta();
             MtdMostrarListaAnimal();
             MtdMostrarListaCultivo();
@@ -119,17 +132,37 @@ namespace CapaPresentación
                 try
                 {
                     int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
-                    int CodigoAnimal = int.Parse(cboxCodigoAnimal.Text.Split('-')[0].Trim());
+
+                    int CodigoAnimal = 0;
+                    int CodigoCultivo = 0;
+                    int CodigoProducto = 0;
+
+                    if (cboxCodigoAnimal.Enabled && cboxCodigoAnimal.Text != "Ninguno")
+                    {
+                        CodigoAnimal = int.Parse(cboxCodigoAnimal.Text.Split('-')[0].Trim());
+                    }
+
+                    if (cboxCodigoCultivo.Enabled && cboxCodigoCultivo.Text != "Ninguno")
+                    {
+                        CodigoCultivo = int.Parse(cboxCodigoCultivo.Text.Split('-')[0].Trim());
+                    }
+
+                    if (cboxCodigoProducto.Enabled && cboxCodigoProducto.Text != "Ninguno")
+                    {
+                        CodigoProducto = int.Parse(cboxCodigoProducto.Text.Split('-')[0].Trim());
+                    }
+
+                   /* int CodigoAnimal = int.Parse(cboxCodigoAnimal.Text.Split('-')[0].Trim());
                     int CodigoCultivo = int.Parse(cboxCodigoCultivo.Text.Split('-')[0].Trim());
-                    int CodigoProducto = int.Parse(cboxCodigoProducto.Text.Split('-')[0].Trim());
+                    int CodigoProducto = int.Parse(cboxCodigoProducto.Text.Split('-')[0].Trim()); */
                     decimal Cantidad = decimal.Parse(txtCantidad.Text);
                     decimal PrecioUnitario = decimal.Parse(txtPrecioUnitario.Text);
-                    decimal Total = 10; //Hay que cambiarlo
+                    decimal Total = cl_ventasdetalle.MtdCalcularTotal(Cantidad, PrecioUnitario);
                     decimal Descuento = decimal.Parse(txtDescuento.Text);
                     decimal Impuesto = decimal.Parse(txtImpuesto.Text);
-                    decimal TotalVenta = 20; //Hay que cambiarlo
+                    decimal TotalVenta = cl_ventasdetalle.MtdCalcularTotalVenta(Total, Descuento, Impuesto);
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_ventasdetalle.MtdFechaActual();
 
                     cd_ventasdetalle.MtdAgregarVentasDetalle(CodigoVenta, CodigoAnimal, CodigoCultivo, CodigoProducto, Cantidad, PrecioUnitario, Total, Descuento, Impuesto, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
@@ -157,17 +190,39 @@ namespace CapaPresentación
                 {
                     int CodigoDetalle = int.Parse(txtCodigoDetalle.Text);
                     int CodigoVenta = int.Parse(cboxCodigoVenta.Text.Split('-')[0].Trim());
+
+                    int CodigoAnimal = 0;
+                    int CodigoCultivo = 0;
+                    int CodigoProducto = 0;
+
+                    if (cboxCodigoAnimal.Enabled && cboxCodigoAnimal.Text != "Ninguno")
+                    {
+                        CodigoAnimal = int.Parse(cboxCodigoAnimal.Text.Split('-')[0].Trim());
+                    }
+
+                    if (cboxCodigoCultivo.Enabled && cboxCodigoCultivo.Text != "Ninguno")
+                    {
+                        CodigoCultivo = int.Parse(cboxCodigoCultivo.Text.Split('-')[0].Trim());
+                    }
+
+                    if (cboxCodigoProducto.Enabled && cboxCodigoProducto.Text != "Ninguno")
+                    {
+                        CodigoProducto = int.Parse(cboxCodigoProducto.Text.Split('-')[0].Trim());
+                    }
+
+                   /*
+
                     int CodigoAnimal = int.Parse(cboxCodigoAnimal.Text.Split('-')[0].Trim());
                     int CodigoCultivo = int.Parse(cboxCodigoCultivo.Text.Split('-')[0].Trim());
-                    int CodigoProducto = int.Parse(cboxCodigoProducto.Text.Split('-')[0].Trim());
+                    int CodigoProducto = int.Parse(cboxCodigoProducto.Text.Split('-')[0].Trim()); */
                     decimal Cantidad = decimal.Parse(txtCantidad.Text);
                     decimal PrecioUnitario = decimal.Parse(txtPrecioUnitario.Text);
-                    decimal Total = 10; //Hay que cambiarlo
+                    decimal Total = cl_ventasdetalle.MtdCalcularTotal(Cantidad, PrecioUnitario);
                     decimal Descuento = decimal.Parse(txtDescuento.Text);
                     decimal Impuesto = decimal.Parse(txtImpuesto.Text);
-                    decimal TotalVenta = 20; //Hay que cambiarlo
+                    decimal TotalVenta = cl_ventasdetalle.MtdCalcularTotalVenta(Total, Descuento, Impuesto);
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_ventasdetalle.MtdFechaActual();
 
                     cd_ventasdetalle.MtdActualizarVentasDetalle(CodigoDetalle, CodigoVenta, CodigoAnimal, CodigoCultivo, CodigoProducto, Cantidad, PrecioUnitario, Total, Descuento, Impuesto, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
@@ -184,12 +239,27 @@ namespace CapaPresentación
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int CodigoDetalle = int.Parse(txtCodigoDetalle.Text);
+            try
+            {
+                int CodigoDetalle = int.Parse(txtCodigoDetalle.Text);
 
-            cd_ventasdetalle.MtdEliminarVentasDetalle(CodigoDetalle);
-            MessageBox.Show("Detalle de venta eliminado correctamente", "Eliminar Detalle", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            mtdConsultarVentasDetalle();
-            mtdLimpiarCampos();
+                if (cd_ventasdetalle.MtdConsultarPagosVentas(CodigoDetalle) == true)
+                {
+                    MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    cd_ventasdetalle.MtdEliminarVentasDetalle(CodigoDetalle);
+                    MessageBox.Show("Detalle de venta eliminado correctamente", "Eliminar Detalle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    mtdConsultarVentasDetalle();
+                    mtdLimpiarCampos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -286,6 +356,21 @@ namespace CapaPresentación
             }
         }
 
+        private void AnyComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox activeComboBox = (ComboBox)sender;
+
+            if (activeComboBox.SelectedItem == null)
+                return;
+
+            bool isNinguno = (activeComboBox.SelectedItem.ToString() == "Ninguno");
+
+            cboxCodigoAnimal.Enabled = isNinguno;
+            cboxCodigoCultivo.Enabled = isNinguno;
+            cboxCodigoProducto.Enabled = isNinguno;
+
+            activeComboBox.Enabled = true;
+        }
 
     }
 }

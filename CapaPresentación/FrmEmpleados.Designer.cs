@@ -42,9 +42,7 @@
             this.cboxCodigoGranja = new System.Windows.Forms.ComboBox();
             this.cboxCargo = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtSalarioBase = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtSalario = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -143,6 +141,7 @@
             this.label10.Size = new System.Drawing.Size(122, 22);
             this.label10.TabIndex = 85;
             this.label10.Text = "Fecha actual:";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // lblFecha
             // 
@@ -153,6 +152,7 @@
             this.lblFecha.Size = new System.Drawing.Size(137, 22);
             this.lblFecha.TabIndex = 84;
             this.lblFecha.Text = "Imprimir Fecha";
+            this.lblFecha.Click += new System.EventHandler(this.lblFecha_Click);
             // 
             // label6
             // 
@@ -200,9 +200,7 @@
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.cboxCargo);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.txtSalarioBase);
             this.groupBox1.Controls.Add(this.txtCorreo);
-            this.groupBox1.Controls.Add(this.txtSalario);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.label7);
@@ -475,9 +473,7 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ComboBox cboxCargo;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtSalarioBase;
         private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Label txtSalario;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cboxCodigoUsuario;
         private System.Windows.Forms.ComboBox cboxCodigoGranja;

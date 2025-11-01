@@ -168,37 +168,43 @@
             // 
             this.txtObservacion.Location = new System.Drawing.Point(646, 113);
             this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(156, 20);
+            this.txtObservacion.Size = new System.Drawing.Size(125, 20);
             this.txtObservacion.TabIndex = 88;
             // 
             // txtPeso
             // 
             this.txtPeso.Location = new System.Drawing.Point(646, 82);
             this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(156, 20);
+            this.txtPeso.Size = new System.Drawing.Size(125, 20);
             this.txtPeso.TabIndex = 87;
             // 
             // txtCostoUnitario
             // 
             this.txtCostoUnitario.Location = new System.Drawing.Point(646, 17);
             this.txtCostoUnitario.Name = "txtCostoUnitario";
-            this.txtCostoUnitario.Size = new System.Drawing.Size(156, 20);
+            this.txtCostoUnitario.Size = new System.Drawing.Size(125, 20);
             this.txtCostoUnitario.TabIndex = 86;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(195, 95);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(156, 20);
+            this.txtNombre.Size = new System.Drawing.Size(120, 20);
             this.txtNombre.TabIndex = 85;
             // 
             // cboxUnidadMedida
             // 
             this.cboxUnidadMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxUnidadMedida.FormattingEnabled = true;
+            this.cboxUnidadMedida.Items.AddRange(new object[] {
+            "Quintal (Q)",
+            "Mililítros (ML)",
+            "Kilogramo (KG)",
+            "Galon (GL)",
+            "Libras (LB)"});
             this.cboxUnidadMedida.Location = new System.Drawing.Point(646, 53);
             this.cboxUnidadMedida.Name = "cboxUnidadMedida";
-            this.cboxUnidadMedida.Size = new System.Drawing.Size(156, 23);
+            this.cboxUnidadMedida.Size = new System.Drawing.Size(125, 23);
             this.cboxUnidadMedida.TabIndex = 84;
             // 
             // label8
@@ -225,9 +231,16 @@
             // 
             this.cboxTipoInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxTipoInsumo.FormattingEnabled = true;
+            this.cboxTipoInsumo.Items.AddRange(new object[] {
+            "Alimento Animal",
+            "Medicamento Veterinario",
+            "Fertilizante Quimico",
+            "Semilla",
+            "Agroquimico",
+            "Combustible"});
             this.cboxTipoInsumo.Location = new System.Drawing.Point(195, 133);
             this.cboxTipoInsumo.Name = "cboxTipoInsumo";
-            this.cboxTipoInsumo.Size = new System.Drawing.Size(156, 23);
+            this.cboxTipoInsumo.Size = new System.Drawing.Size(120, 23);
             this.cboxTipoInsumo.TabIndex = 80;
             // 
             // label6
@@ -261,14 +274,12 @@
             this.cboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxEstado.FormattingEnabled = true;
             this.cboxEstado.Items.AddRange(new object[] {
-            "Solicitado",
-            "Progreso",
-            "Finalizado",
-            "Cancelado",
-            "Facturado"});
-            this.cboxEstado.Location = new System.Drawing.Point(648, 141);
+            "En Stock",
+            "Bajo Stock",
+            "Agotado"});
+             this.cboxEstado.Location = new System.Drawing.Point(648, 141);
             this.cboxEstado.Name = "cboxEstado";
-            this.cboxEstado.Size = new System.Drawing.Size(154, 23);
+            this.cboxEstado.Size = new System.Drawing.Size(123, 23);
             this.cboxEstado.TabIndex = 68;
             // 
             // btnEditar
@@ -309,7 +320,7 @@
             this.cboxCodigoProveedor.FormattingEnabled = true;
             this.cboxCodigoProveedor.Location = new System.Drawing.Point(195, 53);
             this.cboxCodigoProveedor.Name = "cboxCodigoProveedor";
-            this.cboxCodigoProveedor.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoProveedor.Size = new System.Drawing.Size(120, 23);
             this.cboxCodigoProveedor.TabIndex = 58;
             // 
             // label7
@@ -337,7 +348,7 @@
             this.txtCodigoInsumo.Location = new System.Drawing.Point(195, 18);
             this.txtCodigoInsumo.Name = "txtCodigoInsumo";
             this.txtCodigoInsumo.ReadOnly = true;
-            this.txtCodigoInsumo.Size = new System.Drawing.Size(156, 20);
+            this.txtCodigoInsumo.Size = new System.Drawing.Size(120, 20);
             this.txtCodigoInsumo.TabIndex = 15;
             // 
             // label5

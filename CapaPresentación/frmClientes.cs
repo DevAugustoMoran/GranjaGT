@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,7 +62,7 @@ namespace CapaPresentación
                     string Correo = txtCorreo.Text;
                     string Direccion = txtDireccion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clclientes.MtdFechaActual();
                     cdclientes.MtdAgregarCliente(Nombre, Tipo, Telefono, Correo, Direccion, Estado, UsuarioAuditoria, FechaAuditoria.ToString());
                     MessageBox.Show("Cliente agregado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -103,7 +104,7 @@ namespace CapaPresentación
                     string Correo = txtCorreo.Text;
                     string Direccion = txtDireccion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clclientes.MtdFechaActual();
                     cdclientes.MtdActualizarCliente(CodigoCliente, Nombre, Tipo, Telefono, Correo, Direccion, Estado, UsuarioAuditoria, FechaAuditoria.ToString());
                     MessageBox.Show("Cliente actualizado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -132,11 +133,19 @@ namespace CapaPresentación
             {
                 try
                 {
-                    int CodigoCliente = Convert.ToInt32(txtCodigoCliente.Text);
-                    cdclientes.MtdEliminarCliente(CodigoCliente);
-                    MessageBox.Show("Cliente eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    mtdConsultarClientes();
-                    mtdLimpiarCampos();
+                    int CodigoCliente = int.Parse(txtCodigoCliente.Text);
+
+                    if (cdclientes.MtdConsultarVentas(CodigoCliente) == true)
+                    {
+                        MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        cdclientes.MtdEliminarCliente(CodigoCliente);
+                        MessageBox.Show("Cliente eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mtdConsultarClientes();
+                        mtdLimpiarCampos();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -148,6 +157,11 @@ namespace CapaPresentación
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

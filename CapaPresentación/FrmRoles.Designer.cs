@@ -247,7 +247,7 @@
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.Location = new System.Drawing.Point(832, 114);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(145, 33);
+            this.btnCancelar.Size = new System.Drawing.Size(116, 33);
             this.btnCancelar.TabIndex = 78;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -265,7 +265,7 @@
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.Location = new System.Drawing.Point(832, 65);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(145, 33);
+            this.btnEditar.Size = new System.Drawing.Size(116, 33);
             this.btnEditar.TabIndex = 77;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -283,7 +283,7 @@
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.Location = new System.Drawing.Point(832, 18);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(145, 33);
+            this.btnGuardar.Size = new System.Drawing.Size(116, 33);
             this.btnGuardar.TabIndex = 76;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

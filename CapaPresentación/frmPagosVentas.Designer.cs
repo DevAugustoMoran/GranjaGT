@@ -44,7 +44,7 @@
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
-            this.cboxCodigoVenta = new System.Windows.Forms.ComboBox();
+            this.cboxCodigoDetalle = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCodigoPago = new System.Windows.Forms.TextBox();
@@ -142,7 +142,7 @@
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.dtpFechaPago);
-            this.groupBox1.Controls.Add(this.cboxCodigoVenta);
+            this.groupBox1.Controls.Add(this.cboxCodigoDetalle);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtCodigoPago);
@@ -270,7 +270,7 @@
             this.dtpFechaPago.Size = new System.Drawing.Size(154, 20);
             this.dtpFechaPago.TabIndex = 66;
             // 
-            // cboxCodigoVenta
+            // cboxCodigoDetalle
             // 
             this.cboxCodigoVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxCodigoVenta.FormattingEnabled = true;
@@ -336,7 +336,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 22);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Codigo Venta:";
+            this.label2.Text = "Codigo de Detalle:";
             // 
             // label1
             // 
@@ -385,7 +385,7 @@
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnAgregar;
         private System.Windows.Forms.DateTimePicker dtpFechaPago;
-        private System.Windows.Forms.ComboBox cboxCodigoVenta;
+        private System.Windows.Forms.ComboBox cboxCodigoDetalle;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCodigoPago;

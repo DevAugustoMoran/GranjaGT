@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -94,7 +95,7 @@ namespace CapaPresentación
                     string PlacaTransporte = txtPlacaTransporte.Text;
                     string Observacion = txtObservacion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_envios.MtdFechaActual();
 
                     cd_envios.MtdAgregarEnvios(CodigoVenta, CodigoEmpleado, FechaEnvio, DireccionEnvio, TipoTransporte, PlacaTransporte, Observacion, Estado, UsuarioAuditoria, FechaAuditoria);
@@ -129,7 +130,7 @@ namespace CapaPresentación
                     string PlacaTransporte = txtPlacaTransporte.Text;
                     string Observacion = txtObservacion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_envios.MtdFechaActual();
 
                     cd_envios.MtdActualizarEnvios(CodigoEnvio, CodigoVenta, CodigoEmpleado, FechaEnvio, DireccionEnvio, TipoTransporte, PlacaTransporte, Observacion, Estado, UsuarioAuditoria, FechaAuditoria);

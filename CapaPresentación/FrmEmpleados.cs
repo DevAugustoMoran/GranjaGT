@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -75,13 +76,12 @@ namespace CapaPresentación
             txtTelefono.Text = "";
             txtCorreo.Text = "";
             cboxCargo.Text = "";
-            txtSalarioBase.Text = "";
             cboxEstado.Text = "";
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (cboxCodigoGranja.Text == "" || cboxCodigoUsuario.Text == "" || txtNombre.Text == "" || txtTelefono.Text == "" || txtCorreo.Text == "" || cboxCargo.Text == "" ||txtSalario.Text == "" || cboxEstado.Text == "")
+            if (cboxCodigoGranja.Text == "" || cboxCodigoUsuario.Text == "" || txtNombre.Text == "" || txtTelefono.Text == "" || txtCorreo.Text == "" || cboxCargo.Text == "" || cboxEstado.Text == "")
             {
                 MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -95,13 +95,12 @@ namespace CapaPresentación
                     string Telefono = txtTelefono.Text;
                     string Correo = txtCorreo.Text;
                     string Cargo = cboxCargo.Text;
-                    decimal SalarioBase = decimal.Parse(txtSalarioBase.Text);
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_empleados.MtdFechaActual();
                     DateTime FechaRegistro = cl_empleados.MtdFechaActual();
 
-                    cd_empleados.MtdAgregarEmpleado(CodigoGranja, CodigoUsuario, Nombre, Telefono, Correo, Cargo, Estado, SalarioBase, FechaAuditoria, UsuarioAuditoria, FechaRegistro);
+                    cd_empleados.MtdAgregarEmpleado(CodigoGranja, CodigoUsuario, Nombre, Telefono, Correo, Cargo, Estado, FechaAuditoria, UsuarioAuditoria, FechaRegistro);
                     MessageBox.Show("Empleado agregado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MtdConsultarEmpleados();
                     mtdLimpiarCampos();
@@ -115,7 +114,7 @@ namespace CapaPresentación
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (cboxCodigoGranja.Text == "" || cboxCodigoUsuario.Text == "" || txtNombre.Text == "" || txtTelefono.Text == "" || txtCorreo.Text == "" || cboxCargo.Text == "" || txtSalario.Text == "" || cboxEstado.Text == "")
+            if (cboxCodigoGranja.Text == "" || cboxCodigoUsuario.Text == "" || txtNombre.Text == "" || txtTelefono.Text == "" || txtCorreo.Text == "" || cboxCargo.Text == "" || cboxEstado.Text == "")
             {
                 MessageBox.Show("Por favor complete todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -131,12 +130,11 @@ namespace CapaPresentación
                     string Correo = txtCorreo.Text;
                     string Cargo = cboxCargo.Text;
                     string Estado = cboxEstado.Text;
-                    decimal SalarioBase = decimal.Parse(txtSalarioBase.Text);
                     DateTime FechaIngreso = dtpFechaIngreso.Value;
-                    string UsuarioAuditoria = "Admin"; //Hay que cambiarlo
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = cl_empleados.MtdFechaActual();
 
-                    cd_empleados.MtdActualizarEmpleado(CodigoEmpleado, CodigoGranja, CodigoUsuario, Nombre, Telefono, Correo, Cargo, Estado, SalarioBase, FechaIngreso, UsuarioAuditoria, FechaAuditoria);
+                    cd_empleados.MtdActualizarEmpleado(CodigoEmpleado, CodigoGranja, CodigoUsuario, Nombre, Telefono, Correo, Cargo, Estado, FechaIngreso, UsuarioAuditoria, FechaAuditoria);
                     MessageBox.Show("Empleado actualizado correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MtdConsultarEmpleados();
                     mtdLimpiarCampos();
@@ -155,12 +153,27 @@ namespace CapaPresentación
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int CodigoEmpleado = int.Parse(txtCodigoEmpleado.Text);
+            try
+            {
+                int CodigoEmpleado = int.Parse(txtCodigoEmpleado.Text);
 
-            cd_empleados.MtdEliminarEmpleado(CodigoEmpleado);
-            MessageBox.Show("Empleado eliminado correctamente", "Eliminar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            MtdConsultarEmpleados();
-            mtdLimpiarCampos();
+                if (cd_empleados.MtdConsultarEnvios(CodigoEmpleado) == true || cd_empleados.MtdConsultarPagoEmpleados(CodigoEmpleado) == true)
+                {
+                    MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+
+                    cd_empleados.MtdEliminarEmpleado(CodigoEmpleado);
+                    MessageBox.Show("Empleado eliminado correctamente", "Eliminar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdConsultarEmpleados();
+                    mtdLimpiarCampos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -178,8 +191,17 @@ namespace CapaPresentación
             txtCorreo.Text = dgvRegistroEmpleados.SelectedCells[5].Value.ToString();
             cboxCargo.Text = dgvRegistroEmpleados.SelectedCells[6].Value.ToString();
             cboxEstado.Text = dgvRegistroEmpleados.SelectedCells[7].Value.ToString();
-            txtSalarioBase.Text = dgvRegistroEmpleados.SelectedCells[8].Value.ToString();
-            dtpFechaIngreso.Text = dgvRegistroEmpleados.SelectedCells[9].Value.ToString();
+            dtpFechaIngreso.Text = dgvRegistroEmpleados.SelectedCells[8].Value.ToString();
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFecha_Click(object sender, EventArgs e)
+        {
 
         }
     }

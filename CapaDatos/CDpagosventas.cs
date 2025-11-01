@@ -13,10 +13,10 @@ namespace CapaDatos
         CDconexion cd_conexion = new CDconexion();
 
         //LLAVE FORANEA
-        public List<dynamic> MtdListarVentas()
+        public List<dynamic> MtdListarDetallesVentas()
         {
             List<dynamic> ListaVentas = new List<dynamic>();
-            string QueryListaVentas = "Select CodigoVenta, TipoVenta from tbl_Ventas";
+            string QueryListaVentas = "Select CodigoDetalle, Estado from tbl_VentasDetalle";
             SqlCommand cmd = new SqlCommand(QueryListaVentas, cd_conexion.MtdAbrirConexion());
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -24,8 +24,8 @@ namespace CapaDatos
             {
                 ListaVentas.Add(new
                 {
-                    Value = reader["CodigoVenta"],
-                    Text = $"{reader["CodigoVenta"]} - {reader["TipoVenta"]}"
+                    Value = reader["CodigoDetalle"],
+                    Text = $"{reader["CodigoDetalle"]} - {reader["Estado"]}"
                 });
             }
 
@@ -43,11 +43,10 @@ namespace CapaDatos
             return dt_PagosVentas;
         }
 
-        public void MtdAgregarPagosVentas(int CodigoVenta, decimal Monto, string TipoPago, string NumReferencia, DateTime FechaPago, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
+        public void MtdAgregarPagosVentas(decimal Monto, string TipoPago, string NumReferencia, DateTime FechaPago, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria, int CodigoDetalle)
         {
-            string QueryAgregarPagosVentas = "Insert into tbl_PagosVentas(CodigoVenta, Monto, TipoPago, NumReferencia, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria) values (@CodigoVenta, @Monto, @TipoPago, @NumReferencia, @FechaPago, @Estado, @UsuarioAuditoria, @FechaAuditoria)";
+            string QueryAgregarPagosVentas = "Insert into tbl_PagosVentas(Monto, TipoPago, NumReferencia, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria, CodigoDetalle) values (@Monto, @TipoPago, @NumReferencia, @FechaPago, @Estado, @UsuarioAuditoria, @FechaAuditoria, @CodigoDetalle)";
             SqlCommand CommandAgregarPagosVentas = new SqlCommand(QueryAgregarPagosVentas, cd_conexion.MtdAbrirConexion());
-            CommandAgregarPagosVentas.Parameters.AddWithValue("@CodigoVenta", CodigoVenta);
             CommandAgregarPagosVentas.Parameters.AddWithValue("@Monto", Monto);
             CommandAgregarPagosVentas.Parameters.AddWithValue("@TipoPago", TipoPago);
             CommandAgregarPagosVentas.Parameters.AddWithValue("@NumReferencia", NumReferencia);
@@ -55,16 +54,16 @@ namespace CapaDatos
             CommandAgregarPagosVentas.Parameters.AddWithValue("@Estado", Estado);
             CommandAgregarPagosVentas.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
             CommandAgregarPagosVentas.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
+            CommandAgregarPagosVentas.Parameters.AddWithValue("@CodigoDetalle", CodigoDetalle);
             CommandAgregarPagosVentas.ExecuteNonQuery();
             cd_conexion.MtdCerrarConexion();
         }
 
-        public void MtdActualizarPagosVentas(int CodigoPago, int CodigoVenta, decimal Monto, string TipoPago, string NumReferencia, DateTime FechaPago, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
+        public void MtdActualizarPagosVentas(int CodigoPago, decimal Monto, string TipoPago, string NumReferencia, DateTime FechaPago, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria, int CodigoDetalle)
         {
-            string QueryActualizarPagosVentas = "Update tbl_PagosVentas set CodigoVenta = @CodigoVenta, Monto = @Monto, TipoPago = @TipoPago, NumReferencia = @NumReferencia, FechaPago = @FechaPago, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoPago = @CodigoPago";
+            string QueryActualizarPagosVentas = "Update tbl_PagosVentas set Monto = @Monto, TipoPago = @TipoPago, NumReferencia = @NumReferencia, FechaPago = @FechaPago, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria, CodigoDetalle = @CodigoDetalle where CodigoPago = @CodigoPago";
             SqlCommand CommandActualizarPagosVentas = new SqlCommand(QueryActualizarPagosVentas, cd_conexion.MtdAbrirConexion());
             CommandActualizarPagosVentas.Parameters.AddWithValue("@CodigoPago", CodigoPago);
-            CommandActualizarPagosVentas.Parameters.AddWithValue("@CodigoVenta", CodigoVenta);
             CommandActualizarPagosVentas.Parameters.AddWithValue("@Monto", Monto);
             CommandActualizarPagosVentas.Parameters.AddWithValue("@TipoPago", TipoPago);
             CommandActualizarPagosVentas.Parameters.AddWithValue("@NumReferencia", NumReferencia);
@@ -72,6 +71,7 @@ namespace CapaDatos
             CommandActualizarPagosVentas.Parameters.AddWithValue("@Estado", Estado);
             CommandActualizarPagosVentas.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
             CommandActualizarPagosVentas.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
+            CommandActualizarPagosVentas.Parameters.AddWithValue("@CodigoVenta", CodigoDetalle);
             CommandActualizarPagosVentas.ExecuteNonQuery();
             cd_conexion.MtdCerrarConexion();
         }
@@ -85,13 +85,13 @@ namespace CapaDatos
             cd_conexion.MtdCerrarConexion();
         }
 
-        public Decimal MtdMonto(int CodigoVenta)
+        public Decimal MtdMonto(int CodigoDetalle)
         {
             decimal montototal = 0;
 
-            string QueryConsultarMonto = "SELECT TotalVenta FROM tbl_Ventas WHERE CodigoVenta = @CodigoVenta";
+            string QueryConsultarMonto = "SELECT TotalVenta FROM tbl_VentasDetalle WHERE CodigoDetalle = @CodigoDetalle";
             SqlCommand CommandMonto = new SqlCommand(QueryConsultarMonto, cd_conexion.MtdAbrirConexion());
-            CommandMonto.Parameters.AddWithValue("@CodigoVenta", CodigoVenta);
+            CommandMonto.Parameters.AddWithValue("@CodigoDetalle", CodigoDetalle);
             SqlDataReader reader = CommandMonto.ExecuteReader();
 
             if (reader.Read())

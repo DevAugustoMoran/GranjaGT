@@ -168,21 +168,21 @@
             // 
             this.txtObservacion.Location = new System.Drawing.Point(621, 111);
             this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(156, 20);
+            this.txtObservacion.Size = new System.Drawing.Size(125, 20);
             this.txtObservacion.TabIndex = 91;
             // 
             // txtPlacaTransporte
             // 
             this.txtPlacaTransporte.Location = new System.Drawing.Point(623, 67);
             this.txtPlacaTransporte.Name = "txtPlacaTransporte";
-            this.txtPlacaTransporte.Size = new System.Drawing.Size(156, 20);
+            this.txtPlacaTransporte.Size = new System.Drawing.Size(125, 20);
             this.txtPlacaTransporte.TabIndex = 90;
             // 
             // txtDireccionEnvio
             // 
             this.txtDireccionEnvio.Location = new System.Drawing.Point(191, 169);
             this.txtDireccionEnvio.Name = "txtDireccionEnvio";
-            this.txtDireccionEnvio.Size = new System.Drawing.Size(156, 20);
+            this.txtDireccionEnvio.Size = new System.Drawing.Size(116, 20);
             this.txtDireccionEnvio.TabIndex = 89;
             // 
             // label8
@@ -206,7 +206,7 @@
             "Aéreo"});
             this.cboxTipoTransporte.Location = new System.Drawing.Point(623, 20);
             this.cboxTipoTransporte.Name = "cboxTipoTransporte";
-            this.cboxTipoTransporte.Size = new System.Drawing.Size(156, 23);
+            this.cboxTipoTransporte.Size = new System.Drawing.Size(125, 23);
             this.cboxTipoTransporte.TabIndex = 84;
             // 
             // label12
@@ -261,13 +261,13 @@
             this.cboxEstado.FormattingEnabled = true;
             this.cboxEstado.Items.AddRange(new object[] {
             "Solicitado",
-            "Progreso",
+            "En Progreso",
             "Finalizado",
             "Cancelado",
             "Facturado"});
             this.cboxEstado.Location = new System.Drawing.Point(623, 152);
             this.cboxEstado.Name = "cboxEstado";
-            this.cboxEstado.Size = new System.Drawing.Size(154, 23);
+            this.cboxEstado.Size = new System.Drawing.Size(123, 23);
             this.cboxEstado.TabIndex = 68;
             // 
             // btnEditar
@@ -307,7 +307,7 @@
             this.dtpFechaEnvio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaEnvio.Location = new System.Drawing.Point(192, 129);
             this.dtpFechaEnvio.Name = "dtpFechaEnvio";
-            this.dtpFechaEnvio.Size = new System.Drawing.Size(154, 20);
+            this.dtpFechaEnvio.Size = new System.Drawing.Size(114, 20);
             this.dtpFechaEnvio.TabIndex = 66;
             // 
             // cboxCodigoEmpleado
@@ -316,7 +316,7 @@
             this.cboxCodigoEmpleado.FormattingEnabled = true;
             this.cboxCodigoEmpleado.Location = new System.Drawing.Point(191, 90);
             this.cboxCodigoEmpleado.Name = "cboxCodigoEmpleado";
-            this.cboxCodigoEmpleado.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoEmpleado.Size = new System.Drawing.Size(116, 23);
             this.cboxCodigoEmpleado.TabIndex = 64;
             // 
             // cboxCodigoVenta
@@ -325,7 +325,7 @@
             this.cboxCodigoVenta.FormattingEnabled = true;
             this.cboxCodigoVenta.Location = new System.Drawing.Point(191, 53);
             this.cboxCodigoVenta.Name = "cboxCodigoVenta";
-            this.cboxCodigoVenta.Size = new System.Drawing.Size(156, 23);
+            this.cboxCodigoVenta.Size = new System.Drawing.Size(116, 23);
             this.cboxCodigoVenta.TabIndex = 58;
             // 
             // label7
@@ -343,7 +343,7 @@
             this.txtCodigoEnvio.Location = new System.Drawing.Point(191, 19);
             this.txtCodigoEnvio.Name = "txtCodigoEnvio";
             this.txtCodigoEnvio.ReadOnly = true;
-            this.txtCodigoEnvio.Size = new System.Drawing.Size(156, 20);
+            this.txtCodigoEnvio.Size = new System.Drawing.Size(116, 20);
             this.txtCodigoEnvio.TabIndex = 15;
             // 
             // label5

@@ -101,6 +101,7 @@
             this.label11.Size = new System.Drawing.Size(169, 38);
             this.label11.TabIndex = 97;
             this.label11.Text = "CLIENTES";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
             // 
@@ -151,21 +152,21 @@
             // 
             this.txtTelefono.Location = new System.Drawing.Point(193, 160);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(154, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(111, 20);
             this.txtTelefono.TabIndex = 94;
             // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(595, 85);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(154, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(120, 20);
             this.txtDireccion.TabIndex = 93;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(195, 71);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(154, 20);
+            this.txtNombre.Size = new System.Drawing.Size(111, 20);
             this.txtNombre.TabIndex = 92;
             // 
             // btnCancelar
@@ -226,7 +227,7 @@
             // 
             this.txtCorreo.Location = new System.Drawing.Point(595, 34);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(154, 20);
+            this.txtCorreo.Size = new System.Drawing.Size(120, 20);
             this.txtCorreo.TabIndex = 72;
             // 
             // label8
@@ -258,7 +259,7 @@
             "Inactivo"});
             this.cboxEstado.Location = new System.Drawing.Point(595, 136);
             this.cboxEstado.Name = "cboxEstado";
-            this.cboxEstado.Size = new System.Drawing.Size(154, 23);
+            this.cboxEstado.Size = new System.Drawing.Size(120, 23);
             this.cboxEstado.TabIndex = 68;
             // 
             // cboxTipo
@@ -272,7 +273,7 @@
             "Bueno"});
             this.cboxTipo.Location = new System.Drawing.Point(193, 114);
             this.cboxTipo.Name = "cboxTipo";
-            this.cboxTipo.Size = new System.Drawing.Size(156, 23);
+            this.cboxTipo.Size = new System.Drawing.Size(113, 23);
             this.cboxTipo.TabIndex = 64;
             // 
             // label3
@@ -290,7 +291,7 @@
             this.txtCodigoCliente.Location = new System.Drawing.Point(193, 19);
             this.txtCodigoCliente.Name = "txtCodigoCliente";
             this.txtCodigoCliente.ReadOnly = true;
-            this.txtCodigoCliente.Size = new System.Drawing.Size(156, 20);
+            this.txtCodigoCliente.Size = new System.Drawing.Size(113, 20);
             this.txtCodigoCliente.TabIndex = 15;
             // 
             // label5

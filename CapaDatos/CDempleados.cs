@@ -65,9 +65,9 @@ namespace CapaDatos
             return dt_empleado;
         }
 
-        public void MtdAgregarEmpleado(int CodigoGranja, int CodigoUsuario, string Nombre, string Telefono, string Correo, string Cargo, string Estado, decimal SalarioBase, DateTime FechaIngreso, string UsuarioAuditoria, DateTime FechaAuditoria)
+        public void MtdAgregarEmpleado(int CodigoGranja, int CodigoUsuario, string Nombre, string Telefono, string Correo, string Cargo, string Estado, DateTime FechaIngreso, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
-            string QueryAgregarEmpleado = "Insert into tbl_Empleados(CodigoGranja, CodigoUsuario, Nombre, Telefono, Correo, Cargo, Estado, SalarioBase, FechaIngreso, UsuarioAuditoria, FechaAuditoria) values (@CodigoGranja, @CodigoUsuario, @Nombre, @Telefono, @Correo, @Cargo, @Estado, @SalarioBase, @FechaIngreso, @UsuarioAuditoria, @FechaAuditoria)";
+            string QueryAgregarEmpleado = "Insert into tbl_Empleados(CodigoGranja, CodigoUsuario, Nombre, Telefono, Correo, Cargo, Estado, FechaIngreso, UsuarioAuditoria, FechaAuditoria) values (@CodigoGranja, @CodigoUsuario, @Nombre, @Telefono, @Correo, @Cargo, @Estado, @FechaIngreso, @UsuarioAuditoria, @FechaAuditoria)";
             SqlCommand CommandAgregarEmpleado = new SqlCommand(QueryAgregarEmpleado, cd_conexion.MtdAbrirConexion());
             CommandAgregarEmpleado.Parameters.AddWithValue("@CodigoGranja", CodigoGranja);
             CommandAgregarEmpleado.Parameters.AddWithValue("@CodigoUsuario", CodigoUsuario);
@@ -76,7 +76,6 @@ namespace CapaDatos
             CommandAgregarEmpleado.Parameters.AddWithValue("@Correo", Correo);
             CommandAgregarEmpleado.Parameters.AddWithValue("@Cargo", Cargo);
             CommandAgregarEmpleado.Parameters.AddWithValue("@Estado", Estado);
-            CommandAgregarEmpleado.Parameters.AddWithValue("@SalarioBase", SalarioBase);
             CommandAgregarEmpleado.Parameters.AddWithValue("@FechaIngreso", FechaIngreso);
             CommandAgregarEmpleado.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
             CommandAgregarEmpleado.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
@@ -84,9 +83,9 @@ namespace CapaDatos
             cd_conexion.MtdCerrarConexion();
         }
 
-        public void MtdActualizarEmpleado(int CodigoEmpleado, int CodigoGranja, int CodigoUsuario, string Nombre, string Telefono, string Correo, string Cargo, string Estado, decimal SalarioBase, DateTime FechaIngreso, string UsuarioAuditoria, DateTime FechaAuditoria)
+        public void MtdActualizarEmpleado(int CodigoEmpleado, int CodigoGranja, int CodigoUsuario, string Nombre, string Telefono, string Correo, string Cargo, string Estado, DateTime FechaIngreso, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
-            string QueryActualizarEmpleado = "Update tbl_Empleados set CodigoGranja = @CodigoGranja, CodigoUsuario = @CodigoUsuario, Nombre = @Nombre, Telefono = @Telefono, Correo = @Correo, Cargo = @Cargo, Estado = @Estado, SalarioBase = @SalarioBase, FechaIngreso = @FechaIngreso, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoEmpleado = @CodigoEmpleado";
+            string QueryActualizarEmpleado = "Update tbl_Empleados set CodigoGranja = @CodigoGranja, CodigoUsuario = @CodigoUsuario, Nombre = @Nombre, Telefono = @Telefono, Correo = @Correo, Cargo = @Cargo, Estado = @Estado, FechaIngreso = @FechaIngreso, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoEmpleado = @CodigoEmpleado";
             SqlCommand CommandActualizarEmpleado = new SqlCommand(QueryActualizarEmpleado, cd_conexion.MtdAbrirConexion());
             CommandActualizarEmpleado.Parameters.AddWithValue("@CodigoEmpleado", CodigoEmpleado);
             CommandActualizarEmpleado.Parameters.AddWithValue("@CodigoGranja", CodigoGranja);
@@ -96,7 +95,6 @@ namespace CapaDatos
             CommandActualizarEmpleado.Parameters.AddWithValue("@Correo", Correo);
             CommandActualizarEmpleado.Parameters.AddWithValue("@Cargo", Cargo);
             CommandActualizarEmpleado.Parameters.AddWithValue("@Estado", Estado);
-            CommandActualizarEmpleado.Parameters.AddWithValue("@SalarioBase", SalarioBase);
             CommandActualizarEmpleado.Parameters.AddWithValue("@FechaIngreso", FechaIngreso);
             CommandActualizarEmpleado.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
             CommandActualizarEmpleado.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
@@ -111,6 +109,44 @@ namespace CapaDatos
             CommandEliminarEmpleado.Parameters.AddWithValue("@CodigoEmpleado", CodigoEmpleado);
             CommandEliminarEmpleado.ExecuteNonQuery();
             cd_conexion.MtdCerrarConexion();
+        }
+
+        public bool MtdConsultarEnvios(int CodigoEmpleado)
+        {
+            string QueryConsultarEnvio = "SELECT 1 FROM tbl_Envios WHERE CodigoEmpleado = @CodigoEmpleado";
+            SqlCommand CommandEliminarEmpleado = new SqlCommand(QueryConsultarEnvio, cd_conexion.MtdAbrirConexion());
+            CommandEliminarEmpleado.Parameters.AddWithValue("@CodigoEmpleado", CodigoEmpleado);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarEmpleado.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool MtdConsultarPagoEmpleados(int CodigoEmpleado)
+        {
+            string QueryConsultarPagoEmpleado = "SELECT 1 FROM tbl_Pagos_Empleados WHERE CodigoEmpleado = @CodigoEmpleado";
+            SqlCommand CommandEliminarEmpleado = new SqlCommand(QueryConsultarPagoEmpleado, cd_conexion.MtdAbrirConexion());
+            CommandEliminarEmpleado.Parameters.AddWithValue("@CodigoEmpleado", CodigoEmpleado);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarEmpleado.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

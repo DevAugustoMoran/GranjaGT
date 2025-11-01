@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaLogica;
+using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,7 +64,7 @@ namespace CapaPresentación
                     string Correo = txtCorreo.Text;
                     string Direccion = txtDireccion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clproveedores.MtdFechaActual();
 
                     cdproveedores.MtdAgregarProveedor(Nombre, Telefono, Correo, Direccion, Estado, UsuarioAuditoria, FechaAuditoria);
@@ -104,7 +105,7 @@ namespace CapaPresentación
                     string Correo = txtCorreo.Text;
                     string Direccion = txtDireccion.Text;
                     string Estado = cboxEstado.Text;
-                    string UsuarioAuditoria = "Administrador";
+                    string UsuarioAuditoria = UserCache.Nombre;
                     DateTime FechaAuditoria = clproveedores.MtdFechaActual();
                     cdproveedores.MtdActualizarProveedor(CodigoProveedor, Nombre, Telefono, Correo, Direccion, Estado, UsuarioAuditoria, FechaAuditoria);
                     MessageBox.Show("Proveedor actualizado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -133,11 +134,19 @@ namespace CapaPresentación
             {
                 try
                 {
-                    int CodigoProveedor = Convert.ToInt32(txtCodigoProveedor.Text);
-                    cdproveedores.MtdEliminarProveedor(CodigoProveedor);
-                    MessageBox.Show("Proveedor eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    mtdConsultarProveedores();
-                    mtdLimpiarCampos();
+                    int CodigoProveedor = int.Parse(txtCodigoProveedor.Text);
+
+                    if (cdproveedores.MtdConsultarInsumos(CodigoProveedor) == true)
+                    {
+                        MessageBox.Show("Hay otros formularios usando estos campos. No se puede eliminar", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        cdproveedores.MtdEliminarProveedor(CodigoProveedor);
+                        MessageBox.Show("Proveedor eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mtdConsultarProveedores();
+                        mtdLimpiarCampos();
+                    }
                 }
                 catch (Exception ex)
                 {

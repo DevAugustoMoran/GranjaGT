@@ -181,6 +181,7 @@
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.txtTelefono);
+            this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.label7);
@@ -266,7 +267,7 @@
             this.txtDirección.Location = new System.Drawing.Point(187, 120);
             this.txtDirección.Margin = new System.Windows.Forms.Padding(2);
             this.txtDirección.Name = "txtDirección";
-            this.txtDirección.Size = new System.Drawing.Size(108, 20);
+            this.txtDirección.Size = new System.Drawing.Size(117, 20);
             this.txtDirección.TabIndex = 7;
             // 
             // txtCodigoGranja
@@ -275,7 +276,7 @@
             this.txtCodigoGranja.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigoGranja.Name = "txtCodigoGranja";
             this.txtCodigoGranja.ReadOnly = true;
-            this.txtCodigoGranja.Size = new System.Drawing.Size(108, 20);
+            this.txtCodigoGranja.Size = new System.Drawing.Size(117, 20);
             this.txtCodigoGranja.TabIndex = 1;
             // 
             // label4
@@ -305,7 +306,7 @@
             this.txtNombre.Location = new System.Drawing.Point(187, 80);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(108, 20);
+            this.txtNombre.Size = new System.Drawing.Size(117, 20);
             this.txtNombre.TabIndex = 3;
             // 
             // label3

@@ -107,9 +107,9 @@ namespace CapaDatos
             string QueryAgregarVentasDetalle = "Insert into tbl_VentasDetalle(CodigoVenta, CodigoAnimal, CodigoCultivo, CodigoProducto, Cantidad, PrecioUnitario, Total, Descuento, Impuesto, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria) values (@CodigoVenta, @CodigoAnimal, @CodigoCultivo, @CodigoProducto, @Cantidad, @PrecioUnitario, @Total, @Descuento, @Impuesto, @TotalVenta, @Estado, @UsuarioAuditoria, @FechaAuditoria)";
             SqlCommand CommandAgregarVentasDetalle = new SqlCommand(QueryAgregarVentasDetalle, cd_conexion.MtdAbrirConexion());
             CommandAgregarVentasDetalle.Parameters.AddWithValue("@CodigoVenta", CodigoVenta);
-            CommandAgregarVentasDetalle.Parameters.AddWithValue("@CodigoAnimal", CodigoAnimal);
-            CommandAgregarVentasDetalle.Parameters.AddWithValue("@CodigoCultivo", CodigoCultivo);
-            CommandAgregarVentasDetalle.Parameters.AddWithValue("@CodigoProducto", CodigoProducto);
+            CommandAgregarVentasDetalle.Parameters.AddWithValue("@CodigoAnimal", (CodigoAnimal == 0) ? (object)DBNull.Value : CodigoAnimal);
+            CommandAgregarVentasDetalle.Parameters.AddWithValue("@CodigoCultivo", (CodigoCultivo == 0) ? (object)DBNull.Value : CodigoCultivo);
+            CommandAgregarVentasDetalle.Parameters.AddWithValue("@CodigoProducto", (CodigoProducto == 0) ? (object)DBNull.Value : CodigoProducto);
             CommandAgregarVentasDetalle.Parameters.AddWithValue("@Cantidad", Cantidad);
             CommandAgregarVentasDetalle.Parameters.AddWithValue("@PrecioUnitario", PrecioUnitario);
             CommandAgregarVentasDetalle.Parameters.AddWithValue("@Total", Total);
@@ -129,9 +129,9 @@ namespace CapaDatos
             SqlCommand CommandActualizarVentasDetalle = new SqlCommand(QueryActualizarVentasDetalle, cd_conexion.MtdAbrirConexion());
             CommandActualizarVentasDetalle.Parameters.AddWithValue("@CodigoDetalle", CodigoDetalle);
             CommandActualizarVentasDetalle.Parameters.AddWithValue("@CodigoVenta", CodigoVenta);
-            CommandActualizarVentasDetalle.Parameters.AddWithValue("@CodigoAnimal", CodigoAnimal);
-            CommandActualizarVentasDetalle.Parameters.AddWithValue("@CodigoCultivo", CodigoCultivo);
-            CommandActualizarVentasDetalle.Parameters.AddWithValue("@CodigoProducto", CodigoProducto);
+            CommandActualizarVentasDetalle.Parameters.AddWithValue("@CodigoAnimal", (CodigoAnimal == 0) ? (object)DBNull.Value : CodigoAnimal);
+            CommandActualizarVentasDetalle.Parameters.AddWithValue("@CodigoCultivo", (CodigoCultivo == 0) ? (object)DBNull.Value : CodigoCultivo);
+            CommandActualizarVentasDetalle.Parameters.AddWithValue("@CodigoProducto", (CodigoProducto == 0) ? (object)DBNull.Value : CodigoProducto);
             CommandActualizarVentasDetalle.Parameters.AddWithValue("@Cantidad", Cantidad);
             CommandActualizarVentasDetalle.Parameters.AddWithValue("@PrecioUnitario", PrecioUnitario);
             CommandActualizarVentasDetalle.Parameters.AddWithValue("@Total", Total);
@@ -152,6 +152,25 @@ namespace CapaDatos
             CommandEliminarVentasDetalle.Parameters.AddWithValue("@CodigoDetalle", CodigoDetalle);
             CommandEliminarVentasDetalle.ExecuteNonQuery();
             cd_conexion.MtdCerrarConexion();
+        }
+
+        public bool MtdConsultarPagosVentas(int CodigoDetalle)
+        {
+            string QueryConsultarPagosVentas = "SELECT 1 FROM tbl_PagosVentas WHERE CodigoDetalle = @CodigoDetalle";
+            SqlCommand CommandEliminarVentaDetalle = new SqlCommand(QueryConsultarPagosVentas, cd_conexion.MtdAbrirConexion());
+            CommandEliminarVentaDetalle.Parameters.AddWithValue("@CodigoDetalle", CodigoDetalle);
+            cd_conexion.MtdAbrirConexion();
+            object result = CommandEliminarVentaDetalle.ExecuteScalar(); // devuelve 1 o null
+            cd_conexion.MtdCerrarConexion();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
