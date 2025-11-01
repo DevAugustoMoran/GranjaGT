@@ -176,6 +176,9 @@
     <EmbeddedResource Include="frmCultivos.resx">
       <DependentUpon>frmCultivos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmEmpleados.resx">
+      <DependentUpon>FrmEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEnvios.resx">
       <DependentUpon>frmEnvios.cs</DependentUpon>
     </EmbeddedResource>
