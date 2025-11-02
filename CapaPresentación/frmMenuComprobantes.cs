@@ -134,13 +134,14 @@ namespace CapaPresentación
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
 
             FrmDashVentas FormDash = new FrmDashVentas();
 
 
 
             FormDash.Show();
+        }
         private void btnDashboardPagos_Click(object sender, EventArgs e)
         {
             frmDashPagos formularioReporte = new frmDashPagos();
