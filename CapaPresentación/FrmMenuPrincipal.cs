@@ -27,6 +27,7 @@ namespace CapaPresentación
             panelTres.Visible = false;
             panelCuatro.Visible = false;
             panelCinco.Visible = false;
+            panelSeis.Visible = false;
         }
 
         private void MtdOcultarSubMenu()
@@ -41,6 +42,8 @@ namespace CapaPresentación
                 panelCuatro.Visible = false;
             if (panelCinco.Visible == true)
                 panelCinco.Visible = false;
+            if (panelSeis.Visible == true)
+                panelSeis.Visible = false;
         }
 
         private void MtdMostrarSubMenu(Panel subMenu)
@@ -207,6 +210,26 @@ namespace CapaPresentación
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSeis_Click(object sender, EventArgs e)
+        {
+            MtdMostrarSubMenu(panelSeis);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panelCuatro_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            MtdAbrirContenedorFormulario(new FrmDashVentas());
         }
     }
 }
