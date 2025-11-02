@@ -39,7 +39,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelCinco = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
@@ -68,17 +67,17 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnUno = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContenedorForm = new System.Windows.Forms.Panel();
             this.panelMenuLateral.SuspendLayout();
             this.panelSeis.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelCinco.SuspendLayout();
             this.panelCuatro.SuspendLayout();
             this.panelTres.SuspendLayout();
             this.panelDos.SuspendLayout();
             this.panelUno.SuspendLayout();
-            this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelContenedorForm.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +86,7 @@
             // 
             this.panelMenuLateral.AutoScroll = true;
             this.panelMenuLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(121)))), ((int)(((byte)(1)))));
+            this.panelMenuLateral.Controls.Add(this.pictureBox2);
             this.panelMenuLateral.Controls.Add(this.panelSeis);
             this.panelMenuLateral.Controls.Add(this.btnSeis);
             this.panelMenuLateral.Controls.Add(this.lblEstado);
@@ -230,18 +230,6 @@
             this.label1.Size = new System.Drawing.Size(69, 17);
             this.label1.TabIndex = 15;
             this.label1.Text = "Usuario:";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(6, -27);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(49, 58);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
             // 
             // panelCinco
             // 
@@ -708,13 +696,24 @@
             // 
             // panelLogo
             // 
-            this.panelLogo.Controls.Add(this.pictureBox2);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 75);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(263, 81);
             this.panelLogo.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(6, 46);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(49, 58);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -753,13 +752,12 @@
             this.panelMenuLateral.ResumeLayout(false);
             this.panelMenuLateral.PerformLayout();
             this.panelSeis.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelCinco.ResumeLayout(false);
             this.panelCuatro.ResumeLayout(false);
             this.panelTres.ResumeLayout(false);
             this.panelDos.ResumeLayout(false);
             this.panelUno.ResumeLayout(false);
-            this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelContenedorForm.ResumeLayout(false);
             this.panelContenedorForm.PerformLayout();
