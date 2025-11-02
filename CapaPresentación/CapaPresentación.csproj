@@ -315,6 +315,7 @@
     <EmbeddedResource Include="Seguridad\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ArchivosExcel\Dashboard.xlsx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
