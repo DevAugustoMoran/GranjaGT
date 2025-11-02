@@ -13,7 +13,8 @@ namespace CapaPresentación
 {
     public partial class frmComprobanteVenta: Form
     {
-        public string CodigoPagoAMostrar { get; set; }
+        public string CodigoVentaAMostrar { get; set; }
+        public string CuadroDeTexto { get; set; }
         public frmComprobanteVenta()
         {
             InitializeComponent();
@@ -25,9 +26,9 @@ namespace CapaPresentación
             try
             {
 
-                if (string.IsNullOrEmpty(CodigoPagoAMostrar))
+                if (string.IsNullOrEmpty(CodigoVentaAMostrar) || CuadroDeTexto == "Codigo Detalle")
                 {
-                    MessageBox.Show("No se especificó un código de pago.");
+                    MessageBox.Show("No se especificó un código de detalle Venta.");
                     this.Close();
                     return;
                 }
@@ -44,7 +45,7 @@ namespace CapaPresentación
                 new System.Net.NetworkCredential(ec2User, ec2Pass);
 
                 List<ReportParameter> parametros = new List<ReportParameter>();
-                parametros.Add(new ReportParameter("CodigoDetalle", CodigoPagoAMostrar));
+                parametros.Add(new ReportParameter("CodigoDetalle", CodigoVentaAMostrar));
                 rvComprobanteVenta.ServerReport.SetParameters(parametros);
 
                 rvComprobanteVenta.RefreshReport();

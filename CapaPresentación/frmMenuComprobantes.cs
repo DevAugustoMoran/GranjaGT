@@ -29,6 +29,7 @@ namespace CapaPresentación
             frmComprobantePago formularioReporte = new frmComprobantePago();
 
             formularioReporte.CodigoPagoAMostrar = idDePago;
+            formularioReporte.CuadroDeTexto = txtCodigoPago.Text;
 
             formularioReporte.Show();
         }
@@ -40,22 +41,24 @@ namespace CapaPresentación
 
         private void btnComprobanteEnvio_Click(object sender, EventArgs e)
         {
-            string idDePago = txtCodigoEnvio.Text;
+            string idDeEnvio = txtCodigoEnvio.Text;
 
             frmComprobanteEnvio formularioReporte = new frmComprobanteEnvio();
 
-            formularioReporte.CodigoPagoAMostrar = idDePago;
+            formularioReporte.CodigoEnvioAMostrar = idDeEnvio;
+            formularioReporte.CuadroDeTexto = txtCodigoEnvio.Text;
 
             formularioReporte.Show();
         }
 
         private void btnComprobanteVenta_Click(object sender, EventArgs e)
         {
-            string idDePago = txtCodigoDetalle.Text;
+            string idDeVenta = txtCodigoDetalle.Text;
 
             frmComprobanteVenta formularioReporte = new frmComprobanteVenta();
 
-            formularioReporte.CodigoPagoAMostrar = idDePago;
+            formularioReporte.CodigoVentaAMostrar = idDeVenta;
+            formularioReporte.CuadroDeTexto = txtCodigoDetalle.Text;
 
             formularioReporte.Show();
         }
@@ -127,6 +130,12 @@ namespace CapaPresentación
 
                 txtCodigoDetalle.ForeColor = Color.LightGray;
             }
+        }
+
+        private void btnDashboardPagos_Click(object sender, EventArgs e)
+        {
+            frmDashPagos formularioReporte = new frmDashPagos();
+            formularioReporte.Show();
         }
     }
 }
