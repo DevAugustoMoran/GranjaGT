@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnDashboardPagos = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnDashVentas = new System.Windows.Forms.Button();
             this.btnComprobanteVenta = new System.Windows.Forms.Button();
@@ -153,18 +153,19 @@
             this.label6.TabIndex = 89;
             this.label6.Text = "DASHBOARD PAGOS";
             // 
-            // button3
+            // btnDashboardPagos
             // 
-            this.button3.BackgroundImage = global::CapaPresentación.Properties.Resources.ssrs_logo;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(578, 395);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(201, 136);
-            this.button3.TabIndex = 88;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDashboardPagos.BackgroundImage = global::CapaPresentación.Properties.Resources.ssrs_logo;
+            this.btnDashboardPagos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDashboardPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboardPagos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDashboardPagos.Location = new System.Drawing.Point(578, 395);
+            this.btnDashboardPagos.Name = "btnDashboardPagos";
+            this.btnDashboardPagos.Size = new System.Drawing.Size(201, 136);
+            this.btnDashboardPagos.TabIndex = 88;
+            this.btnDashboardPagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDashboardPagos.UseVisualStyleBackColor = true;
+            this.btnDashboardPagos.Click += new System.EventHandler(this.btnDashboardPagos_Click);
             // 
             // button2
             // 
@@ -235,7 +236,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(935, 601);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnDashboardPagos);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
@@ -275,6 +276,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnDashboardPagos;
     }
 }

@@ -14,6 +14,7 @@ namespace CapaPresentación
     public partial class frmComprobantePago: Form
     {
         public string CodigoPagoAMostrar { get; set; }
+        public string CuadroDeTexto { get; set; }
 
         public frmComprobantePago()
         {
@@ -25,7 +26,7 @@ namespace CapaPresentación
             try
             {
 
-                    if (string.IsNullOrEmpty(CodigoPagoAMostrar))
+                    if (string.IsNullOrEmpty(CodigoPagoAMostrar) || CuadroDeTexto == "Codigo Pago")
                     {
                     MessageBox.Show("No se especificó un código de pago.");
                     this.Close();
