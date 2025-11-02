@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -146,6 +147,40 @@ namespace CapaPresentación
         {
             frmDashPagos formularioReporte = new frmDashPagos();
             formularioReporte.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            string rutaOrigen = Path.Combine(Application.StartupPath, "..\\..\\ArchivosExcel\\Dashboard.xlsx");
+
+            if (!File.Exists(rutaOrigen))
+            {
+                MessageBox.Show("El archivo de origen no se encuentra: " + rutaOrigen, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            SaveFileDialog sfd = new SaveFileDialog();
+
+            sfd.Filter = "Archivos de Excel (*.xlsx)|*.xlsx|Todos los archivos (*.*)|*.*";
+
+
+            sfd.FileName = Path.GetFileName(rutaOrigen);
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+
+                    File.Copy(rutaOrigen, sfd.FileName, true); 
+
+                    MessageBox.Show("Archivo descargado y guardado en:\n" + sfd.FileName, "Descarga Completa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al guardar el archivo: " + ex.Message, "Error de Descarga", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
