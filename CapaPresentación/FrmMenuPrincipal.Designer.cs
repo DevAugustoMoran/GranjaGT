@@ -64,8 +64,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnUno = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.panelContenedorForm = new System.Windows.Forms.Panel();
+            this.btnSeis = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelContenedorForm = new System.Windows.Forms.Panel();
+            this.panelSeis = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
             this.panelMenuLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelCinco.SuspendLayout();
@@ -73,14 +77,17 @@
             this.panelTres.SuspendLayout();
             this.panelDos.SuspendLayout();
             this.panelUno.SuspendLayout();
-            this.panelContenedorForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelContenedorForm.SuspendLayout();
+            this.panelSeis.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenuLateral
             // 
             this.panelMenuLateral.AutoScroll = true;
             this.panelMenuLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(121)))), ((int)(((byte)(1)))));
+            this.panelMenuLateral.Controls.Add(this.panelSeis);
+            this.panelMenuLateral.Controls.Add(this.btnSeis);
             this.panelMenuLateral.Controls.Add(this.lblEstado);
             this.panelMenuLateral.Controls.Add(this.lblRol);
             this.panelMenuLateral.Controls.Add(this.lblUsuario);
@@ -103,7 +110,6 @@
             this.panelMenuLateral.Location = new System.Drawing.Point(0, 0);
             this.panelMenuLateral.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenuLateral.Name = "panelMenuLateral";
-            this.panelMenuLateral.Padding = new System.Windows.Forms.Padding(0, 100, 0, 0);
             this.panelMenuLateral.Size = new System.Drawing.Size(280, 595);
             this.panelMenuLateral.TabIndex = 0;
             this.panelMenuLateral.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenuLateral_Paint);
@@ -113,7 +119,7 @@
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold);
             this.lblEstado.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblEstado.Location = new System.Drawing.Point(140, 100);
+            this.lblEstado.Location = new System.Drawing.Point(140, 0);
             this.lblEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(13, 17);
@@ -125,7 +131,7 @@
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold);
             this.lblRol.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblRol.Location = new System.Drawing.Point(140, 58);
+            this.lblRol.Location = new System.Drawing.Point(140, -42);
             this.lblRol.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(13, 17);
@@ -137,7 +143,7 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold);
             this.lblUsuario.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblUsuario.Location = new System.Drawing.Point(140, 28);
+            this.lblUsuario.Location = new System.Drawing.Point(140, -72);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(13, 17);
@@ -149,7 +155,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.DarkGray;
-            this.label3.Location = new System.Drawing.Point(59, 100);
+            this.label3.Location = new System.Drawing.Point(59, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 17);
@@ -161,7 +167,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(59, 60);
+            this.label2.Location = new System.Drawing.Point(59, -40);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 17);
@@ -173,7 +179,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.DarkGray;
-            this.label1.Location = new System.Drawing.Point(59, 28);
+            this.label1.Location = new System.Drawing.Point(59, -72);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 17);
@@ -195,10 +201,11 @@
             // panelCinco
             // 
             this.panelCinco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(221)))), ((int)(((byte)(20)))));
+            this.panelCinco.Controls.Add(this.button1);
             this.panelCinco.Controls.Add(this.button20);
             this.panelCinco.Controls.Add(this.button21);
             this.panelCinco.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCinco.Location = new System.Drawing.Point(0, 842);
+            this.panelCinco.Location = new System.Drawing.Point(0, 742);
             this.panelCinco.Margin = new System.Windows.Forms.Padding(2);
             this.panelCinco.Name = "panelCinco";
             this.panelCinco.Size = new System.Drawing.Size(263, 58);
@@ -247,7 +254,7 @@
             this.btnCinco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCinco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCinco.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCinco.Location = new System.Drawing.Point(0, 782);
+            this.btnCinco.Location = new System.Drawing.Point(0, 682);
             this.btnCinco.Margin = new System.Windows.Forms.Padding(2);
             this.btnCinco.Name = "btnCinco";
             this.btnCinco.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -265,11 +272,12 @@
             this.panelCuatro.Controls.Add(this.button16);
             this.panelCuatro.Controls.Add(this.button17);
             this.panelCuatro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCuatro.Location = new System.Drawing.Point(0, 704);
+            this.panelCuatro.Location = new System.Drawing.Point(0, 604);
             this.panelCuatro.Margin = new System.Windows.Forms.Padding(2);
             this.panelCuatro.Name = "panelCuatro";
             this.panelCuatro.Size = new System.Drawing.Size(263, 78);
             this.panelCuatro.TabIndex = 9;
+            this.panelCuatro.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCuatro_Paint);
             // 
             // button15
             // 
@@ -332,7 +340,7 @@
             this.btnCuatro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCuatro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCuatro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCuatro.Location = new System.Drawing.Point(0, 644);
+            this.btnCuatro.Location = new System.Drawing.Point(0, 544);
             this.btnCuatro.Margin = new System.Windows.Forms.Padding(2);
             this.btnCuatro.Name = "btnCuatro";
             this.btnCuatro.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -350,7 +358,7 @@
             this.panelTres.Controls.Add(this.button12);
             this.panelTres.Controls.Add(this.button13);
             this.panelTres.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTres.Location = new System.Drawing.Point(0, 566);
+            this.panelTres.Location = new System.Drawing.Point(0, 466);
             this.panelTres.Margin = new System.Windows.Forms.Padding(2);
             this.panelTres.Name = "panelTres";
             this.panelTres.Size = new System.Drawing.Size(263, 78);
@@ -417,7 +425,7 @@
             this.btnTres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTres.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTres.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnTres.Location = new System.Drawing.Point(0, 506);
+            this.btnTres.Location = new System.Drawing.Point(0, 406);
             this.btnTres.Margin = new System.Windows.Forms.Padding(2);
             this.btnTres.Name = "btnTres";
             this.btnTres.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -435,7 +443,7 @@
             this.panelDos.Controls.Add(this.button10);
             this.panelDos.Controls.Add(this.button11);
             this.panelDos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDos.Location = new System.Drawing.Point(0, 428);
+            this.panelDos.Location = new System.Drawing.Point(0, 328);
             this.panelDos.Margin = new System.Windows.Forms.Padding(2);
             this.panelDos.Name = "panelDos";
             this.panelDos.Size = new System.Drawing.Size(263, 78);
@@ -502,7 +510,7 @@
             this.btnDos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDos.Location = new System.Drawing.Point(0, 368);
+            this.btnDos.Location = new System.Drawing.Point(0, 268);
             this.btnDos.Margin = new System.Windows.Forms.Padding(2);
             this.btnDos.Name = "btnDos";
             this.btnDos.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -522,7 +530,7 @@
             this.panelUno.Controls.Add(this.button3);
             this.panelUno.Controls.Add(this.button2);
             this.panelUno.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelUno.Location = new System.Drawing.Point(0, 241);
+            this.panelUno.Location = new System.Drawing.Point(0, 141);
             this.panelUno.Margin = new System.Windows.Forms.Padding(2);
             this.panelUno.Name = "panelUno";
             this.panelUno.Size = new System.Drawing.Size(263, 127);
@@ -625,7 +633,7 @@
             this.btnUno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUno.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnUno.Location = new System.Drawing.Point(0, 181);
+            this.btnUno.Location = new System.Drawing.Point(0, 81);
             this.btnUno.Margin = new System.Windows.Forms.Padding(2);
             this.btnUno.Name = "btnUno";
             this.btnUno.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -639,21 +647,46 @@
             // panelLogo
             // 
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 100);
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(263, 81);
             this.panelLogo.TabIndex = 1;
             // 
-            // panelContenedorForm
+            // btnSeis
             // 
-            this.panelContenedorForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(221)))), ((int)(((byte)(20)))));
-            this.panelContenedorForm.Controls.Add(this.pictureBox1);
-            this.panelContenedorForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedorForm.Location = new System.Drawing.Point(280, 0);
-            this.panelContenedorForm.Name = "panelContenedorForm";
-            this.panelContenedorForm.Size = new System.Drawing.Size(928, 595);
-            this.panelContenedorForm.TabIndex = 1;
+            this.btnSeis.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSeis.FlatAppearance.BorderSize = 0;
+            this.btnSeis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeis.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSeis.Location = new System.Drawing.Point(0, 800);
+            this.btnSeis.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSeis.Name = "btnSeis";
+            this.btnSeis.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnSeis.Size = new System.Drawing.Size(263, 60);
+            this.btnSeis.TabIndex = 23;
+            this.btnSeis.Text = "DASHBOARD Y COMPROBANTES";
+            this.btnSeis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSeis.UseVisualStyleBackColor = true;
+            this.btnSeis.Click += new System.EventHandler(this.btnSeis_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(0, 51);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(263, 24);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Roles";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -665,6 +698,42 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // panelContenedorForm
+            // 
+            this.panelContenedorForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(221)))), ((int)(((byte)(20)))));
+            this.panelContenedorForm.Controls.Add(this.pictureBox1);
+            this.panelContenedorForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedorForm.Location = new System.Drawing.Point(280, 0);
+            this.panelContenedorForm.Name = "panelContenedorForm";
+            this.panelContenedorForm.Size = new System.Drawing.Size(928, 595);
+            this.panelContenedorForm.TabIndex = 1;
+            // 
+            // panelSeis
+            // 
+            this.panelSeis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(221)))), ((int)(((byte)(20)))));
+            this.panelSeis.Controls.Add(this.button7);
+            this.panelSeis.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSeis.Location = new System.Drawing.Point(0, 860);
+            this.panelSeis.Name = "panelSeis";
+            this.panelSeis.Size = new System.Drawing.Size(263, 100);
+            this.panelSeis.TabIndex = 1;
+            // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(0, 0);
+            this.button7.Name = "button7";
+            this.button7.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.button7.Size = new System.Drawing.Size(263, 23);
+            this.button7.TabIndex = 0;
+            this.button7.Text = "Dashboard Ventas";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // FrmMenuPrincipal
             // 
@@ -687,9 +756,10 @@
             this.panelTres.ResumeLayout(false);
             this.panelDos.ResumeLayout(false);
             this.panelUno.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelContenedorForm.ResumeLayout(false);
             this.panelContenedorForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelSeis.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -724,8 +794,6 @@
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button btnCuatro;
-        private System.Windows.Forms.Panel panelContenedorForm;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.Label lblUsuario;
@@ -733,5 +801,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnSeis;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panelContenedorForm;
+        private System.Windows.Forms.Panel panelSeis;
+        private System.Windows.Forms.Button button7;
     }
 }
