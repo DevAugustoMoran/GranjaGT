@@ -128,5 +128,16 @@ namespace CapaPresentación
                 txtCodigoDetalle.ForeColor = Color.LightGray;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+
+            FrmDashVentas FormDash = new FrmDashVentas();
+
+
+
+            FormDash.Show();
+        }
     }
 }

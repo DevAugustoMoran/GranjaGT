@@ -40,7 +40,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDashVentas = new System.Windows.Forms.Button();
             this.btnComprobanteVenta = new System.Windows.Forms.Button();
             this.btnComprobanteEnvio = new System.Windows.Forms.Button();
             this.btnComprobantePago = new System.Windows.Forms.Button();
@@ -179,18 +179,19 @@
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnDashVentas
             // 
-            this.button1.BackgroundImage = global::CapaPresentación.Properties.Resources.PowerBi;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(73, 395);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(201, 136);
-            this.button1.TabIndex = 84;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDashVentas.BackgroundImage = global::CapaPresentación.Properties.Resources.PowerBi;
+            this.btnDashVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDashVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashVentas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDashVentas.Location = new System.Drawing.Point(73, 395);
+            this.btnDashVentas.Name = "btnDashVentas";
+            this.btnDashVentas.Size = new System.Drawing.Size(201, 136);
+            this.btnDashVentas.TabIndex = 84;
+            this.btnDashVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDashVentas.UseVisualStyleBackColor = true;
+            this.btnDashVentas.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnComprobanteVenta
             // 
@@ -238,7 +239,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDashVentas);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -270,7 +271,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDashVentas;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;

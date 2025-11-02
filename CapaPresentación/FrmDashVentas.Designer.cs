@@ -50,7 +50,7 @@
             this.ClientSize = new System.Drawing.Size(935, 601);
             this.Controls.Add(this.webView21);
             this.Name = "FrmDashVentas";
-            this.Text = "FrmDashVentas";
+            this.Text = "DASHBOARD VENTAS";
             this.Load += new System.EventHandler(this.FrmDashVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.ResumeLayout(false);
