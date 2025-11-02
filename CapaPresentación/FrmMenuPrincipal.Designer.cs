@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             this.panelMenuLateral = new System.Windows.Forms.Panel();
+            this.panelSeis = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.btnSeis = new System.Windows.Forms.Button();
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -38,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelCinco = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
             this.btnCinco = new System.Windows.Forms.Button();
@@ -64,13 +68,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnUno = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.btnSeis = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContenedorForm = new System.Windows.Forms.Panel();
-            this.panelSeis = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
             this.panelMenuLateral.SuspendLayout();
+            this.panelSeis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelCinco.SuspendLayout();
             this.panelCuatro.SuspendLayout();
@@ -79,7 +80,6 @@
             this.panelUno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelContenedorForm.SuspendLayout();
-            this.panelSeis.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenuLateral
@@ -113,6 +113,50 @@
             this.panelMenuLateral.Size = new System.Drawing.Size(280, 595);
             this.panelMenuLateral.TabIndex = 0;
             this.panelMenuLateral.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenuLateral_Paint);
+            // 
+            // panelSeis
+            // 
+            this.panelSeis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(221)))), ((int)(((byte)(20)))));
+            this.panelSeis.Controls.Add(this.button7);
+            this.panelSeis.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSeis.Location = new System.Drawing.Point(0, 860);
+            this.panelSeis.Name = "panelSeis";
+            this.panelSeis.Size = new System.Drawing.Size(263, 32);
+            this.panelSeis.TabIndex = 1;
+            // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(0, 0);
+            this.button7.Name = "button7";
+            this.button7.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.button7.Size = new System.Drawing.Size(263, 23);
+            this.button7.TabIndex = 0;
+            this.button7.Text = "Opciones";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
+            // btnSeis
+            // 
+            this.btnSeis.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSeis.FlatAppearance.BorderSize = 0;
+            this.btnSeis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeis.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSeis.Location = new System.Drawing.Point(0, 800);
+            this.btnSeis.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSeis.Name = "btnSeis";
+            this.btnSeis.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnSeis.Size = new System.Drawing.Size(263, 60);
+            this.btnSeis.TabIndex = 23;
+            this.btnSeis.Text = "DASHBOARD Y COMPROBANTES";
+            this.btnSeis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSeis.UseVisualStyleBackColor = true;
+            this.btnSeis.Click += new System.EventHandler(this.btnSeis_Click);
             // 
             // lblEstado
             // 
@@ -210,6 +254,23 @@
             this.panelCinco.Name = "panelCinco";
             this.panelCinco.Size = new System.Drawing.Size(263, 58);
             this.panelCinco.TabIndex = 11;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(0, 51);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(263, 24);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Roles";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // button20
             // 
@@ -653,41 +714,6 @@
             this.panelLogo.Size = new System.Drawing.Size(263, 81);
             this.panelLogo.TabIndex = 1;
             // 
-            // btnSeis
-            // 
-            this.btnSeis.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSeis.FlatAppearance.BorderSize = 0;
-            this.btnSeis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeis.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSeis.Location = new System.Drawing.Point(0, 800);
-            this.btnSeis.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSeis.Name = "btnSeis";
-            this.btnSeis.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnSeis.Size = new System.Drawing.Size(263, 60);
-            this.btnSeis.TabIndex = 23;
-            this.btnSeis.Text = "DASHBOARD Y COMPROBANTES";
-            this.btnSeis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSeis.UseVisualStyleBackColor = true;
-            this.btnSeis.Click += new System.EventHandler(this.btnSeis_Click);
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(0, 51);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(263, 24);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Roles";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -709,32 +735,6 @@
             this.panelContenedorForm.Size = new System.Drawing.Size(928, 595);
             this.panelContenedorForm.TabIndex = 1;
             // 
-            // panelSeis
-            // 
-            this.panelSeis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(221)))), ((int)(((byte)(20)))));
-            this.panelSeis.Controls.Add(this.button7);
-            this.panelSeis.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSeis.Location = new System.Drawing.Point(0, 860);
-            this.panelSeis.Name = "panelSeis";
-            this.panelSeis.Size = new System.Drawing.Size(263, 100);
-            this.panelSeis.TabIndex = 1;
-            // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(0, 0);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(263, 23);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "Dashboard Ventas";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click_1);
-            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -750,6 +750,7 @@
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
             this.panelMenuLateral.ResumeLayout(false);
             this.panelMenuLateral.PerformLayout();
+            this.panelSeis.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelCinco.ResumeLayout(false);
             this.panelCuatro.ResumeLayout(false);
@@ -759,7 +760,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelContenedorForm.ResumeLayout(false);
             this.panelContenedorForm.PerformLayout();
-            this.panelSeis.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
