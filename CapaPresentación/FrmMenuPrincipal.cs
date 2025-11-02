@@ -229,7 +229,7 @@ namespace CapaPresentación
 
         private void button7_Click_1(object sender, EventArgs e)
         {
-            MtdAbrirContenedorFormulario(new FrmDashVentas());
+            MtdAbrirContenedorFormulario(new frmMenuComprobantes());
         }
     }
 }
